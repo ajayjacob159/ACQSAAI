@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Sparkles, PhoneCall, CheckCircle2, ShieldCheck, Activity } from 'lucide-react';
+import { X, CheckCircle2, PhoneCall, Sparkles, Send, ShieldCheck } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 interface DemoModalProps {
@@ -8,189 +8,173 @@ interface DemoModalProps {
   initialType?: string;
 }
 
-export const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose, initialType }) => {
-  const [formData, setFormData] = useState({
-    fullName: '',
-    hospitalName: '',
-    role: 'Hospital CEO / COO',
-    email: '',
-    phone: '',
-    productInterest: 'Full Enterprise AI Suite',
-    message: ''
-  });
-
+export const DemoModal: React.FC<DemoModalProps> = ({ isOpen, onClose, initialType = 'live_demo' }) => {
+  const [activeType, setActiveType] = useState<string>(initialType);
   const [submitted, setSubmitted] = useState(false);
+
+  const [formData, setFormData] = useState({
+    hospitalName: '',
+    contactName: '',
+    phone: '',
+    email: '',
+    role: 'Managing Director / CEO',
+    city: '',
+    language: 'Telugu + English',
+    dailyCalls: '500 - 2,000 calls/day'
+  });
 
   if (!isOpen) return null;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
+
     confetti({
-      particleCount: 80,
-      spread: 80,
+      particleCount: 70,
+      spread: 70,
       origin: { y: 0.6 },
-      colors: ['#20D6C7', '#53CFFF', '#6BE7B7', '#8B7CFF']
+      colors: ['#00C2B3', '#0077FF', '#7C3AED']
     });
+
+    setTimeout(() => {
+      setSubmitted(false);
+      onClose();
+    }, 3500);
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-md animate-in fade-in duration-200">
       
-      <div className="relative w-full max-w-xl bg-[#09242A] border-2 border-[#20D6C7]/40 rounded-3xl p-6 sm:p-8 shadow-2xl overflow-hidden max-h-[90vh] overflow-y-auto">
+      <div className="relative w-full max-w-xl bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6 text-slate-900">
         
-        {/* Close button */}
+        {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 p-2 rounded-full bg-[#071621] text-slate-400 hover:text-white border border-white/10"
+          className="absolute top-5 right-5 p-2 rounded-xl bg-slate-100 border border-slate-200 text-slate-500 hover:text-slate-900 transition-colors"
+          aria-label="Close modal"
         >
           <X className="w-5 h-5" />
         </button>
 
+        {/* Modal Header */}
+        <div className="space-y-2">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#00C2B3]/10 text-xs font-bold text-[#00C2B3]">
+            <Sparkles className="w-3.5 h-3.5" /> ACQSA ENTERPRISE DEMO & VOICE TEST
+          </div>
+          <h3 className="text-2xl font-poppins font-extrabold text-slate-900">
+            {activeType === 'voice_call' ? 'Request Instant AI Voice Call' : 'Book Executive Hospital Demo'}
+          </h3>
+          <p className="text-xs text-slate-600">
+            Experience real-time vernacular voice AI calls and clinical EMR auto-scribing tailored to your hospital network.
+          </p>
+        </div>
+
+        {/* Form Body */}
         {submitted ? (
-          <div className="py-12 text-center space-y-4 animate-in zoom-in duration-300">
-            <div className="w-16 h-16 mx-auto rounded-full bg-[#6BE7B7]/20 border border-[#6BE7B7] flex items-center justify-center text-[#6BE7B7]">
+          <div className="py-10 text-center space-y-3 animate-in zoom-in-95">
+            <div className="w-14 h-14 mx-auto rounded-full bg-emerald-100 border border-emerald-200 flex items-center justify-center text-[#10B981]">
               <CheckCircle2 className="w-8 h-8" />
             </div>
-            <h3 className="font-heading font-extrabold text-2xl text-white">
-              Demonstration Request Confirmed
-            </h3>
-            <p className="text-slate-300 text-sm max-w-md mx-auto leading-relaxed">
-              Thank you, <strong className="text-white">{formData.fullName}</strong>. Our enterprise healthcare AI specialist will contact <strong className="text-[#20D6C7]">{formData.hospitalName}</strong> within 2 business hours.
+            <h4 className="text-xl font-bold text-slate-900">Demo Request Submitted!</h4>
+            <p className="text-xs text-slate-600 max-w-sm mx-auto">
+              Our clinical automation desk will connect with <strong className="text-slate-900">{formData.phone || 'your phone'}</strong> within 15 minutes.
             </p>
-            <button
-              onClick={onClose}
-              className="mt-4 px-6 py-2.5 rounded-xl bg-[#20D6C7] text-[#091B22] font-bold text-sm"
-            >
-              Close Window
-            </button>
           </div>
         ) : (
-          <div className="space-y-6">
-            
-            <div className="space-y-1">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-[#20D6C7]/15 text-[11px] font-bold text-[#20D6C7]">
-                <Sparkles className="w-3.5 h-3.5" /> ACQSA ENTERPRISE DEMO
-              </div>
-              <h3 className="font-heading font-extrabold text-2xl text-white">
-                {initialType === 'voice_call' ? 'Schedule a Voice AI Call' : 'Book a Live ACQSA AI Demo'}
-              </h3>
-              <p className="text-xs text-slate-400">
-                Experience intelligent voice, WhatsApp, OPD, and ClinScribe automation tailored to your hospital workflows.
-              </p>
-            </div>
-
-            <form onSubmit={handleSubmit} className="space-y-4 text-xs">
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block font-semibold text-slate-300 mb-1">Full Name *</label>
-                  <input
-                    type="text"
-                    required
-                    value={formData.fullName}
-                    onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                    placeholder="Dr. Rajesh Kumar"
-                    className="w-full bg-[#071621] text-white px-3.5 py-2.5 rounded-xl border border-white/10 focus:outline-none focus:border-[#20D6C7]"
-                  />
-                </div>
-
-                <div>
-                  <label className="block font-semibold text-slate-300 mb-1">Hospital / Clinic Name *</label>
-                  <input
-                    type="text"
-                    required
-                    value={formData.hospitalName}
-                    onChange={(e) => setFormData({ ...formData, hospitalName: e.target.value })}
-                    placeholder="City Multispeciality Hospital"
-                    className="w-full bg-[#071621] text-white px-3.5 py-2.5 rounded-xl border border-white/10 focus:outline-none focus:border-[#20D6C7]"
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block font-semibold text-slate-300 mb-1">Designation / Role</label>
-                  <select
-                    value={formData.role}
-                    onChange={(e) => setFormData({ ...formData, role: e.target.value })}
-                    className="w-full bg-[#071621] text-white px-3.5 py-2.5 rounded-xl border border-white/10 focus:outline-none focus:border-[#20D6C7]"
-                  >
-                    <option>Hospital CEO / COO</option>
-                    <option>Medical Director</option>
-                    <option>Hospital Administrator</option>
-                    <option>Front Office Manager</option>
-                    <option>OPD / Nursing Head</option>
-                    <option>TPA & Billing Manager</option>
-                    <option>Doctor / Consultant</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label className="block font-semibold text-slate-300 mb-1">Product Interest</label>
-                  <select
-                    value={formData.productInterest}
-                    onChange={(e) => setFormData({ ...formData, productInterest: e.target.value })}
-                    className="w-full bg-[#071621] text-white px-3.5 py-2.5 rounded-xl border border-white/10 focus:outline-none focus:border-[#20D6C7]"
-                  >
-                    <option>Full Enterprise AI Suite</option>
-                    <option>ACQSA Voice & WhatsApp Agent</option>
-                    <option>ACQSA ClinScribe Auto-Scribe</option>
-                    <option>TPA & Cashless Automation</option>
-                  </select>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block font-semibold text-slate-300 mb-1">Official Email *</label>
-                  <input
-                    type="email"
-                    required
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    placeholder="rajesh@hospital.com"
-                    className="w-full bg-[#071621] text-white px-3.5 py-2.5 rounded-xl border border-white/10 focus:outline-none focus:border-[#20D6C7]"
-                  />
-                </div>
-
-                <div>
-                  <label className="block font-semibold text-slate-300 mb-1">Mobile / Phone *</label>
-                  <input
-                    type="tel"
-                    required
-                    value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    placeholder="+91 98765 43210"
-                    className="w-full bg-[#071621] text-white px-3.5 py-2.5 rounded-xl border border-white/10 focus:outline-none focus:border-[#20D6C7]"
-                  />
-                </div>
-              </div>
-
+          <form onSubmit={handleSubmit} className="space-y-4 text-xs font-poppins font-medium">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
-                <label className="block font-semibold text-slate-300 mb-1">Workflow Notes (Optional)</label>
-                <textarea
-                  rows={2}
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  placeholder="Tell us about your OPD call volumes or HIS integration setup..."
-                  className="w-full bg-[#071621] text-white px-3.5 py-2 rounded-xl border border-white/10 focus:outline-none focus:border-[#20D6C7]"
+                <label className="block text-slate-700 mb-1">Hospital / Clinic Name</label>
+                <input
+                  type="text"
+                  required
+                  value={formData.hospitalName}
+                  onChange={(e) => setFormData({ ...formData, hospitalName: e.target.value })}
+                  placeholder="e.g. Apollo Multi-Specialty"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-900 focus:outline-none focus:border-[#00C2B3]"
                 />
               </div>
+              <div>
+                <label className="block text-slate-700 mb-1">Your Name & Designation</label>
+                <input
+                  type="text"
+                  required
+                  value={formData.contactName}
+                  onChange={(e) => setFormData({ ...formData, contactName: e.target.value })}
+                  placeholder="Dr. Rajesh Kumar (MD)"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-900 focus:outline-none focus:border-[#00C2B3]"
+                />
+              </div>
+            </div>
 
-              <button
-                type="submit"
-                className="w-full py-3.5 rounded-xl bg-gradient-to-r from-[#20D6C7] via-[#53CFFF] to-[#6BE7B7] text-[#091B22] font-heading font-extrabold text-sm shadow-xl shadow-[#20D6C7]/25 hover:scale-[1.01] transition-transform"
-              >
-                Submit Demo Request
-              </button>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <label className="block text-slate-700 mb-1">Phone Number (For Test Call)</label>
+                <input
+                  type="tel"
+                  required
+                  value={formData.phone}
+                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  placeholder="+91 98765 43210"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-900 focus:outline-none focus:border-[#00C2B3]"
+                />
+              </div>
+              <div>
+                <label className="block text-slate-700 mb-1">Hospital Email</label>
+                <input
+                  type="email"
+                  required
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  placeholder="director@hospital.com"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-slate-900 focus:outline-none focus:border-[#00C2B3]"
+                />
+              </div>
+            </div>
 
-              <p className="text-[10px] text-slate-400 text-center">
-                🔒 Your information is confidential and will only be used for ACQSA AI product demonstration coordination.
-              </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <label className="block text-slate-700 mb-1">Primary Language Dialect</label>
+                <select
+                  value={formData.language}
+                  onChange={(e) => setFormData({ ...formData, language: e.target.value })}
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-slate-900 focus:outline-none focus:border-[#00C2B3]"
+                >
+                  <option>Telugu + English</option>
+                  <option>Hindi + English</option>
+                  <option>Tamil + English</option>
+                  <option>Kannada + English</option>
+                  <option>Marathi + English</option>
+                  <option>Bengali + English</option>
+                </select>
+              </div>
+              <div>
+                <label className="block text-slate-700 mb-1">Daily Call / OPD Volume</label>
+                <select
+                  value={formData.dailyCalls}
+                  onChange={(e) => setFormData({ ...formData, dailyCalls: e.target.value })}
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2.5 text-slate-900 focus:outline-none focus:border-[#00C2B3]"
+                >
+                  <option>Under 500 calls/day</option>
+                  <option>500 - 2,000 calls/day</option>
+                  <option>2,000 - 10,000 calls/day</option>
+                  <option>10,000+ calls/day (Network)</option>
+                </select>
+              </div>
+            </div>
 
-            </form>
-          </div>
+            <button
+              type="submit"
+              className="w-full py-3.5 rounded-xl bg-gradient-to-r from-[#00C2B3] via-[#0077FF] to-[#7C3AED] text-white font-poppins font-extrabold text-xs uppercase tracking-wider shadow-lg hover:scale-[1.01] transition-transform flex items-center justify-center gap-2"
+            >
+              <Send className="w-4 h-4" />
+              {activeType === 'voice_call' ? 'Trigger Instant AI Test Call' : 'Schedule Live Executive Demo'}
+            </button>
+
+            <div className="pt-2 text-center text-[10px] text-slate-500 font-jura flex items-center justify-center gap-1">
+              <ShieldCheck className="w-3.5 h-3.5 text-[#10B981]" /> Enterprise Security & Clinical Data Protection Compliant
+            </div>
+          </form>
         )}
 
       </div>

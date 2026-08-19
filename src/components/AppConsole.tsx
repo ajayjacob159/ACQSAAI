@@ -8,24 +8,24 @@ export const AppConsole: React.FC = () => {
   const [voiceActive, setVoiceActive] = useState(true);
 
   return (
-    <section id="app-console" className="py-24 relative bg-slate-900 text-white overflow-hidden">
+    <section id="app-console" className="py-24 relative bg-[#FAFAFC] text-slate-900 border-t border-slate-200 overflow-hidden">
       
       {/* Background ambient lighting */}
-      <div className="absolute top-1/4 left-10 w-96 h-96 bg-[#00C2B3]/20 rounded-full blur-[160px] pointer-events-none" />
-      <div className="absolute bottom-10 right-10 w-96 h-96 bg-[#0077FF]/20 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/4 left-10 w-96 h-96 bg-[#00C2B3]/10 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute bottom-10 right-10 w-96 h-96 bg-[#0077FF]/10 rounded-full blur-[160px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#00C2B3]/20 border border-[#00C2B3]/40 text-xs font-bold text-[#00C2B3]">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100 border border-[#00C2B3]/40 text-xs font-bold text-[#00C2B3]">
             <Smartphone className="w-3.5 h-3.5" /> NATIVE MOBILE APPLICATION EXPERIENCE
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-poppins font-extrabold tracking-tight leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-poppins font-extrabold tracking-tight leading-tight text-slate-900">
             Full Android Web App <br />
             <span className="text-gradient">Experience on your browser.</span>
           </h2>
-          <p className="text-slate-300 text-base sm:text-lg">
+          <p className="text-slate-600 text-base sm:text-lg">
             Experience ACQSA AI like a native Android app—test voice AI calls, OPD slot locking, WhatsApp notifications, and discharge auto-scribing in real time.
           </p>
         </div>
@@ -36,10 +36,10 @@ export const AppConsole: React.FC = () => {
           {/* Left Controls & Tab Switcher */}
           <div className="lg:col-span-5 space-y-6">
             <div className="space-y-3">
-              <h3 className="text-2xl font-poppins font-extrabold text-white">
+              <h3 className="text-2xl font-poppins font-extrabold text-slate-900">
                 Interactive App Features
               </h3>
-              <p className="text-slate-300 text-sm leading-relaxed">
+              <p className="text-slate-600 text-sm leading-relaxed">
                 Click any tab to switch screens inside the Android mobile app simulator on the right.
               </p>
             </div>
@@ -48,19 +48,19 @@ export const AppConsole: React.FC = () => {
               
               <button
                 onClick={() => setActiveAppTab('voice')}
-                className={`w-full p-4 rounded-2xl text-left border transition-all flex items-center justify-between ${
+                className={`w-full p-4 rounded-2xl text-left border transition-all flex items-center justify-between shadow-sm ${
                   activeAppTab === 'voice'
-                    ? 'bg-[#00C2B3]/20 border-[#00C2B3] text-white shadow-lg'
-                    : 'bg-slate-800/60 border-slate-700 text-slate-300 hover:bg-slate-800'
+                    ? 'bg-white border-[#00C2B3] text-slate-900 shadow-md ring-2 ring-[#00C2B3]/20'
+                    : 'bg-white border-slate-200 text-slate-700 hover:bg-slate-50'
                 }`}
               >
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-[#00C2B3]/20 text-[#00C2B3] flex items-center justify-center font-bold">
+                  <div className="w-10 h-10 rounded-xl bg-[#00C2B3]/15 text-[#00C2B3] flex items-center justify-center font-bold">
                     <Mic className="w-5 h-5" />
                   </div>
                   <div>
-                    <strong className="block text-sm font-bold">1. Voice AI & Vernacular Assistant</strong>
-                    <span className="text-xs text-slate-400">Live call synthesis & intent extraction</span>
+                    <strong className="block text-sm font-bold text-slate-900">1. Voice AI & Vernacular Assistant</strong>
+                    <span className="text-xs text-slate-500">Live call synthesis & intent extraction</span>
                   </div>
                 </div>
                 <ChevronRight className="w-4 h-4 text-[#00C2B3]" />
@@ -68,19 +68,19 @@ export const AppConsole: React.FC = () => {
 
               <button
                 onClick={() => setActiveAppTab('opd')}
-                className={`w-full p-4 rounded-2xl text-left border transition-all flex items-center justify-between ${
+                className={`w-full p-4 rounded-2xl text-left border transition-all flex items-center justify-between shadow-sm ${
                   activeAppTab === 'opd'
-                    ? 'bg-[#0077FF]/20 border-[#0077FF] text-white shadow-lg'
-                    : 'bg-slate-800/60 border-slate-700 text-slate-300 hover:bg-slate-800'
+                    ? 'bg-white border-[#0077FF] text-slate-900 shadow-md ring-2 ring-[#0077FF]/20'
+                    : 'bg-white border-slate-200 text-slate-700 hover:bg-slate-50'
                 }`}
               >
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-[#0077FF]/20 text-[#0077FF] flex items-center justify-center font-bold">
+                  <div className="w-10 h-10 rounded-xl bg-[#0077FF]/15 text-[#0077FF] flex items-center justify-center font-bold">
                     <Calendar className="w-5 h-5" />
                   </div>
                   <div>
-                    <strong className="block text-sm font-bold">2. Touch OPD Slot Booking</strong>
-                    <span className="text-xs text-slate-400">Select doctor, date & lock slot</span>
+                    <strong className="block text-sm font-bold text-slate-900">2. Touch OPD Slot Booking</strong>
+                    <span className="text-xs text-slate-500">Select doctor, date & lock slot</span>
                   </div>
                 </div>
                 <ChevronRight className="w-4 h-4 text-[#0077FF]" />
@@ -88,19 +88,19 @@ export const AppConsole: React.FC = () => {
 
               <button
                 onClick={() => setActiveAppTab('scribe')}
-                className={`w-full p-4 rounded-2xl text-left border transition-all flex items-center justify-between ${
+                className={`w-full p-4 rounded-2xl text-left border transition-all flex items-center justify-between shadow-sm ${
                   activeAppTab === 'scribe'
-                    ? 'bg-[#7C3AED]/20 border-[#7C3AED] text-white shadow-lg'
-                    : 'bg-slate-800/60 border-slate-700 text-slate-300 hover:bg-slate-800'
+                    ? 'bg-white border-[#7C3AED] text-slate-900 shadow-md ring-2 ring-[#7C3AED]/20'
+                    : 'bg-white border-slate-200 text-slate-700 hover:bg-slate-50'
                 }`}
               >
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-[#7C3AED]/20 text-[#7C3AED] flex items-center justify-center font-bold">
+                  <div className="w-10 h-10 rounded-xl bg-[#7C3AED]/15 text-[#7C3AED] flex items-center justify-center font-bold">
                     <FileText className="w-5 h-5" />
                   </div>
                   <div>
-                    <strong className="block text-sm font-bold">3. ClinScribe Auto-Summary</strong>
-                    <span className="text-xs text-slate-400">Doctor review & 1-tap approval</span>
+                    <strong className="block text-sm font-bold text-slate-900">3. ClinScribe Auto-Summary</strong>
+                    <span className="text-xs text-slate-500">Doctor review & 1-tap approval</span>
                   </div>
                 </div>
                 <ChevronRight className="w-4 h-4 text-[#7C3AED]" />
@@ -108,19 +108,19 @@ export const AppConsole: React.FC = () => {
 
               <button
                 onClick={() => setActiveAppTab('tpa')}
-                className={`w-full p-4 rounded-2xl text-left border transition-all flex items-center justify-between ${
+                className={`w-full p-4 rounded-2xl text-left border transition-all flex items-center justify-between shadow-sm ${
                   activeAppTab === 'tpa'
-                    ? 'bg-[#10B981]/20 border-[#10B981] text-white shadow-lg'
-                    : 'bg-slate-800/60 border-slate-700 text-slate-300 hover:bg-slate-800'
+                    ? 'bg-white border-[#10B981] text-slate-900 shadow-md ring-2 ring-[#10B981]/20'
+                    : 'bg-white border-slate-200 text-slate-700 hover:bg-slate-50'
                 }`}
               >
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-[#10B981]/20 text-[#10B981] flex items-center justify-center font-bold">
+                  <div className="w-10 h-10 rounded-xl bg-[#10B981]/15 text-[#10B981] flex items-center justify-center font-bold">
                     <ShieldCheck className="w-5 h-5" />
                   </div>
                   <div>
-                    <strong className="block text-sm font-bold">4. TPA Pre-Auth Tracker</strong>
-                    <span className="text-xs text-slate-400">Cashless claim checklist & status</span>
+                    <strong className="block text-sm font-bold text-slate-900">4. TPA Pre-Auth Tracker</strong>
+                    <span className="text-xs text-slate-500">Cashless claim checklist & status</span>
                   </div>
                 </div>
                 <ChevronRight className="w-4 h-4 text-[#10B981]" />
@@ -131,7 +131,7 @@ export const AppConsole: React.FC = () => {
 
           {/* Right Column: Android Phone Shell Simulator */}
           <div className="lg:col-span-7 flex justify-center">
-            <div className="w-full max-w-[340px] sm:max-w-[380px] bg-slate-950 rounded-[44px] border-[6px] border-slate-700 p-4 shadow-2xl relative overflow-hidden text-slate-900">
+            <div className="w-full max-w-[340px] sm:max-w-[380px] bg-slate-900 text-white rounded-[44px] border-[6px] border-slate-300 p-4 shadow-2xl relative overflow-hidden text-slate-900">
               
               {/* Android Top Camera Punch Hole & Speaker */}
               <div className="w-24 h-4 bg-slate-800 rounded-full mx-auto mb-3 flex items-center justify-center gap-2 z-30 relative">
@@ -140,7 +140,7 @@ export const AppConsole: React.FC = () => {
               </div>
 
               {/* Android Status Bar */}
-              <div className="flex items-center justify-between px-3 text-[10px] text-slate-400 font-semibold mb-3">
+              <div className="flex items-center justify-between px-3 text-[10px] text-slate-300 font-semibold mb-3">
                 <span>09:41</span>
                 <div className="flex items-center gap-1.5">
                   <Signal className="w-3 h-3 text-[#00C2B3]" />
