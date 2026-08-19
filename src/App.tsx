@@ -6,6 +6,7 @@ import { ScrollRevealSection } from './components/ScrollRevealSection';
 import { TrustMarquee } from './components/TrustMarquee';
 import { ProductsOverview } from './components/ProductsOverview';
 import { YCInnovations } from './components/YCInnovations';
+import { AppConsole } from './components/AppConsole';
 import { VernacularExperience } from './components/VernacularExperience';
 import { OPDBookingJourney } from './components/OPDBookingJourney';
 import { WhatsAppDemo } from './components/WhatsAppDemo';
@@ -22,6 +23,8 @@ import { FAQAccordion } from './components/FAQAccordion';
 import { FinalCTA } from './components/FinalCTA';
 import { DemoModal } from './components/DemoModal';
 import { Footer } from './components/Footer';
+import { MobileBottomNav } from './components/MobileBottomNav';
+import { PWAInstallBanner } from './components/PWAInstallBanner';
 
 export function App() {
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
@@ -53,8 +56,11 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FAFAFC] text-slate-900 flex flex-col font-sans selection:bg-[#00C2B3]/20 selection:text-[#0077FF]">
+    <div className="min-h-screen bg-[#FAFAFC] text-slate-900 flex flex-col font-sans selection:bg-[#00C2B3]/20 selection:text-[#0077FF] relative">
       
+      {/* PWA 1-Click App Installation Banner */}
+      <PWAInstallBanner />
+
       {/* Global Navbar */}
       <Navbar onOpenDemoModal={handleOpenDemoModal} />
 
@@ -72,54 +78,60 @@ export function App() {
         {/* Section 3: Y Combinator Healthcare AI Innovations Suite */}
         <YCInnovations />
 
-        {/* Section 4: Two Core AI Products Overview */}
+        {/* Section 4: Native Android Mobile Web App Console */}
+        <AppConsole />
+
+        {/* Section 5: Two Core AI Products Overview */}
         <ProductsOverview onOpenDemoModal={handleOpenDemoModal} />
 
-        {/* Section 5: Vernacular AI Experience */}
+        {/* Section 6: Vernacular AI Experience */}
         <VernacularExperience />
 
-        {/* Section 6: OPD Booking Journey */}
+        {/* Section 7: OPD Booking Journey */}
         <OPDBookingJourney />
 
-        {/* Section 7: WhatsApp Agent Demo */}
+        {/* Section 8: WhatsApp Agent Demo */}
         <WhatsAppDemo />
 
-        {/* Section 8: Auto-Scribe Experience */}
+        {/* Section 9: Auto-Scribe Experience */}
         <AutoScribeDemo />
 
-        {/* Section 9: TPA Workflow */}
+        {/* Section 10: TPA Workflow */}
         <TPAWorkflow />
 
-        {/* Section 10: Designed for Every Hospital Team */}
+        {/* Section 11: Designed for Every Hospital Team */}
         <RoleBenefits />
 
-        {/* Section 11: Integrations Orbit */}
+        {/* Section 12: Integrations Orbit */}
         <IntegrationsMap />
 
-        {/* Section 12: Analytics Dashboard */}
+        {/* Section 13: Analytics Dashboard */}
         <AnalyticsDashboard />
 
-        {/* Section 13: Security & Responsible AI */}
+        {/* Section 14: Security & Responsible AI */}
         <SecuritySection />
 
-        {/* Section 14: Interactive ROI Calculator */}
+        {/* Section 15: Interactive ROI Calculator */}
         <ROICalculator />
 
-        {/* Section 15: Implementation Process */}
+        {/* Section 16: Implementation Process */}
         <ImplementationProcess />
 
-        {/* Section 16: Use Cases Grid */}
+        {/* Section 17: Use Cases Grid */}
         <UseCasesGrid />
 
-        {/* Section 17: FAQ Accordion */}
+        {/* Section 18: FAQ Accordion */}
         <FAQAccordion />
 
-        {/* Section 18: Final CTA & Demo Request */}
+        {/* Section 19: Final CTA & Demo Request */}
         <FinalCTA onOpenDemoModal={handleOpenDemoModal} />
       </main>
 
       {/* Global Footer */}
       <Footer />
+
+      {/* Native Mobile App Bottom Navigation Bar (Visible on mobile screens) */}
+      <MobileBottomNav onOpenDemoModal={handleOpenDemoModal} />
 
       {/* Interactive Modal */}
       <DemoModal
