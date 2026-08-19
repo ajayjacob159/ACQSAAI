@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Lenis from 'lenis';
+import { SEOHead } from './components/SEOHead';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { ScrollRevealSection } from './components/ScrollRevealSection';
@@ -15,6 +16,7 @@ import { TPAWorkflow } from './components/TPAWorkflow';
 import { RoleBenefits } from './components/RoleBenefits';
 import { IntegrationsMap } from './components/IntegrationsMap';
 import { AnalyticsDashboard } from './components/AnalyticsDashboard';
+import { ArticlesSection } from './components/ArticlesSection';
 import { SecuritySection } from './components/SecuritySection';
 import { ROICalculator } from './components/ROICalculator';
 import { ImplementationProcess } from './components/ImplementationProcess';
@@ -56,8 +58,11 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FAFAFC] text-slate-900 flex flex-col font-sans selection:bg-[#00C2B3]/20 selection:text-[#0077FF] relative">
+    <div className="min-h-screen bg-[#FAFAFC] text-slate-900 flex flex-col font-sans selection:bg-[#FF1B6B]/20 selection:text-[#0077FF] relative">
       
+      {/* Dynamic SEO & AEO JSON-LD Schema Metadata */}
+      <SEOHead />
+
       {/* PWA 1-Click App Installation Banner */}
       <PWAInstallBanner />
 
@@ -75,7 +80,7 @@ export function App() {
         {/* Section 2: Trust & Value Strip */}
         <TrustMarquee />
 
-        {/* Section 3: Y Combinator Healthcare AI Innovations Suite */}
+        {/* Section 3: Healthcare AI Automations Suite */}
         <YCInnovations />
 
         {/* Section 4: Native Android Mobile Web App Console */}
@@ -108,29 +113,32 @@ export function App() {
         {/* Section 13: Analytics Dashboard */}
         <AnalyticsDashboard />
 
-        {/* Section 14: Security & Responsible AI */}
+        {/* Section 14: SEO & AEO Knowledge Hub & Articles */}
+        <ArticlesSection />
+
+        {/* Section 15: Security & Governance */}
         <SecuritySection />
 
-        {/* Section 15: Interactive ROI Calculator */}
+        {/* Section 16: Interactive ROI Calculator */}
         <ROICalculator />
 
-        {/* Section 16: Implementation Process */}
+        {/* Section 17: Implementation Process */}
         <ImplementationProcess />
 
-        {/* Section 17: Use Cases Grid */}
+        {/* Section 18: Use Cases Grid */}
         <UseCasesGrid />
 
-        {/* Section 18: FAQ Accordion */}
+        {/* Section 19: FAQ Accordion */}
         <FAQAccordion />
 
-        {/* Section 19: Final CTA & Demo Request */}
+        {/* Section 20: Final CTA & Demo Request */}
         <FinalCTA onOpenDemoModal={handleOpenDemoModal} />
       </main>
 
       {/* Global Footer */}
       <Footer />
 
-      {/* Native Mobile App Bottom Navigation Bar (Visible on mobile screens) */}
+      {/* Native Mobile App Bottom Navigation Bar */}
       <MobileBottomNav onOpenDemoModal={handleOpenDemoModal} />
 
       {/* Interactive Modal */}
