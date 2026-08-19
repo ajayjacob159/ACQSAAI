@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Cpu, ShieldCheck, PhoneCall, Stethoscope, FileText, CheckCircle2, ArrowRight, Zap, RefreshCw, AlertTriangle, Layers, Activity, Sparkles, Filter, Database, FileSpreadsheet, UserCheck, Radio, Award } from 'lucide-react';
+import { Cpu, ShieldCheck, PhoneCall, Stethoscope, FileText, CheckCircle2, ArrowRight, Zap, RefreshCw, AlertTriangle, Layers, Activity, Sparkles, Filter, Database, FileSpreadsheet, UserCheck, Radio, Award, HelpCircle, TrendingUp, Check } from 'lucide-react';
 
 export const YCInnovations: React.FC = () => {
-  const [activeCategory, setActiveCategory] = useState<'admin' | 'clinical' | 'regulatory' | 'voice_rcm' | 'specialty' | 'capacity'>('admin');
+  const [activeCategory, setActiveCategory] = useState<'admin' | 'voice_rcm' | 'clinical' | 'specialty' | 'regulatory' | 'capacity'>('admin');
 
   // Interactive simulation state for Voice RCM
   const [rcmStatus, setRcmStatus] = useState('Payer Call Queued');
@@ -19,39 +19,39 @@ export const YCInnovations: React.FC = () => {
   };
 
   const categories = [
-    { id: 'admin', label: '1. Administrative & Legacy Software AI', icon: <Database className="w-4 h-4 text-[#00C2B3]" /> },
+    { id: 'admin', label: '1. Administrative & Legacy Software AI', icon: <Database className="w-4 h-4 text-[#FF1B6B]" /> },
     { id: 'voice_rcm', label: '2. Voice RCM & Payer Callers', icon: <PhoneCall className="w-4 h-4 text-[#0077FF]" /> },
     { id: 'clinical', label: '3. Autonomous Practice & Prescriptions', icon: <Cpu className="w-4 h-4 text-[#7C3AED]" /> },
     { id: 'specialty', label: '4. Specialty Scribing & Radiology AI', icon: <Stethoscope className="w-4 h-4 text-[#10B981]" /> },
     { id: 'regulatory', label: '5. Credentialing & Regulatory AI', icon: <ShieldCheck className="w-4 h-4 text-[#00C2B3]" /> },
-    { id: 'capacity', label: '6. Post-Discharge & Remote Voice', icon: <Activity className="w-4 h-4 text-[#0077FF]" /> }
+    { id: 'capacity', label: '6. Post-Discharge & Remote Voice', icon: <Activity className="w-4 h-4 text-[#FF1B6B]" /> }
   ];
 
   return (
     <section id="yc-innovations" className="py-24 relative bg-white border-t border-slate-200 overflow-hidden">
       
       {/* Background ambient lighting */}
-      <div className="absolute top-1/4 left-10 w-96 h-96 bg-[#00C2B3]/10 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/4 left-10 w-96 h-96 bg-[#FF1B6B]/10 rounded-full blur-[160px] pointer-events-none" />
       <div className="absolute bottom-10 right-10 w-96 h-96 bg-[#0077FF]/10 rounded-full blur-[160px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-12">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100 border border-[#00C2B3]/40 text-xs font-bold text-[#00C2B3]">
-            <Zap className="w-3.5 h-3.5" /> Y COMBINATOR HEALTHCARE AI TAXONOMY & SUITE
+        <div className="text-center max-w-3xl mx-auto space-y-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100 border border-[#FF1B6B]/40 text-xs font-bold text-[#FF1B6B]">
+            <Zap className="w-3.5 h-3.5 text-[#FF1B6B]" /> HEALTHCARE AI AUTOMATION SUITE
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-poppins font-extrabold text-slate-900 tracking-tight leading-tight">
-            Complete Healthcare <br />
+            Comprehensive Healthcare <br />
             <span className="text-gradient">AI Automations Portfolio.</span>
           </h2>
-          <p className="text-slate-600 text-base sm:text-lg">
-            Extracted from top Y Combinator healthcare AI startups—unifying prior authorization, legacy software agents, voice RCM, specialty scribing, provider credentialing, and remote voice monitoring into ACQSA AI.
+          <p className="text-slate-800 text-base sm:text-lg font-medium">
+            Explore how each specialized automation solves critical operational bottlenecks, how it works step-by-step, and the exact financial and clinical benefits for your hospital.
           </p>
         </div>
 
         {/* Category Selector Tabs */}
-        <div className="flex items-center justify-start lg:justify-center gap-2 overflow-x-auto pb-4 mb-12 no-scrollbar">
+        <div className="flex items-center justify-start lg:justify-center gap-2 overflow-x-auto pb-4 no-scrollbar">
           {categories.map((cat) => {
             const isActive = activeCategory === cat.id;
             return (
@@ -61,7 +61,7 @@ export const YCInnovations: React.FC = () => {
                 className={`px-5 py-3 rounded-2xl text-xs font-poppins font-bold transition-all whitespace-nowrap flex items-center gap-2 border ${
                   isActive
                     ? 'bg-slate-900 text-white border-slate-900 shadow-xl shadow-slate-900/10 scale-105'
-                    : 'bg-white text-slate-700 hover:text-slate-900 border-slate-200 hover:border-slate-300'
+                    : 'bg-white text-slate-800 hover:text-slate-900 border-slate-200 hover:border-slate-300 shadow-sm'
                 }`}
               >
                 {cat.icon}
@@ -73,316 +73,353 @@ export const YCInnovations: React.FC = () => {
 
         {/* CATEGORY 1: Administrative & Legacy Software AI */}
         {activeCategory === 'admin' && (
-          <div className="bg-[#F8FAFC] border border-slate-200 rounded-3xl p-6 sm:p-10 shadow-xl space-y-8 animate-in fade-in duration-300">
+          <div className="bg-[#FAFAFC] border-2 border-slate-200 rounded-3xl p-6 sm:p-10 shadow-xl space-y-10 animate-in fade-in duration-300">
             <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 border-b border-slate-200 pb-6">
               <div>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-[#00C2B3] bg-[#00C2B3]/10 px-3 py-1 rounded-full">
-                  YC BENCHMARKS: PARALLEL, LUMINAI, PLENA & ARINTRA
+                <span className="text-[10px] font-bold uppercase tracking-wider text-[#FF1B6B] bg-[#FF1B6B]/10 px-3 py-1 rounded-full border border-[#FF1B6B]/20">
+                  AUTOMATION SUITE 01 · LEGACY EMR & FAX AI AGENTS
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-poppins font-extrabold text-slate-900 mt-2">
-                  Legacy Hospital Software & Fax AI Agents
+                  Legacy Hospital Software & Digital Fax Automation
                 </h3>
               </div>
-              <span className="text-xs font-bold text-[#0077FF] bg-[#0077FF]/10 px-4 py-2 rounded-xl border border-[#0077FF]/20">
-                100% Elimination of Paper Fax Backlogs
+              <span className="text-xs font-bold text-[#0077FF] bg-sky-50 px-4 py-2 rounded-xl border border-sky-200">
+                100% Elimination of Manual Data Entry Backlogs
               </span>
             </div>
 
+            {/* Why Needed, How It Helps, How Hospitals Benefit Grid */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-white p-5 rounded-2xl border border-slate-200 space-y-3 shadow-sm">
-                <div className="w-9 h-9 rounded-xl bg-[#00C2B3]/15 text-[#00C2B3] flex items-center justify-center font-bold">
-                  <Database className="w-5 h-5" />
+              
+              {/* WHY IT IS NEEDED */}
+              <div className="bg-white p-6 rounded-2xl border-2 border-slate-200 shadow-md space-y-3">
+                <div className="w-10 h-10 rounded-xl bg-rose-50 border border-rose-200 text-rose-600 flex items-center justify-center font-bold">
+                  <HelpCircle className="w-5 h-5" />
                 </div>
-                <h4 className="font-poppins font-bold text-slate-900 text-sm">Legacy Software RPA Agents</h4>
-                <p className="text-slate-600 text-xs leading-relaxed">
-                  Autonomous browser and desktop agents that log into legacy hospital EMRs, update patient records, and sync data without requiring custom API engineering.
+                <h4 className="font-poppins font-extrabold text-slate-900 text-base">Why It Is Needed</h4>
+                <p className="text-slate-800 text-xs font-medium leading-relaxed">
+                  Hospitals operate on legacy desktop software and paper fax streams. Staff spend 4+ hours daily manually re-keying patient details from faxes, referrals, and lab PDFs into disparate EMR systems, creating massive operational backlogs and costly data entry errors.
                 </p>
               </div>
 
-              <div className="bg-white p-5 rounded-2xl border border-slate-200 space-y-3 shadow-sm">
-                <div className="w-9 h-9 rounded-xl bg-[#0077FF]/15 text-[#0077FF] flex items-center justify-center font-bold">
-                  <FileSpreadsheet className="w-5 h-5" />
-                </div>
-                <h4 className="font-poppins font-bold text-slate-900 text-sm">AI Chart-to-Claim Medical Coding</h4>
-                <p className="text-slate-600 text-xs leading-relaxed">
-                  Parses doctor notes and clinical charts into standardized ICD-10 & CPT billing codes, reducing claim denial rates by up to 94%.
-                </p>
-              </div>
-
-              <div className="bg-white p-5 rounded-2xl border border-slate-200 space-y-3 shadow-sm">
-                <div className="w-9 h-9 rounded-xl bg-[#7C3AED]/15 text-[#7C3AED] flex items-center justify-center font-bold">
+              {/* HOW IT HELPS */}
+              <div className="bg-white p-6 rounded-2xl border-2 border-slate-200 shadow-md space-y-3">
+                <div className="w-10 h-10 rounded-xl bg-sky-50 border border-sky-200 text-[#0077FF] flex items-center justify-center font-bold">
                   <Zap className="w-5 h-5" />
                 </div>
-                <h4 className="font-poppins font-bold text-slate-900 text-sm">Digital Fax OCR & Intake Triage</h4>
-                <p className="text-slate-600 text-xs leading-relaxed">
-                  Instantly reads incoming digital faxes, extracts lab requests or patient referrals, and automatically matches them to existing EMR patient profiles.
+                <h4 className="font-poppins font-extrabold text-slate-900 text-base">How It Helps (Workflow)</h4>
+                <p className="text-slate-800 text-xs font-medium leading-relaxed">
+                  Autonomous RPA and vision AI agents log directly into legacy EMR desktop interfaces, scan incoming digital faxes using medical OCR, parse patient referral data, and populate health charts automatically without breaking institutional IT security rules.
                 </p>
               </div>
+
+              {/* HOW HOSPITALS BENEFIT */}
+              <div className="bg-white p-6 rounded-2xl border-2 border-slate-200 shadow-md space-y-3">
+                <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 text-[#10B981] flex items-center justify-center font-bold">
+                  <TrendingUp className="w-5 h-5" />
+                </div>
+                <h4 className="font-poppins font-extrabold text-slate-900 text-base">How Hospitals Benefit</h4>
+                <p className="text-slate-800 text-xs font-medium leading-relaxed">
+                  - **Zero Data Backlog**: Referral faxes processed in sub-2 minutes.<br />
+                  - **94% Reduction in Medical Coding Errors**: Automatic ICD-10 & CPT mapping.<br />
+                  - **Zero API Engineering**: Works over existing EMR user interfaces.
+                </p>
+              </div>
+
             </div>
           </div>
         )}
 
         {/* CATEGORY 2: Voice RCM & Payer Callers */}
         {activeCategory === 'voice_rcm' && (
-          <div className="bg-[#F8FAFC] border border-slate-200 rounded-3xl p-6 sm:p-10 shadow-xl space-y-8 animate-in fade-in duration-300">
+          <div className="bg-[#FAFAFC] border-2 border-slate-200 rounded-3xl p-6 sm:p-10 shadow-xl space-y-10 animate-in fade-in duration-300">
             <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 border-b border-slate-200 pb-6">
               <div>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-[#0077FF] bg-[#0077FF]/10 px-3 py-1 rounded-full">
-                  YC BENCHMARKS: LUNABILL & CLICKS HEALTH
+                <span className="text-[10px] font-bold uppercase tracking-wider text-[#0077FF] bg-sky-50 px-3 py-1 rounded-full border border-sky-200">
+                  AUTOMATION SUITE 02 · VOICE RCM & PAYER CALL AGENTS
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-poppins font-extrabold text-slate-900 mt-2">
-                  Voice AI Insurance Payer Callers
+                  Voice AI Insurance Claim Follow-up & Denial Resolution
                 </h3>
               </div>
               <span className="text-xs font-bold text-[#10B981] bg-emerald-50 px-4 py-2 rounded-xl border border-emerald-200">
-                80% Reduction in Billing Team Phone Hours
+                80% Reduction in Billing Team Phone Call Hours
               </span>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              <div className="lg:col-span-6 space-y-4 text-xs text-slate-600 leading-relaxed">
-                <p>
-                  Replaces manual phone hold times for hospital billing teams. ACQSA Voice RCM agents dial insurance companies, navigate touch-tone IVRs, query claim status, resolve denial codes, and update the billing ledger automatically.
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              
+              <div className="bg-white p-6 rounded-2xl border-2 border-slate-200 shadow-md space-y-3">
+                <div className="w-10 h-10 rounded-xl bg-rose-50 border border-rose-200 text-rose-600 flex items-center justify-center font-bold">
+                  <HelpCircle className="w-5 h-5" />
+                </div>
+                <h4 className="font-poppins font-extrabold text-slate-900 text-base">Why It Is Needed</h4>
+                <p className="text-slate-800 text-xs font-medium leading-relaxed">
+                  Hospital billing staff spend up to 80% of their day sitting on hold with insurance companies, waiting for representatives to check claim status or resolve minor denial hold codes. Unresolved claims lock up millions in hospital revenue.
                 </p>
-
-                <div className="p-4 bg-white rounded-2xl border border-slate-200 space-y-3 shadow-sm">
-                  <div className="flex items-center justify-between font-bold text-slate-900">
-                    <span>Live Voice Call Monitor</span>
-                    <span className="text-[10px] text-[#00C2B3]">Payer Outbound Engine</span>
-                  </div>
-                  <div className="p-3 bg-slate-900 rounded-xl text-white font-mono text-[11px] space-y-1">
-                    <span className="text-[#00C2B3] block">&gt; {rcmStatus}</span>
-                    {rcmLoading && <span className="text-slate-400 text-[10px] animate-pulse">Navigating Payer Audio IVR Menu...</span>}
-                  </div>
-                  <button
-                    onClick={triggerRcmSimulation}
-                    disabled={rcmLoading}
-                    className="w-full py-2.5 rounded-xl bg-gradient-to-r from-[#00C2B3] to-[#0077FF] text-white font-poppins font-bold text-xs uppercase tracking-wider shadow-md hover:scale-[1.01] transition-transform"
-                  >
-                    {rcmLoading ? 'Calling Payer...' : 'Test Payer Call Simulation'}
-                  </button>
-                </div>
               </div>
 
-              <div className="lg:col-span-6 bg-white p-5 rounded-2xl border border-slate-200 space-y-3 text-xs shadow-sm">
-                <h4 className="font-bold text-slate-900 uppercase tracking-wider border-b border-slate-100 pb-2">
-                  Claim Denial Resolution Metric
-                </h4>
-                <div className="space-y-2">
-                  <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex justify-between items-center">
-                    <span>Claim ID: CLM-2026-9042</span>
-                    <span className="text-rose-600 font-bold">Code 96: Non-Covered</span>
-                  </div>
-                  <div className="p-2.5 rounded-xl bg-emerald-50 text-emerald-900 font-bold border border-emerald-200 flex justify-between items-center">
-                    <span>Auto-Appealed & Approved</span>
-                    <span>Reimbursed: ₹1,48,500</span>
-                  </div>
+              <div className="bg-white p-6 rounded-2xl border-2 border-slate-200 shadow-md space-y-3">
+                <div className="w-10 h-10 rounded-xl bg-sky-50 border border-sky-200 text-[#0077FF] flex items-center justify-center font-bold">
+                  <Zap className="w-5 h-5" />
                 </div>
+                <h4 className="font-poppins font-extrabold text-slate-900 text-base">How It Helps (Workflow)</h4>
+                <p className="text-slate-800 text-xs font-medium leading-relaxed">
+                  ACQSA Voice RCM agents dial insurance payers automatically, navigate touch-tone IVR phone trees, converse with insurance agents, query claim hold reasons (e.g. Denial Code #96), submit missing document evidence, and update the billing ledger.
+                </p>
               </div>
+
+              <div className="bg-white p-6 rounded-2xl border-2 border-slate-200 shadow-md space-y-3">
+                <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 text-[#10B981] flex items-center justify-center font-bold">
+                  <TrendingUp className="w-5 h-5" />
+                </div>
+                <h4 className="font-poppins font-extrabold text-slate-900 text-base">How Hospitals Benefit</h4>
+                <p className="text-slate-800 text-xs font-medium leading-relaxed">
+                  - **Accelerated Cash Flow**: Claim resolution cycle reduced from 21 days to 3 days.<br />
+                  - **80% Staff Phone Time Saved**: Billing teams focus on complex appeals.<br />
+                  - **Automated Ledger Sync**: Payment approval notices updated in real time.
+                </p>
+              </div>
+
+            </div>
+
+            {/* Interactive Simulation Bar */}
+            <div className="p-4 bg-white rounded-2xl border border-slate-200 space-y-3 shadow-sm">
+              <div className="flex items-center justify-between font-bold text-slate-900 text-xs">
+                <span>Interactive Payer Call Simulator</span>
+                <span className="text-[10px] text-[#00C2B3]">Live Outbound Engine</span>
+              </div>
+              <div className="p-3 bg-slate-900 rounded-xl text-white font-mono text-[11px] space-y-1">
+                <span className="text-[#00C2B3] block">&gt; {rcmStatus}</span>
+                {rcmLoading && <span className="text-slate-400 text-[10px] animate-pulse">Navigating Payer Audio IVR Menu...</span>}
+              </div>
+              <button
+                onClick={triggerRcmSimulation}
+                disabled={rcmLoading}
+                className="w-full py-2.5 rounded-xl bg-gradient-to-r from-[#00C2B3] to-[#0077FF] text-white font-poppins font-bold text-xs uppercase tracking-wider shadow-md hover:scale-[1.01] transition-transform"
+              >
+                {rcmLoading ? 'Calling Payer...' : 'Test Payer Call Simulation'}
+              </button>
             </div>
           </div>
         )}
 
         {/* CATEGORY 3: Autonomous Practice & Prescriptions */}
         {activeCategory === 'clinical' && (
-          <div className="bg-[#F8FAFC] border border-slate-200 rounded-3xl p-6 sm:p-10 shadow-xl space-y-8 animate-in fade-in duration-300">
+          <div className="bg-[#FAFAFC] border-2 border-slate-200 rounded-3xl p-6 sm:p-10 shadow-xl space-y-10 animate-in fade-in duration-300">
             <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 border-b border-slate-200 pb-6">
               <div>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-[#7C3AED] bg-[#7C3AED]/10 px-3 py-1 rounded-full">
-                  YC BENCHMARK: STANDARD MEDICAL
+                <span className="text-[10px] font-bold uppercase tracking-wider text-[#7C3AED] bg-purple-50 px-3 py-1 rounded-full border border-purple-200">
+                  AUTOMATION SUITE 03 · AUTONOMOUS PRACTICE & PRESCRIPTIONS
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-poppins font-extrabold text-slate-900 mt-2">
-                  Autonomous Practice OS & Prescription Renewals
+                  Prescription Refill Protocols & Routine Lab Ordering
                 </h3>
               </div>
               <span className="text-xs font-bold text-[#7C3AED] bg-purple-50 px-4 py-2 rounded-xl border border-purple-200">
-                Physician-Supervised Workflow Queue
+                Physician-Supervised 1-Tap Sign-off Queue
               </span>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-white p-5 rounded-2xl border border-slate-200 space-y-3 shadow-sm">
-                <div className="w-9 h-9 rounded-xl bg-[#7C3AED]/15 text-[#7C3AED] flex items-center justify-center font-bold">
-                  <Cpu className="w-5 h-5" />
+              
+              <div className="bg-white p-6 rounded-2xl border-2 border-slate-200 shadow-md space-y-3">
+                <div className="w-10 h-10 rounded-xl bg-rose-50 border border-rose-200 text-rose-600 flex items-center justify-center font-bold">
+                  <HelpCircle className="w-5 h-5" />
                 </div>
-                <h4 className="font-poppins font-bold text-slate-900 text-sm">Prescription Renewal Engine</h4>
-                <p className="text-slate-600 text-xs leading-relaxed">
-                  Automates chronic medication refill checks against patient lab safety metrics (e.g. eGFR, liver enzymes) and queues renewals for 1-click doctor approval.
+                <h4 className="font-poppins font-extrabold text-slate-900 text-base">Why It Is Needed</h4>
+                <p className="text-slate-800 text-xs font-medium leading-relaxed">
+                  Physicians spend hours reviewing routine prescription refill requests for chronic hypertension and diabetes patients. Manually opening charts, checking kidney/liver lab markers, and re-typing prescriptions diverts time from high-acuity patient consultations.
                 </p>
               </div>
 
-              <div className="bg-white p-5 rounded-2xl border border-slate-200 space-y-3 shadow-sm">
-                <div className="w-9 h-9 rounded-xl bg-[#00C2B3]/15 text-[#00C2B3] flex items-center justify-center font-bold">
-                  <CheckCircle2 className="w-5 h-5" />
+              <div className="bg-white p-6 rounded-2xl border-2 border-slate-200 shadow-md space-y-3">
+                <div className="w-10 h-10 rounded-xl bg-sky-50 border border-sky-200 text-[#0077FF] flex items-center justify-center font-bold">
+                  <Zap className="w-5 h-5" />
                 </div>
-                <h4 className="font-poppins font-bold text-slate-900 text-sm">Routine Lab Ordering Triage</h4>
-                <p className="text-slate-600 text-xs leading-relaxed">
-                  Identifies overdue routine screening labs (HbA1c, lipid profiles) for diabetic and hypertensive patients and drafts lab orders automatically.
+                <h4 className="font-poppins font-extrabold text-slate-900 text-base">How It Helps (Workflow)</h4>
+                <p className="text-slate-800 text-xs font-medium leading-relaxed">
+                  ACQSA AI cross-checks incoming refill requests against the patient's latest EMR lab results (eGFR, ALT/AST), verifies clinical safety guidelines, drafts the exact prescription renewal, and queues it for doctor 1-tap approval.
                 </p>
               </div>
 
-              <div className="bg-white p-5 rounded-2xl border border-slate-200 space-y-3 shadow-sm">
-                <div className="w-9 h-9 rounded-xl bg-[#0077FF]/15 text-[#0077FF] flex items-center justify-center font-bold">
-                  <Activity className="w-5 h-5" />
+              <div className="bg-white p-6 rounded-2xl border-2 border-slate-200 shadow-md space-y-3">
+                <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 text-[#10B981] flex items-center justify-center font-bold">
+                  <TrendingUp className="w-5 h-5" />
                 </div>
-                <h4 className="font-poppins font-bold text-slate-900 text-sm">Vital Signs Escalation Queue</h4>
-                <p className="text-slate-600 text-xs leading-relaxed">
-                  Continuously monitors patient home vital submissions and alerts attending physicians when metrics breach safety thresholds.
+                <h4 className="font-poppins font-extrabold text-slate-900 text-base">How Hospitals Benefit</h4>
+                <p className="text-slate-800 text-xs font-medium leading-relaxed">
+                  - **75% Faster Refill Approvals**: Doctors approve queued renewals in batches.<br />
+                  - **Enhanced Medication Safety**: Automated lab safety threshold checks.<br />
+                  - **Increased Physician Capacity**: Frees up 1.5 hours/day for in-person care.
                 </p>
               </div>
+
             </div>
           </div>
         )}
 
         {/* CATEGORY 4: Specialty Scribing & Radiology AI */}
         {activeCategory === 'specialty' && (
-          <div className="bg-[#F8FAFC] border border-slate-200 rounded-3xl p-6 sm:p-10 shadow-xl space-y-8 animate-in fade-in duration-300">
+          <div className="bg-[#FAFAFC] border-2 border-slate-200 rounded-3xl p-6 sm:p-10 shadow-xl space-y-10 animate-in fade-in duration-300">
             <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 border-b border-slate-200 pb-6">
               <div>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-[#10B981] bg-emerald-100 px-3 py-1 rounded-full text-emerald-800">
-                  YC BENCHMARKS: EMBER, ANDY AI, CARESWIFT & RAD AI
+                <span className="text-[10px] font-bold uppercase tracking-wider text-[#10B981] bg-emerald-100 px-3 py-1 rounded-full text-emerald-800 border border-emerald-200">
+                  AUTOMATION SUITE 04 · SPECIALTY SCRIBING & RADIOLOGY AI
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-poppins font-extrabold text-slate-900 mt-2">
-                  Specialty Scribing & Radiology Auto-Reporting
+                  Surgical Operative Copilot & Radiology Auto-Reporting
                 </h3>
               </div>
               <span className="text-xs font-bold text-[#10B981] bg-emerald-50 px-4 py-2 rounded-xl border border-emerald-200">
-                4.8 Mins Saved per Surgical Operative Note
+                4.8 Mins Saved per Surgical Note
               </span>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-white p-5 rounded-2xl border border-slate-200 space-y-3 shadow-sm">
-                <div className="w-9 h-9 rounded-xl bg-emerald-100 text-[#10B981] flex items-center justify-center font-bold">
-                  <Stethoscope className="w-5 h-5" />
+              
+              <div className="bg-white p-6 rounded-2xl border-2 border-slate-200 shadow-md space-y-3">
+                <div className="w-10 h-10 rounded-xl bg-rose-50 border border-rose-200 text-rose-600 flex items-center justify-center font-bold">
+                  <HelpCircle className="w-5 h-5" />
                 </div>
-                <h4 className="font-poppins font-bold text-slate-900 text-sm">Surgeon Operative Copilot</h4>
-                <p className="text-slate-600 text-xs leading-relaxed">
-                  Generates detailed surgical procedure notes, implant details, and letters of medical necessity tailored to specific surgical specialties.
+                <h4 className="font-poppins font-extrabold text-slate-900 text-base">Why It Is Needed</h4>
+                <p className="text-slate-800 text-xs font-medium leading-relaxed">
+                  Generic AI scribes fail in complex surgical, home health, EMS trauma, and radiology settings. Surgeons and radiologists spend hours post-procedure dictating technical implant details, surgical incision metrics, and imaging findings.
                 </p>
               </div>
 
-              <div className="bg-white p-5 rounded-2xl border border-slate-200 space-y-3 shadow-sm">
-                <div className="w-9 h-9 rounded-xl bg-sky-100 text-[#0077FF] flex items-center justify-center font-bold">
-                  <Radio className="w-5 h-5" />
+              <div className="bg-white p-6 rounded-2xl border-2 border-slate-200 shadow-md space-y-3">
+                <div className="w-10 h-10 rounded-xl bg-sky-50 border border-sky-200 text-[#0077FF] flex items-center justify-center font-bold">
+                  <Zap className="w-5 h-5" />
                 </div>
-                <h4 className="font-poppins font-bold text-slate-900 text-sm">Radiology Report Auto-Drafter</h4>
-                <p className="text-slate-600 text-xs leading-relaxed">
-                  Drafts preliminary diagnostic reports for X-ray, MRI, and CT imaging, reducing radiologist dictation time by up to 60%.
+                <h4 className="font-poppins font-bold text-slate-900 text-base">How It Helps (Workflow)</h4>
+                <p className="text-slate-800 text-xs font-medium leading-relaxed">
+                  Captures ambient intra-operative verbal summaries, field nursing assessments, or X-ray/MRI image metadata to draft specialized operative reports, letters of medical necessity, and preliminary radiology findings automatically.
                 </p>
               </div>
 
-              <div className="bg-white p-5 rounded-2xl border border-slate-200 space-y-3 shadow-sm">
-                <div className="w-9 h-9 rounded-xl bg-purple-100 text-[#7C3AED] flex items-center justify-center font-bold">
-                  <FileText className="w-5 h-5" />
+              <div className="bg-white p-6 rounded-2xl border-2 border-slate-200 shadow-md space-y-3">
+                <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 text-[#10B981] flex items-center justify-center font-bold">
+                  <TrendingUp className="w-5 h-5" />
                 </div>
-                <h4 className="font-poppins font-bold text-slate-900 text-sm">Home Health & EMS Ambulance Scribe</h4>
-                <p className="text-slate-600 text-xs leading-relaxed">
-                  Field nursing charting, OASIS assessments, and emergency ambulance patient care reports (PCR) generated on mobile devices during transport.
+                <h4 className="font-poppins font-extrabold text-slate-900 text-base">How Hospitals Benefit</h4>
+                <p className="text-slate-800 text-xs font-medium leading-relaxed">
+                  - **4.8 Mins Saved per Surgical Report**: Immediate post-op note completion.<br />
+                  - **60% Faster Radiology Turnaround**: Preliminary drafts ready for sign-off.<br />
+                  - **Accurate Surgical Billing**: Precise implant & CPT procedure capture.
                 </p>
               </div>
+
             </div>
           </div>
         )}
 
         {/* CATEGORY 5: Credentialing & Regulatory AI */}
         {activeCategory === 'regulatory' && (
-          <div className="bg-[#F8FAFC] border border-slate-200 rounded-3xl p-6 sm:p-10 shadow-xl space-y-8 animate-in fade-in duration-300">
+          <div className="bg-[#FAFAFC] border-2 border-slate-200 rounded-3xl p-6 sm:p-10 shadow-xl space-y-10 animate-in fade-in duration-300">
             <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 border-b border-slate-200 pb-6">
               <div>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-[#00C2B3] bg-[#00C2B3]/10 px-3 py-1 rounded-full">
-                  YC BENCHMARKS: ARCTIC HEALTH, RITIVEL & PANACEA
+                <span className="text-[10px] font-bold uppercase tracking-wider text-[#00C2B3] bg-[#00C2B3]/10 px-3 py-1 rounded-full border border-[#00C2B3]/20">
+                  AUTOMATION SUITE 05 · PROVIDER CREDENTIALING & REGULATORY
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-poppins font-extrabold text-slate-900 mt-2">
-                  Provider Credentialing & Regulatory AI
+                  Doctor License Validation & Regulatory Filing AI
                 </h3>
               </div>
-              <span className="text-xs font-bold text-[#00C2B3] bg-[#00C2B3]/10 px-4 py-2 rounded-xl border border-[#00C2B3]/20">
-                Accelerated Payer Contract Onboarding
+              <span className="text-xs font-bold text-[#00C2B3] bg-teal-50 px-4 py-2 rounded-xl border border-teal-200">
+                Accelerated Provider Onboarding
               </span>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-white p-5 rounded-2xl border border-slate-200 space-y-3 shadow-sm">
-                <div className="w-9 h-9 rounded-xl bg-[#00C2B3]/15 text-[#00C2B3] flex items-center justify-center font-bold">
-                  <UserCheck className="w-5 h-5" />
+              
+              <div className="bg-white p-6 rounded-2xl border-2 border-slate-200 shadow-md space-y-3">
+                <div className="w-10 h-10 rounded-xl bg-rose-50 border border-rose-200 text-rose-600 flex items-center justify-center font-bold">
+                  <HelpCircle className="w-5 h-5" />
                 </div>
-                <h4 className="font-poppins font-bold text-slate-900 text-sm">Provider Credentialing AI</h4>
-                <p className="text-slate-600 text-xs leading-relaxed">
-                  Automates medical license checks, NPI verification, background validation, and insurance network enrollment for new hospital doctors.
+                <h4 className="font-poppins font-extrabold text-slate-900 text-base">Why It Is Needed</h4>
+                <p className="text-slate-800 text-xs font-medium leading-relaxed">
+                  Onboarding a new hospital doctor or specialist takes 60 to 90 days of paperwork—checking state medical council licenses, NPI numbers, malpractice history, and insurance network contracts. Delays stall revenue generation.
                 </p>
               </div>
 
-              <div className="bg-white p-5 rounded-2xl border border-slate-200 space-y-3 shadow-sm">
-                <div className="w-9 h-9 rounded-xl bg-[#0077FF]/15 text-[#0077FF] flex items-center justify-center font-bold">
-                  <Award className="w-5 h-5" />
+              <div className="bg-white p-6 rounded-2xl border-2 border-slate-200 shadow-md space-y-3">
+                <div className="w-10 h-10 rounded-xl bg-sky-50 border border-sky-200 text-[#0077FF] flex items-center justify-center font-bold">
+                  <Zap className="w-5 h-5" />
                 </div>
-                <h4 className="font-poppins font-bold text-slate-900 text-sm">Regulatory IND & Filing Drafter</h4>
-                <p className="text-slate-600 text-xs leading-relaxed">
-                  Synthesizes clinical trial data into regulatory submission documents (INDs, BLAs) for medical device and pharma compliance.
+                <h4 className="font-poppins font-extrabold text-slate-900 text-base">How It Helps (Workflow)</h4>
+                <p className="text-slate-800 text-xs font-medium leading-relaxed">
+                  Automates medical council registry lookups, verifies NPI credentials, fills out payer network contracting packets, and monitors hospital NABH compliance audit checklists continuously.
                 </p>
               </div>
 
-              <div className="bg-white p-5 rounded-2xl border border-slate-200 space-y-3 shadow-sm">
-                <div className="w-9 h-9 rounded-xl bg-[#7C3AED]/15 text-[#7C3AED] flex items-center justify-center font-bold">
-                  <ShieldCheck className="w-5 h-5" />
+              <div className="bg-white p-6 rounded-2xl border-2 border-slate-200 shadow-md space-y-3">
+                <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 text-[#10B981] flex items-center justify-center font-bold">
+                  <TrendingUp className="w-5 h-5" />
                 </div>
-                <h4 className="font-poppins font-bold text-slate-900 text-sm">Hospital NABH Audit Readiness</h4>
-                <p className="text-slate-600 text-xs leading-relaxed">
-                  Continuously audits clinical documentation compliance against NABH / JCI hospital accreditation guidelines.
+                <h4 className="font-poppins font-extrabold text-slate-900 text-base">How Hospitals Benefit</h4>
+                <p className="text-slate-800 text-xs font-medium leading-relaxed">
+                  - **Provider Onboarding Cut from 90 Days to 7 Days**<br />
+                  - **Continuous License Verification**: Auto-alerts before expiration.<br />
+                  - **NABH & JCI Audit Readiness**: Instant compliance reporting.
                 </p>
               </div>
+
             </div>
           </div>
         )}
 
         {/* CATEGORY 6: Post-Discharge & Remote Voice */}
         {activeCategory === 'capacity' && (
-          <div className="bg-[#F8FAFC] border border-slate-200 rounded-3xl p-6 sm:p-10 shadow-xl space-y-8 animate-in fade-in duration-300">
+          <div className="bg-[#FAFAFC] border-2 border-slate-200 rounded-3xl p-6 sm:p-10 shadow-xl space-y-10 animate-in fade-in duration-300">
             <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 border-b border-slate-200 pb-6">
               <div>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-[#0077FF] bg-[#0077FF]/10 px-3 py-1 rounded-full">
-                  YC BENCHMARK: KAIGO HEALTH & CONTOUR
+                <span className="text-[10px] font-bold uppercase tracking-wider text-[#FF1B6B] bg-[#FF1B6B]/10 px-3 py-1 rounded-full border border-[#FF1B6B]/20">
+                  AUTOMATION SUITE 06 · POST-DISCHARGE VOICE MONITORING
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-poppins font-extrabold text-slate-900 mt-2">
-                  Post-Discharge Voice AI & Patient Monitoring
+                  Automated Post-Operative Voice Outreach & Readmission Guard
                 </h3>
               </div>
-              <span className="text-xs font-bold text-[#0077FF] bg-sky-50 px-4 py-2 rounded-xl border border-sky-200">
-                Automated Post-Operative Outreach
+              <span className="text-xs font-bold text-[#FF1B6B] bg-rose-50 px-4 py-2 rounded-xl border border-rose-200">
+                38% Reduction in 30-Day Readmissions
               </span>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-white p-5 rounded-2xl border border-slate-200 space-y-3 shadow-sm">
-                <div className="w-9 h-9 rounded-xl bg-[#0077FF]/15 text-[#0077FF] flex items-center justify-center font-bold">
-                  <PhoneCall className="w-5 h-5" />
+              
+              <div className="bg-white p-6 rounded-2xl border-2 border-slate-200 shadow-md space-y-3">
+                <div className="w-10 h-10 rounded-xl bg-rose-50 border border-rose-200 text-rose-600 flex items-center justify-center font-bold">
+                  <HelpCircle className="w-5 h-5" />
                 </div>
-                <h4 className="font-poppins font-bold text-slate-900 text-sm">Automated Post-Discharge Calls</h4>
-                <p className="text-slate-600 text-xs leading-relaxed">
-                  Places automated voice calls to discharged patients on Day 1, Day 3, and Day 7 to check wound recovery, pain levels, and medication adherence.
+                <h4 className="font-poppins font-extrabold text-slate-900 text-base">Why It Is Needed</h4>
+                <p className="text-slate-800 text-xs font-medium leading-relaxed">
+                  Post-surgical patients often experience complications (fever, wound infection, dosage confusion) after returning home. Nursing desks lack the staffing to call hundreds of discharged patients individually every day.
                 </p>
               </div>
 
-              <div className="bg-white p-5 rounded-2xl border border-slate-200 space-y-3 shadow-sm">
-                <div className="w-9 h-9 rounded-xl bg-[#00C2B3]/15 text-[#00C2B3] flex items-center justify-center font-bold">
-                  <Activity className="w-5 h-5" />
+              <div className="bg-white p-6 rounded-2xl border-2 border-slate-200 shadow-md space-y-3">
+                <div className="w-10 h-10 rounded-xl bg-sky-50 border border-sky-200 text-[#0077FF] flex items-center justify-center font-bold">
+                  <Zap className="w-5 h-5" />
                 </div>
-                <h4 className="font-poppins font-bold text-slate-900 text-sm">Remote Symptom Escalation</h4>
-                <p className="text-slate-600 text-xs leading-relaxed">
-                  Flags red-flag post-op symptoms (fever, bleeding, severe pain) during voice conversations and routes urgent calls to hospital nursing desks.
+                <h4 className="font-poppins font-extrabold text-slate-900 text-base">How It Helps (Workflow)</h4>
+                <p className="text-slate-800 text-xs font-medium leading-relaxed">
+                  Voice AI agents place automated follow-up phone calls on Day 1, Day 3, and Day 7 post-discharge, conversing in the patient's vernacular language to evaluate pain scores, fever levels, and medication adherence.
                 </p>
               </div>
 
-              <div className="bg-white p-5 rounded-2xl border border-slate-200 space-y-3 shadow-sm">
-                <div className="w-9 h-9 rounded-xl bg-[#10B981]/15 text-[#10B981] flex items-center justify-center font-bold">
-                  <CheckCircle2 className="w-5 h-5" />
+              <div className="bg-white p-6 rounded-2xl border-2 border-slate-200 shadow-md space-y-3">
+                <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 text-[#10B981] flex items-center justify-center font-bold">
+                  <TrendingUp className="w-5 h-5" />
                 </div>
-                <h4 className="font-poppins font-bold text-slate-900 text-sm">30-Day Readmission Reduction</h4>
-                <p className="text-slate-600 text-xs leading-relaxed">
-                  Reduces hospital readmission rates by 38% through proactive symptom tracking and automated prescription refill reminders.
+                <h4 className="font-poppins font-extrabold text-slate-900 text-base">How Hospitals Benefit</h4>
+                <p className="text-slate-800 text-xs font-medium leading-relaxed">
+                  - **38% Lower Readmission Rates**: Early detection of complications.<br />
+                  - **Instant Nurse Escalation**: Red-flag symptoms trigger priority calls.<br />
+                  - **100% Patient Outreach Coverage**: Every patient contacted post-op.
                 </p>
               </div>
+
             </div>
           </div>
         )}
