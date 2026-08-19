@@ -4,8 +4,8 @@
 
 @layer base {
   body {
-    background-color: #020103;
-    color: #ffffff;
+    background-color: #FAFAFC;
+    color: #0F172A;
     font-family: 'Inter', sans-serif;
   }
 
@@ -14,29 +14,25 @@
   }
 }
 
-/* LIA-style High-Impact Atmospheric Gradient */
+/* Light Theme Atmosphere */
 .hero-atmosphere {
   background:
-    radial-gradient(circle at 50% 38%, rgba(241, 61, 232, 0.22), transparent 38%),
-    radial-gradient(circle at 50% 50%, rgba(0, 240, 255, 0.20), transparent 45%),
-    radial-gradient(circle at 78% 30%, rgba(139, 124, 255, 0.18), transparent 40%),
-    radial-gradient(circle at 20% 70%, rgba(109, 255, 182, 0.15), transparent 42%),
-    linear-gradient(180deg, rgba(255,255,255,0.03), transparent 24%),
-    linear-gradient(180deg, #020103 0%, #040810 100%);
+    radial-gradient(circle at 50% 38%, rgba(0, 194, 179, 0.10), transparent 42%),
+    radial-gradient(circle at 78% 30%, rgba(0, 119, 255, 0.08), transparent 40%),
+    radial-gradient(circle at 20% 70%, rgba(16, 185, 129, 0.08), transparent 42%),
+    linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
 }
 
-/* Footer High-Impact Atmosphere */
 .footer-atmosphere {
   background:
-    radial-gradient(circle at 50% 10%, rgba(241, 61, 232, 0.25), transparent 45%),
-    radial-gradient(circle at 20% 80%, rgba(0, 240, 255, 0.20), transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(109, 255, 182, 0.18), transparent 50%),
-    linear-gradient(180deg, #040810 0%, #020103 100%);
+    radial-gradient(circle at 50% 10%, rgba(0, 194, 179, 0.12), transparent 45%),
+    radial-gradient(circle at 20% 80%, rgba(0, 119, 255, 0.08), transparent 50%),
+    linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%);
 }
 
-/* Vertical Continuous Scroll Rail for Industry/Department Use Cases */
+/* Vertical Continuous Scroll Rail */
 .hero-rail-scroll {
-  animation: railScroll 20s linear infinite;
+  animation: railScroll 22s linear infinite;
   will-change: transform;
 }
 
@@ -52,7 +48,7 @@
 /* Sonar Ripple Animation */
 @keyframes lia-sonar {
   0% { transform: scale(0.72); opacity: 0; }
-  10% { opacity: 0.72; }
+  10% { opacity: 0.62; }
   100% { transform: scale(4.4); opacity: 0; }
 }
 
@@ -60,79 +56,73 @@
   animation: lia-sonar 3s cubic-bezier(0.1, 0.8, 0.3, 1) infinite;
 }
 
-/* Custom Scrollbar */
+/* Custom Scrollbar for Light Mode */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #020103;
+  background: #FAFAFC;
 }
 ::-webkit-scrollbar-thumb {
-  background: #0d323a;
+  background: #CBD5E1;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #00F0FF;
+  background: #00C2B3;
 }
 
-/* Fine Grid Pattern */
+/* Fine Light Grid Pattern */
 .bg-grid-pattern {
   background-size: 32px 32px;
   background-image: 
-    linear-gradient(to right, rgba(0, 240, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 240, 255, 0.05) 1px, transparent 1px);
+    linear-gradient(to right, rgba(0, 194, 179, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 194, 179, 0.06) 1px, transparent 1px);
 }
 
 .bg-dot-pattern {
-  background-image: radial-gradient(rgba(241, 61, 232, 0.15) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(0, 119, 255, 0.12) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 
-/* Translucent Glassmorphism Cards */
+/* Translucent Light Glassmorphism Cards */
 .glass-panel {
-  background: rgba(9, 36, 42, 0.65);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(0, 240, 255, 0.18);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.90);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
 }
 
 .glass-panel-hover {
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .glass-panel-hover:hover {
-  border-color: rgba(241, 61, 232, 0.5);
-  box-shadow: 0 14px 40px rgba(241, 61, 232, 0.22), 0 0 20px rgba(0, 240, 255, 0.2);
-  transform: translateY(-4px);
+  border-color: rgba(0, 194, 179, 0.5);
+  box-shadow: 0 16px 40px rgba(0, 194, 179, 0.12), 0 0 20px rgba(0, 119, 255, 0.08);
+  transform: translateY(-3px);
 }
 
-/* High-Voltage Adrenaline Text Gradients */
+/* High-Contrast Light Mode Text Gradients */
 .text-gradient {
-  background: linear-gradient(135deg, #00F0FF 0%, #20D6C7 30%, #F13DE8 70%, #8B7CFF 100%);
+  background: linear-gradient(135deg, #00C2B3 0%, #0077FF 50%, #7C3AED 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .text-gradient-neon {
-  background: linear-gradient(135deg, #F13DE8 0%, #00F0FF 50%, #6dffb6 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.text-gradient-green {
-  background: linear-gradient(135deg, #6dffb6 0%, #00F0FF 100%);
+  background: linear-gradient(135deg, #00C2B3 0%, #0077FF 60%, #10B981 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 /* Glowing Button Pulse */
 .glow-button-pulse {
-  box-shadow: 0 0 25px rgba(241, 61, 232, 0.4), 0 0 45px rgba(0, 240, 255, 0.3);
+  box-shadow: 0 8px 25px rgba(0, 194, 179, 0.3);
   transition: all 0.3s ease-in-out;
 }
 .glow-button-pulse:hover {
-  box-shadow: 0 0 40px rgba(241, 61, 232, 0.7), 0 0 65px rgba(0, 240, 255, 0.5);
-  transform: scale(1.03);
+  box-shadow: 0 12px 35px rgba(0, 194, 179, 0.45);
+  transform: scale(1.02);
 }
 
 /* Animations */

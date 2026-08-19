@@ -5,6 +5,7 @@ import { Hero } from './components/Hero';
 import { ScrollRevealSection } from './components/ScrollRevealSection';
 import { TrustMarquee } from './components/TrustMarquee';
 import { ProductsOverview } from './components/ProductsOverview';
+import { YCInnovations } from './components/YCInnovations';
 import { VernacularExperience } from './components/VernacularExperience';
 import { OPDBookingJourney } from './components/OPDBookingJourney';
 import { WhatsAppDemo } from './components/WhatsAppDemo';
@@ -26,7 +27,7 @@ export function App() {
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
   const [demoModalType, setDemoModalType] = useState<string | undefined>('live_demo');
 
-  // Initialize Lenis 60fps smooth scrolling physics (lialive-inspired)
+  // Initialize Lenis 60fps smooth scrolling physics
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
@@ -52,7 +53,7 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#040810] text-white flex flex-col font-sans selection:bg-[#20D6C7]/30 selection:text-[#53CFFF]">
+    <div className="min-h-screen bg-[#FAFAFC] text-slate-900 flex flex-col font-sans selection:bg-[#00C2B3]/20 selection:text-[#0077FF]">
       
       {/* Global Navbar */}
       <Navbar onOpenDemoModal={handleOpenDemoModal} />
@@ -62,55 +63,58 @@ export function App() {
         {/* Section 1: Hero with 3D WebGL Particle Sphere */}
         <Hero onOpenDemoModal={handleOpenDemoModal} />
 
-        {/* LIA-Inspired Scroll-Pinned 3D Feature Card Reveal */}
+        {/* 3D Scroll-Pinned Card Reveal */}
         <ScrollRevealSection />
 
         {/* Section 2: Trust & Value Strip */}
         <TrustMarquee />
 
-        {/* Section 3: Two Core AI Products */}
+        {/* Section 3: Y Combinator Healthcare AI Innovations Suite */}
+        <YCInnovations />
+
+        {/* Section 4: Two Core AI Products Overview */}
         <ProductsOverview onOpenDemoModal={handleOpenDemoModal} />
 
-        {/* Section 4: Vernacular AI Experience */}
+        {/* Section 5: Vernacular AI Experience */}
         <VernacularExperience />
 
-        {/* Section 5: OPD Booking Journey */}
+        {/* Section 6: OPD Booking Journey */}
         <OPDBookingJourney />
 
-        {/* Section 6: WhatsApp Agent Demo */}
+        {/* Section 7: WhatsApp Agent Demo */}
         <WhatsAppDemo />
 
-        {/* Section 7: Auto-Scribe Experience */}
+        {/* Section 8: Auto-Scribe Experience */}
         <AutoScribeDemo />
 
-        {/* Section 8: TPA Workflow */}
+        {/* Section 9: TPA Workflow */}
         <TPAWorkflow />
 
-        {/* Section 9: Designed for Every Hospital Team */}
+        {/* Section 10: Designed for Every Hospital Team */}
         <RoleBenefits />
 
-        {/* Section 10: Integrations Orbit */}
+        {/* Section 11: Integrations Orbit */}
         <IntegrationsMap />
 
-        {/* Section 11: Analytics Dashboard */}
+        {/* Section 12: Analytics Dashboard */}
         <AnalyticsDashboard />
 
-        {/* Section 12: Security & Responsible AI */}
+        {/* Section 13: Security & Responsible AI */}
         <SecuritySection />
 
-        {/* Section 13: Interactive ROI Calculator */}
+        {/* Section 14: Interactive ROI Calculator */}
         <ROICalculator />
 
-        {/* Section 14: Implementation Process */}
+        {/* Section 15: Implementation Process */}
         <ImplementationProcess />
 
-        {/* Section 15: Use Cases Grid */}
+        {/* Section 16: Use Cases Grid */}
         <UseCasesGrid />
 
-        {/* Section 16: FAQ Accordion */}
+        {/* Section 17: FAQ Accordion */}
         <FAQAccordion />
 
-        {/* Section 17: Final CTA & Demo Request */}
+        {/* Section 18: Final CTA & Demo Request */}
         <FinalCTA onOpenDemoModal={handleOpenDemoModal} />
       </main>
 

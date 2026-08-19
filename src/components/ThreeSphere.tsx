@@ -32,9 +32,9 @@ export const ThreeSphere: React.FC<ThreeSphereProps> = ({ isPlaying }) => {
     const originalPositions = new Float32Array(particleCount * 3);
     const colors = new Float32Array(particleCount * 3);
 
-    const color1 = new THREE.Color('#20D6C7'); // Aqua
-    const color2 = new THREE.Color('#53CFFF'); // Cyan
-    const color3 = new THREE.Color('#8B7CFF'); // Purple
+    const color1 = new THREE.Color('#00C2B3'); // Vibrant Medical Aqua
+    const color2 = new THREE.Color('#0077FF'); // Intelligent Blue
+    const color3 = new THREE.Color('#7C3AED'); // Deep Violet
 
     for (let i = 0; i < particleCount; i++) {
       // Golden spiral distribution on sphere surface
@@ -78,20 +78,20 @@ export const ThreeSphere: React.FC<ThreeSphereProps> = ({ isPlaying }) => {
     const ctx = canvasPoint.getContext('2d');
     if (ctx) {
       const grad = ctx.createRadialGradient(8, 8, 0, 8, 8, 8);
-      grad.addColorStop(0, 'rgba(255,255,255,1)');
-      grad.addColorStop(0.4, 'rgba(255,255,255,0.8)');
-      grad.addColorStop(1, 'rgba(255,255,255,0)');
+      grad.addColorStop(0, 'rgba(0,194,179,1)');
+      grad.addColorStop(0.5, 'rgba(0,119,255,0.8)');
+      grad.addColorStop(1, 'rgba(124,58,237,0)');
       ctx.fillStyle = grad;
       ctx.fillRect(0, 0, 16, 16);
     }
     const texture = new THREE.CanvasTexture(canvasPoint);
 
     const material = new THREE.PointsMaterial({
-      size: 0.038,
+      size: 0.045,
       vertexColors: true,
       map: texture,
       transparent: true,
-      blending: THREE.AdditiveBlending,
+      opacity: 0.85,
       depthWrite: false
     });
 
@@ -101,10 +101,10 @@ export const ThreeSphere: React.FC<ThreeSphereProps> = ({ isPlaying }) => {
     // Inner glowing core mesh
     const coreGeom = new THREE.IcosahedronGeometry(1.2, 3);
     const coreMat = new THREE.MeshBasicMaterial({
-      color: 0x20D6C7,
+      color: 0x00C2B3,
       wireframe: true,
       transparent: true,
-      opacity: 0.12
+      opacity: 0.18
     });
     const coreMesh = new THREE.Mesh(coreGeom, coreMat);
     scene.add(coreMesh);

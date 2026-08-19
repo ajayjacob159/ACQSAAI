@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Mic, FileText, CheckCircle2, Play, Sparkles, Image as ImageIcon, Languages, Plus, ShieldCheck, Calendar, Clock, UserCheck, ChevronRight } from 'lucide-react';
+import { Mic, FileText, CheckCircle2, Play, Sparkles, Languages, Plus, Calendar, Clock } from 'lucide-react';
 
 export const ScrollRevealSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement | null>(null);
@@ -49,14 +49,14 @@ export const ScrollRevealSection: React.FC = () => {
   ];
 
   return (
-    <div ref={sectionRef} className="relative bg-[#020103] border-t border-[#20D6C7]/15" style={{ height: '300vh' }}>
+    <div ref={sectionRef} className="relative bg-[#FAFAFC] border-t border-slate-200" style={{ height: '300vh' }}>
       
       {/* Sticky Full Viewport Container */}
-      <div className="sticky top-0 h-screen overflow-hidden flex flex-col justify-center bg-[#020103] select-none">
+      <div className="sticky top-0 h-screen overflow-hidden flex flex-col justify-center bg-[#FAFAFC] select-none">
         
         {/* Background Ambient Radial Glows */}
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_42%,rgba(32,214,199,0.14),transparent_55%),radial-gradient(circle_at_20%_70%,rgba(83,207,255,0.08),transparent_45%),radial-gradient(circle_at_80%_30%,rgba(139,124,255,0.08),transparent_45%)]" />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-32 bg-gradient-to-t from-[#020103] to-transparent" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_42%,rgba(0,194,179,0.12),transparent_55%),radial-gradient(circle_at_20%_70%,rgba(0,119,255,0.08),transparent_45%),radial-gradient(circle_at_80%_30%,rgba(124,58,237,0.08),transparent_45%)]" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-32 bg-gradient-to-t from-[#FAFAFC] to-transparent" />
 
         {/* Giant Outlined Stroke Background Text Marquee */}
         <div 
@@ -69,7 +69,7 @@ export const ScrollRevealSection: React.FC = () => {
               fontSize: 'clamp(72px, 16vw, 240px)', 
               lineHeight: 0.9, 
               color: 'transparent', 
-              WebkitTextStroke: '1.5px rgba(32, 214, 199, 0.4)' 
+              WebkitTextStroke: '1.5px rgba(0, 194, 179, 0.35)' 
             }}
           >
             ACQSA HEALTHCARE AI ✦ OPD AUTOMATION ✦ CLINSCRIBE AUTO-SCRIBE ✦ TPA WORKFLOWS
@@ -80,7 +80,7 @@ export const ScrollRevealSection: React.FC = () => {
               fontSize: 'clamp(72px, 16vw, 240px)', 
               lineHeight: 0.9, 
               color: 'transparent', 
-              WebkitTextStroke: '1.5px rgba(83, 207, 255, 0.4)' 
+              WebkitTextStroke: '1.5px rgba(0, 119, 255, 0.35)' 
             }}
           >
             VERNACULAR VOICE AI ✦ WHATSAPP AGENT ✦ HIS INTEGRATION ✦ RESPONSIBLE AI
@@ -88,7 +88,7 @@ export const ScrollRevealSection: React.FC = () => {
         </div>
 
         {/* 3D Morphing Card Container */}
-        <div className="relative z-20 w-full max-w-4xl mx-auto px-4 h-[580px] flex items-center justify-center">
+        <div className="relative z-20 w-full max-w-4xl mx-auto px-4 h-[560px] flex items-center justify-center">
           
           {/* CARD 1: Conversational Voice AI */}
           <div 
@@ -102,21 +102,21 @@ export const ScrollRevealSection: React.FC = () => {
             }}
           >
             <div 
-              className="relative w-full h-full rounded-[28px] overflow-hidden p-6 sm:p-8 flex flex-col justify-between"
+              className="relative w-full h-full rounded-[28px] overflow-hidden p-6 sm:p-8 flex flex-col justify-between border border-slate-200 shadow-2xl"
               style={{
-                background: 'radial-gradient(120% 90% at 92% -8%, rgba(32, 214, 199, 0.45) 0%, transparent 52%), radial-gradient(90% 70% at 8% 4%, rgba(83, 207, 255, 0.35) 0%, transparent 58%), linear-gradient(180deg, #09242A 0%, #071621 55%, #040810 100%)',
-                boxShadow: '0 30px 80px -20px rgba(32, 214, 199, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1)'
+                background: 'linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%)',
+                boxShadow: '0 25px 70px -15px rgba(0, 194, 179, 0.18)'
               }}
             >
               {/* Card Header Tag */}
               <div className="flex items-center justify-between z-10">
-                <span className="px-3 py-1 rounded-full text-xs font-bold bg-white/10 text-[#20D6C7] backdrop-blur-md border border-white/10 flex items-center gap-1.5">
+                <span className="px-3 py-1 rounded-full text-xs font-bold bg-[#00C2B3]/10 text-[#00C2B3] border border-[#00C2B3]/30 flex items-center gap-1.5">
                   <Sparkles className="w-3.5 h-3.5" /> FEATURE 01 · CONVERSATIONAL VOICE AI
                 </span>
                 
                 <a
                   href="#whatsapp-demo"
-                  className="px-3 py-1 rounded-full text-[11px] font-bold bg-[#20D6C7] text-[#091B22] flex items-center gap-1 hover:scale-105 transition-transform"
+                  className="px-3 py-1 rounded-full text-[11px] font-bold bg-[#00C2B3] text-white flex items-center gap-1 hover:scale-105 transition-transform shadow-md shadow-[#00C2B3]/20"
                 >
                   <Play className="w-3 h-3 fill-current" /> Watch Demo
                 </a>
@@ -126,52 +126,52 @@ export const ScrollRevealSection: React.FC = () => {
               <div className="space-y-4 my-auto z-10">
                 
                 {/* Assistant Message Bubble */}
-                <div className="flex items-end gap-3 max-w-[85%]">
-                  <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#20D6C7] to-[#53CFFF] flex items-center justify-center text-[#091B22] font-bold text-xs shadow-lg">
+                <div className="flex items-end gap-3 max-w-[88%]">
+                  <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#00C2B3] to-[#0077FF] flex items-center justify-center text-white font-bold text-xs shadow-md">
                     AC
                   </div>
-                  <div className="p-4 rounded-2xl bg-[#071621]/90 border border-white/10 text-xs text-white shadow-xl space-y-1">
-                    <span className="text-[10px] text-[#53CFFF] font-bold block">ACQSA Voice & WhatsApp Assistant</span>
-                    <p className="leading-relaxed">
+                  <div className="p-4 rounded-2xl bg-white border border-slate-200 text-xs text-slate-900 shadow-md space-y-1">
+                    <span className="text-[10px] text-[#0077FF] font-bold block">ACQSA Voice & WhatsApp Assistant</span>
+                    <p className="leading-relaxed font-medium">
                       “Namaste Anand! Your OPD appointment with Dr. Ananya Rao (Cardiology) is confirmed for tomorrow at 11:30 AM. Would you like hospital directions sent to your WhatsApp?”
                     </p>
                   </div>
                 </div>
 
                 {/* Animated Typing Indicator */}
-                <div className="inline-flex items-center gap-1.5 px-3 py-2 rounded-2xl bg-[#071621]/70 border border-white/10 ml-11">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#20D6C7] animate-ping" />
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#53CFFF] animate-pulse" />
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#6BE7B7] animate-pulse" />
-                  <span className="text-[10px] text-slate-400 font-mono ml-1">Voice synthesis active</span>
+                <div className="inline-flex items-center gap-1.5 px-3 py-2 rounded-2xl bg-slate-100 border border-slate-200 ml-11">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#00C2B3] animate-ping" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#0077FF] animate-pulse" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-pulse" />
+                  <span className="text-[10px] text-slate-500 font-mono ml-1">Voice synthesis active</span>
                 </div>
 
                 {/* Quick Action Chips Bar */}
-                <div className="p-3 rounded-2xl bg-[#040810]/80 border border-white/10 flex flex-wrap items-center gap-2">
-                  <button className="px-3 py-1.5 rounded-full bg-white/5 hover:bg-white/10 text-[11px] text-slate-200 border border-white/10 flex items-center gap-1.5">
-                    <Calendar className="w-3.5 h-3.5 text-[#20D6C7]" /> Book Appointment
+                <div className="p-3 rounded-2xl bg-slate-50 border border-slate-200 flex flex-wrap items-center gap-2">
+                  <button className="px-3 py-1.5 rounded-full bg-white text-[11px] font-semibold text-slate-700 border border-slate-200 shadow-sm flex items-center gap-1.5">
+                    <Calendar className="w-3.5 h-3.5 text-[#00C2B3]" /> Book Appointment
                   </button>
-                  <button className="px-3 py-1.5 rounded-full bg-white/5 hover:bg-white/10 text-[11px] text-slate-200 border border-white/10 flex items-center gap-1.5">
-                    <Clock className="w-3.5 h-3.5 text-[#53CFFF]" /> Reschedule Slot
+                  <button className="px-3 py-1.5 rounded-full bg-white text-[11px] font-semibold text-slate-700 border border-slate-200 shadow-sm flex items-center gap-1.5">
+                    <Clock className="w-3.5 h-3.5 text-[#0077FF]" /> Reschedule Slot
                   </button>
-                  <button className="px-3 py-1.5 rounded-full bg-white/5 hover:bg-white/10 text-[11px] text-slate-200 border border-white/10 flex items-center gap-1.5">
-                    <Languages className="w-3.5 h-3.5 text-[#6BE7B7]" /> Switch Language
+                  <button className="px-3 py-1.5 rounded-full bg-white text-[11px] font-semibold text-slate-700 border border-slate-200 shadow-sm flex items-center gap-1.5">
+                    <Languages className="w-3.5 h-3.5 text-[#10B981]" /> Switch Language
                   </button>
                 </div>
 
               </div>
 
               {/* Composer Bar */}
-              <div className="p-3 rounded-2xl bg-[#071621]/90 border border-white/10 flex items-center justify-between z-10 text-xs">
+              <div className="p-3 rounded-2xl bg-white border border-slate-200 flex items-center justify-between z-10 text-xs shadow-sm">
                 <div className="flex items-center gap-2 flex-1">
-                  <button className="p-1.5 rounded-full text-slate-400 hover:text-white">
+                  <button className="p-1.5 rounded-full text-slate-400 hover:text-slate-700">
                     <Plus className="w-4 h-4" />
                   </button>
                   <span className="text-slate-400">Ask ACQSA Voice AI anything...</span>
                 </div>
 
                 <div className="flex items-center gap-2">
-                  <button className="w-8 h-8 rounded-full bg-gradient-to-r from-[#20D6C7] to-[#53CFFF] text-[#091B22] flex items-center justify-center font-bold shadow-md hover:scale-105 transition-transform">
+                  <button className="w-8 h-8 rounded-full bg-gradient-to-r from-[#00C2B3] to-[#0077FF] text-white flex items-center justify-center font-bold shadow-md hover:scale-105 transition-transform">
                     <Mic className="w-4 h-4" />
                   </button>
                 </div>
@@ -194,18 +194,18 @@ export const ScrollRevealSection: React.FC = () => {
             }}
           >
             <div 
-              className="relative w-full h-full rounded-[28px] overflow-hidden p-6 sm:p-8 flex flex-col justify-between"
+              className="relative w-full h-full rounded-[28px] overflow-hidden p-6 sm:p-8 flex flex-col justify-between border border-slate-200 shadow-2xl"
               style={{
-                background: 'radial-gradient(110% 80% at 86% 8%, rgba(83, 207, 255, 0.45) 0%, transparent 55%), radial-gradient(80% 60% at 12% 108%, rgba(139, 124, 255, 0.35) 5%, transparent 60%), linear-gradient(160deg, #09242A 0%, #071621 55%, #040810 100%)',
-                boxShadow: '0 30px 80px -20px rgba(83, 207, 255, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1)'
+                background: 'linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%)',
+                boxShadow: '0 25px 70px -15px rgba(0, 119, 255, 0.18)'
               }}
             >
               {/* Card Header */}
               <div className="flex items-center justify-between z-10">
-                <span className="px-3 py-1 rounded-full text-xs font-bold bg-white/10 text-[#53CFFF] backdrop-blur-md border border-white/10 flex items-center gap-1.5">
+                <span className="px-3 py-1 rounded-full text-xs font-bold bg-[#0077FF]/10 text-[#0077FF] border border-[#0077FF]/30 flex items-center gap-1.5">
                   <Sparkles className="w-3.5 h-3.5" /> FEATURE 02 · REAL-TIME HIS SLOT LOCKING
                 </span>
-                <span className="px-3 py-1 rounded-full text-[10px] font-extrabold bg-[#6BE7B7]/20 text-[#6BE7B7] border border-[#6BE7B7]/40">
+                <span className="px-3 py-1 rounded-full text-[10px] font-extrabold bg-[#10B981]/15 text-[#10B981] border border-[#10B981]/40">
                   Sub-second Latency
                 </span>
               </div>
@@ -213,52 +213,52 @@ export const ScrollRevealSection: React.FC = () => {
               {/* Progress Steps Visualizer */}
               <div className="space-y-6 my-auto z-10">
                 
-                <div className="p-5 rounded-2xl bg-[#071621]/90 border border-white/10 space-y-4">
-                  <h4 className="text-xs font-bold text-white uppercase tracking-wider">
+                <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-4">
+                  <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider">
                     Automated Booking Verification Pathway
                   </h4>
 
                   <div className="grid grid-cols-4 gap-2 items-center text-center">
                     
                     <div className="space-y-1">
-                      <div className="w-7 h-7 mx-auto rounded-full bg-[#6BE7B7] text-[#091B22] flex items-center justify-center font-bold text-xs shadow-md">
+                      <div className="w-7 h-7 mx-auto rounded-full bg-[#10B981] text-white flex items-center justify-center font-bold text-xs shadow-md">
                         ✓
                       </div>
-                      <span className="text-[10px] text-white font-medium block">Intent Parsed</span>
+                      <span className="text-[10px] text-slate-800 font-medium block">Intent Parsed</span>
                     </div>
 
                     <div className="space-y-1">
-                      <div className="w-7 h-7 mx-auto rounded-full bg-[#6BE7B7] text-[#091B22] flex items-center justify-center font-bold text-xs shadow-md">
+                      <div className="w-7 h-7 mx-auto rounded-full bg-[#10B981] text-white flex items-center justify-center font-bold text-xs shadow-md">
                         ✓
                       </div>
-                      <span className="text-[10px] text-white font-medium block">Doctor Found</span>
+                      <span className="text-[10px] text-slate-800 font-medium block">Doctor Found</span>
                     </div>
 
                     <div className="space-y-1">
-                      <div className="w-7 h-7 mx-auto rounded-full bg-[#6BE7B7] text-[#091B22] flex items-center justify-center font-bold text-xs shadow-md">
+                      <div className="w-7 h-7 mx-auto rounded-full bg-[#10B981] text-white flex items-center justify-center font-bold text-xs shadow-md">
                         ✓
                       </div>
-                      <span className="text-[10px] text-white font-medium block">HIS Slot Locked</span>
+                      <span className="text-[10px] text-slate-800 font-medium block">HIS Slot Locked</span>
                     </div>
 
                     <div className="space-y-1">
-                      <div className="w-7 h-7 mx-auto rounded-full bg-[#20D6C7] text-[#091B22] flex items-center justify-center font-bold text-xs shadow-md animate-bounce">
+                      <div className="w-7 h-7 mx-auto rounded-full bg-[#00C2B3] text-white flex items-center justify-center font-bold text-xs shadow-md animate-bounce">
                         ✓
                       </div>
-                      <span className="text-[10px] text-[#20D6C7] font-bold block">WhatsApp Sent</span>
+                      <span className="text-[10px] text-[#00C2B3] font-bold block">WhatsApp Sent</span>
                     </div>
 
                   </div>
                 </div>
 
                 {/* Confirmed Ticket Card */}
-                <div className="p-4 rounded-2xl bg-gradient-to-r from-[#20D6C7]/20 to-[#53CFFF]/20 border border-[#20D6C7]/50 flex items-center justify-between text-xs">
+                <div className="p-4 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center justify-between text-xs shadow-sm">
                   <div>
-                    <span className="text-[10px] font-bold text-[#20D6C7] uppercase block">Appointment Status</span>
-                    <strong className="text-white text-sm">Dr. Ananya Rao · Cardiology</strong>
-                    <p className="text-slate-300 text-[11px]">Tuesday, 12 August · 11:30 AM · Ref: ACQ-CARD-8902</p>
+                    <span className="text-[10px] font-bold text-emerald-800 uppercase block">Appointment Status</span>
+                    <strong className="text-slate-900 text-sm">Dr. Ananya Rao · Cardiology</strong>
+                    <p className="text-slate-600 text-[11px]">Tuesday, 12 August · 11:30 AM · Ref: ACQ-CARD-8902</p>
                   </div>
-                  <span className="px-3 py-1.5 rounded-xl bg-[#20D6C7] text-[#091B22] font-bold text-xs shadow-lg">
+                  <span className="px-3 py-1.5 rounded-xl bg-[#10B981] text-white font-bold text-xs shadow-md">
                     Confirmed
                   </span>
                 </div>
@@ -280,18 +280,18 @@ export const ScrollRevealSection: React.FC = () => {
             }}
           >
             <div 
-              className="relative w-full h-full rounded-[28px] overflow-hidden p-6 sm:p-8 flex flex-col justify-between"
+              className="relative w-full h-full rounded-[28px] overflow-hidden p-6 sm:p-8 flex flex-col justify-between border border-slate-200 shadow-2xl"
               style={{
-                background: 'radial-gradient(110% 80% at 86% 8%, rgba(139, 124, 255, 0.45) 0%, transparent 55%), radial-gradient(80% 60% at 12% 108%, rgba(32, 214, 199, 0.35) 5%, transparent 60%), linear-gradient(160deg, #09242A 0%, #071621 55%, #040810 100%)',
-                boxShadow: '0 30px 80px -20px rgba(139, 124, 255, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1)'
+                background: 'linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%)',
+                boxShadow: '0 25px 70px -15px rgba(124, 58, 237, 0.18)'
               }}
             >
               {/* Card Header */}
               <div className="flex items-center justify-between z-10">
-                <span className="px-3 py-1 rounded-full text-xs font-bold bg-white/10 text-[#8B7CFF] backdrop-blur-md border border-white/10 flex items-center gap-1.5">
+                <span className="px-3 py-1 rounded-full text-xs font-bold bg-[#7C3AED]/10 text-[#7C3AED] border border-[#7C3AED]/30 flex items-center gap-1.5">
                   <Sparkles className="w-3.5 h-3.5" /> FEATURE 03 · CLINSCRIBE & TPA AUTO-SCRIBE
                 </span>
-                <span className="px-3 py-1 rounded-full text-[10px] font-extrabold bg-[#8B7CFF]/20 text-[#8B7CFF] border border-[#8B7CFF]/40">
+                <span className="px-3 py-1 rounded-full text-[10px] font-extrabold bg-[#7C3AED]/15 text-[#7C3AED] border border-[#7C3AED]/40">
                   Doctor Sign-off Ready
                 </span>
               </div>
@@ -299,35 +299,35 @@ export const ScrollRevealSection: React.FC = () => {
               {/* Clinical Note Visualizer */}
               <div className="space-y-4 my-auto z-10 text-xs">
                 
-                <div className="p-4 rounded-2xl bg-[#071621]/90 border border-white/10 space-y-2">
-                  <div className="flex items-center justify-between text-[#8B7CFF] font-bold border-b border-white/10 pb-1.5">
+                <div className="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2">
+                  <div className="flex items-center justify-between text-[#7C3AED] font-bold border-b border-slate-100 pb-1.5">
                     <span className="flex items-center gap-1.5"><FileText className="w-4 h-4" /> Generated Discharge Note</span>
-                    <span className="text-[10px] text-[#6BE7B7]">ICD-10 Mapped</span>
+                    <span className="text-[10px] text-[#10B981]">ICD-10 Mapped</span>
                   </div>
                   
                   <div className="grid grid-cols-2 gap-2 text-[11px] pt-1">
                     <div>
-                      <span className="text-slate-400 block text-[10px]">Diagnosis</span>
-                      <strong className="text-white">Dengue Fever (NS1 Ag Positive)</strong>
+                      <span className="text-slate-400 text-[10px] block">Diagnosis</span>
+                      <strong className="text-slate-900">Dengue Fever (NS1 Ag Positive)</strong>
                     </div>
                     <div>
-                      <span className="text-slate-400 block text-[10px]">Platelet Count</span>
-                      <strong className="text-[#6BE7B7]">95,000 / μL (Recovering)</strong>
+                      <span className="text-slate-400 text-[10px] block">Platelet Count</span>
+                      <strong className="text-[#10B981]">95,000 / μL (Recovering)</strong>
                     </div>
                     <div>
-                      <span className="text-slate-400 block text-[10px]">Treatment</span>
-                      <strong className="text-white">IV Normal Saline, Paracetamol 650mg</strong>
+                      <span className="text-slate-400 text-[10px] block">Treatment</span>
+                      <strong className="text-slate-900">IV Normal Saline, Paracetamol 650mg</strong>
                     </div>
                     <div>
-                      <span className="text-slate-400 block text-[10px]">TPA Pre-Auth</span>
-                      <strong className="text-[#53CFFF]">Verified & Attached</strong>
+                      <span className="text-slate-400 text-[10px] block">TPA Pre-Auth</span>
+                      <strong className="text-[#0077FF]">Verified & Attached</strong>
                     </div>
                   </div>
                 </div>
 
-                <div className="p-3 rounded-xl bg-[#8B7CFF]/20 border border-[#8B7CFF]/40 text-[#8B7CFF] font-semibold flex items-center justify-between">
+                <div className="p-3 rounded-xl bg-purple-50 border border-purple-200 text-[#7C3AED] font-semibold flex items-center justify-between">
                   <span>Clinical Safety Protocol: AI draft requires doctor approval</span>
-                  <button className="px-3 py-1 rounded-lg bg-[#8B7CFF] text-[#091B22] font-bold text-xs">
+                  <button className="px-3 py-1 rounded-lg bg-[#7C3AED] text-white font-bold text-xs shadow-md">
                     Approve Draft
                   </button>
                 </div>
@@ -341,10 +341,10 @@ export const ScrollRevealSection: React.FC = () => {
 
         {/* Dynamic Card Meta Text at Bottom */}
         <div className="relative z-30 text-center max-w-xl mx-auto mt-6 space-y-2">
-          <h3 className="font-poppins font-bold text-xl sm:text-2xl text-white tracking-tight">
+          <h3 className="font-poppins font-bold text-xl sm:text-2xl text-slate-900 tracking-tight">
             {cardsMeta[activeIndex].title}
           </h3>
-          <p className="font-inter text-xs sm:text-sm text-slate-400 leading-relaxed">
+          <p className="font-inter text-xs sm:text-sm text-slate-600 leading-relaxed">
             {cardsMeta[activeIndex].subtitle}
           </p>
         </div>

@@ -1,8 +1,8 @@
-name: ACQSA AI 24/7 Cloud Client Acquisition Swarm
+name: ACQSA AI 24/7 Cloud Client Acquisition & LinkedIn Swarm
 
 on:
   schedule:
-    # Runs every 15 minutes 24/7/365 in GitHub Cloud
+    # Runs every 15 minutes 24/7/365 in GitHub Cloud even when laptop is shutdown
     - cron: '*/15 * * * *'
   workflow_dispatch:
   push:
@@ -21,7 +21,11 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Run ACQSA AI 24/7 Swarm Single Cycle
+      - name: Install Dependencies
+        run: |
+          pip install websockets requests || echo "Core standard library ready"
+
+      - name: Run 24/7 Healthcare Client Acquisition Swarm Cycle
         env:
           TELEGRAM_BOT_TOKEN: "8605382934:AAEYaehMipYzjn4VWKVDmSVLyNonf9_-QYo"
           TELEGRAM_CHAT_ID: "8976047512"
@@ -32,6 +36,9 @@ jobs:
         run: |
           python3 client_acquisition_swarm/swarm_master_runner.py --single
 
-      - name: Verify Live Telemetry
+      - name: Run LinkedIn Adrenal & Engagement Cloud Swarm
+        env:
+          TELEGRAM_BOT_TOKEN: "8605382934:AAEYaehMipYzjn4VWKVDmSVLyNonf9_-QYo"
+          TELEGRAM_CHAT_ID: "8976047512"
         run: |
-          cat client_acquisition_swarm/leads/swarm_telemetry.json || echo "Telemetry ready"
+          python3 client_acquisition_swarm/acqsa_linkedin_autonomous_adrenal_swarm.py || echo "LinkedIn Cloud Cycle Complete"

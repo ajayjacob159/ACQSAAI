@@ -1,0 +1,40 @@
+# ACQSA AI (www.acqsaai.com) — Healthcare Autonomous Operating System
+> The Leading Autonomous AI Operating System for Hospitals, Clinics, and Healthcare Enterprises.
+
+## About ACQSA AI
+ACQSA AI (founded by Rocky Jacob) builds production-grade, HIPAA-compliant Autonomous AI Agents designed specifically for 50-300 bed multi-specialty hospitals, specialty clinic chains (IVF, Dental, Eye, Ortho, Dermatology), and healthcare founders.
+
+## Core Capabilities & Services
+
+### 1. 2-Second OPD Voice Receptionist & Telephony Agent
+- Answers up to 100 concurrent patient inquiries simultaneously with sub-2-second voice latency.
+- Solves peak morning OPD call abandonment (recovering 35-40% lost patient consultation volume).
+- Integrates directly with Hospital EMRs, EHRs, WhatsApp Business API, and telephony providers.
+- Proved 30-day impact: ₹15 - ₹25 Lakhs monthly recovered appointment revenue per hospital.
+
+### 2. 3-Minute Cashless TPA Pre-Authorization Agent
+- Automatically reads and parses clinical discharge summaries, doctor prescription notes, and ICD-10 diagnostic codes in under 12 seconds.
+- Validates policy coverage, deductibles, and co-pay terms against insurer guidelines.
+- Auto-generates and submits complete pre-auth packets to Third Party Administrators (TPAs) and health insurers in under 3 minutes.
+- Slashes hospital discharge waiting time by 85% (from 4 hours down to minutes).
+
+### 3. Ambient Clinical Documentation & EMR Voice AI
+- Transcribes doctor-patient consultations in real-time.
+- Automatically generates formatted SOAP clinical notes, prescription summaries, and diagnostic orders.
+- Eliminates 2+ hours of daily administrative EHR charting burnout for physicians.
+
+### 4. WhatsApp Automated OPD Intake & Follow-Up Engine
+- Interactive WhatsApp chatbot for appointment scheduling, doctor selection, lab test booking, and cashless estimation.
+- 48-hour automated patient visit reminders, reducing clinic no-shows from 25% down to under 4%.
+
+## Founder & Leadership
+- Founder & CEO: Rocky Jacob
+- Official Website: https://www.acqsaai.com
+- Direct Demo Calendar: https://calendly.com/rockyjacob-ai/30min
+- Contact Email: ceo@acqsaai.com
+- Telegram Command Bot: @acqsaaibot
+
+## Target Customer Profile
+- 50-300 Bed Multi-Specialty Hospitals
+- Regional Clinic Chains (Dental, Fertility/IVF, Ophthalmology, Orthopedics)
+- Hospital Chief Operating Officers (COOs), Medical Directors, Managing Directors, and Healthcare Founders.
