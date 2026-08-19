@@ -138,17 +138,17 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Col 4: SEO & Knowledge Hub */}
+          {/* Col 4: Blogs & Knowledge Hub */}
           <div className="space-y-3">
-            <h4 className="font-poppins font-extrabold text-xs text-slate-900 uppercase tracking-widest text-[#7C3AED]">
-              SEO Knowledge Hub
+            <h4 className="font-poppins font-extrabold text-xs text-slate-900 uppercase tracking-widest text-[#7C3AED] flex items-center gap-1">
+              <BookOpen className="w-3.5 h-3.5 text-[#7C3AED]" /> Blogs & Articles
             </h4>
             <ul className="space-y-2.5 text-slate-700 font-inter font-medium">
-              <li><a href="#articles" className="hover:text-[#7C3AED] transition-colors">OPD Automation Guide</a></li>
-              <li><a href="#articles" className="hover:text-[#7C3AED] transition-colors">Auto-Scribing Playbook</a></li>
-              <li><a href="#articles" className="hover:text-[#7C3AED] transition-colors">TPA Pre-Auth Whitepaper</a></li>
-              <li><a href="#security" className="hover:text-[#7C3AED] transition-colors">Responsible AI Protocol</a></li>
-              <li><a href="#integrations" className="hover:text-[#7C3AED] transition-colors">HIS & EMR API Connectors</a></li>
+              <li><a href="#articles" className="hover:text-[#7C3AED] transition-colors font-bold">Healthcare AI Blogs Hub</a></li>
+              <li><a href="#articles" className="hover:text-[#7C3AED] transition-colors">OPD Automation Blog Guide</a></li>
+              <li><a href="#articles" className="hover:text-[#7C3AED] transition-colors">NABH Auto-Scribing Playbook</a></li>
+              <li><a href="#articles" className="hover:text-[#7C3AED] transition-colors">TPA Pre-Auth Cashless Guide</a></li>
+              <li><a href="#articles" className="hover:text-[#7C3AED] transition-colors">Hospital AI Operating Systems</a></li>
             </ul>
           </div>
 

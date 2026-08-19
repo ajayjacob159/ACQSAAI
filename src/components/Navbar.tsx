@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Activity, Menu, X, PhoneCall, ChevronDown, Sparkles, Zap, ShieldCheck, Stethoscope, Cpu, Database, ArrowRight, BookOpen } from 'lucide-react';
+import { Activity, Menu, X, PhoneCall, ChevronDown, Sparkles, Zap, ShieldCheck, Stethoscope, Cpu, Database } from 'lucide-react';
 
 interface NavbarProps {
   onOpenDemoModal: (type?: string) => void;
@@ -149,11 +149,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemoModal }) => {
               How It Works
             </a>
 
-            <a href="#articles" className="text-xs font-poppins font-semibold uppercase tracking-wider text-[#7C3AED] font-bold hover:text-slate-900 transition-colors flex items-center gap-1">
-              <BookOpen className="w-3.5 h-3.5 text-[#7C3AED]" />
-              SEO & Knowledge Hub
-            </a>
-
             <a href="#security" className="text-xs font-poppins font-semibold uppercase tracking-wider text-slate-800 hover:text-[#FF1B6B] transition-colors">
               Security
             </a>
@@ -217,10 +212,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemoModal }) => {
 
             <a href="#solutions" onClick={() => setMobileMenuOpen(false)} className="text-sm font-poppins font-bold uppercase tracking-wider text-slate-900 py-2 border-b border-slate-100">
               Solutions
-            </a>
-
-            <a href="#articles" onClick={() => setMobileMenuOpen(false)} className="text-sm font-poppins font-bold uppercase tracking-wider text-[#7C3AED] py-2 border-b border-slate-100 flex items-center gap-1.5">
-              <BookOpen className="w-4 h-4 text-[#7C3AED]" /> Knowledge Hub Articles
             </a>
 
             <a href="#security" onClick={() => setMobileMenuOpen(false)} className="text-sm font-poppins font-bold uppercase tracking-wider text-slate-900 py-2 border-b border-slate-100">
