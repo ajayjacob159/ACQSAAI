@@ -51,31 +51,6 @@ export const YCInnovations: React.FC = () => {
           </p>
         </div>
 
-        {/* Featured Automation Architecture Banner Image */}
-        <div className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 rounded-3xl p-4 sm:p-8 shadow-2xl border-2 border-slate-700 text-white space-y-4 relative overflow-hidden">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6 relative z-10">
-            <div className="space-y-2 text-center md:text-left max-w-xl">
-              <span className="text-[10px] font-extrabold uppercase tracking-widest text-[#00C2B3] bg-[#00C2B3]/10 px-3 py-1 rounded-full border border-[#00C2B3]/30">
-                HYBRID AI HEALTH CLOUD ARCHITECTURE
-              </span>
-              <h3 className="text-xl sm:text-2xl font-poppins font-extrabold text-white leading-snug">
-                MedZit Care Coordination Network
-              </h3>
-              <p className="text-xs text-slate-300 font-medium leading-relaxed">
-                Seamless encrypted telemetry connecting Hospital ICUs, Outpatient Clinics, Diagnostic Centers, Virtual Tele-Consultations, and Home Wearable Sensors into a unified AI Cloud.
-              </p>
-            </div>
-            
-            {/* Embedded Automation Network Photo */}
-            <div className="w-full md:w-auto shrink-0 flex justify-center">
-              <img 
-                src="/automation_network.jpg" 
-                alt="ACQSA AI Encrypted Cloud Care Network" 
-                className="max-h-72 sm:max-h-80 w-auto rounded-2xl border-2 border-[#00C2B3]/50 shadow-2xl object-cover hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-          </div>
-        </div>
 
         {/* Category Selector Tabs */}
         <div className="flex items-center justify-start lg:justify-center gap-2 overflow-x-auto pb-4 no-scrollbar">
