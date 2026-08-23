@@ -7,6 +7,7 @@ import { ScrollRevealSection } from './components/ScrollRevealSection';
 import { TrustMarquee } from './components/TrustMarquee';
 import { ProductsOverview } from './components/ProductsOverview';
 import { YCInnovations } from './components/YCInnovations';
+import { EkaHealthOS } from './components/EkaHealthOS';
 import { AppConsole } from './components/AppConsole';
 import { VernacularExperience } from './components/VernacularExperience';
 import { OPDBookingJourney } from './components/OPDBookingJourney';
@@ -80,58 +81,61 @@ export function App() {
         {/* Section 2: Trust & Value Strip */}
         <TrustMarquee />
 
-        {/* Section 3: Healthcare AI Automations Suite */}
+        {/* Section 3: ABDM-Compliant AI Health OS (Eka Care Features Integration) */}
+        <EkaHealthOS />
+
+        {/* Section 4: Healthcare AI Automations Suite */}
         <YCInnovations />
 
-        {/* Section 4: Native Android Mobile Web App Console */}
+        {/* Section 5: Native Android Mobile Web App Console */}
         <AppConsole />
 
-        {/* Section 5: Two Core AI Products Overview */}
+        {/* Section 6: Two Core AI Products Overview */}
         <ProductsOverview onOpenDemoModal={handleOpenDemoModal} />
 
-        {/* Section 6: Vernacular AI Experience */}
+        {/* Section 7: Vernacular AI Experience */}
         <VernacularExperience />
 
-        {/* Section 7: OPD Booking Journey */}
+        {/* Section 8: OPD Booking Journey */}
         <OPDBookingJourney />
 
-        {/* Section 8: WhatsApp Agent Demo */}
+        {/* Section 9: WhatsApp Agent Demo */}
         <WhatsAppDemo />
 
-        {/* Section 9: Auto-Scribe Experience */}
+        {/* Section 10: Auto-Scribe Experience */}
         <AutoScribeDemo />
 
-        {/* Section 10: TPA Workflow */}
+        {/* Section 11: TPA Workflow */}
         <TPAWorkflow />
 
-        {/* Section 11: Designed for Every Hospital Team */}
+        {/* Section 12: Designed for Every Hospital Team */}
         <RoleBenefits />
 
-        {/* Section 12: Integrations Orbit */}
+        {/* Section 13: Integrations Orbit */}
         <IntegrationsMap />
 
-        {/* Section 13: Analytics Dashboard */}
+        {/* Section 14: Analytics Dashboard */}
         <AnalyticsDashboard />
 
-        {/* Section 14: SEO & AEO Knowledge Hub & Articles */}
+        {/* Section 15: SEO & AEO Knowledge Hub & Articles */}
         <ArticlesSection />
 
-        {/* Section 15: Security & Governance */}
+        {/* Section 16: Security & Governance */}
         <SecuritySection />
 
-        {/* Section 16: Interactive ROI Calculator */}
+        {/* Section 17: Interactive ROI Calculator */}
         <ROICalculator />
 
-        {/* Section 17: Implementation Process */}
+        {/* Section 18: Implementation Process */}
         <ImplementationProcess />
 
-        {/* Section 18: Use Cases Grid */}
+        {/* Section 19: Use Cases Grid */}
         <UseCasesGrid />
 
-        {/* Section 19: FAQ Accordion */}
+        {/* Section 20: FAQ Accordion */}
         <FAQAccordion />
 
-        {/* Section 20: Final CTA & Demo Request */}
+        {/* Section 21: Final CTA & Demo Request */}
         <FinalCTA onOpenDemoModal={handleOpenDemoModal} />
       </main>
 
