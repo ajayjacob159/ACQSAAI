@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Cpu, ShieldCheck, PhoneCall, Stethoscope, FileText, CheckCircle2, ArrowRight, Zap, RefreshCw, AlertTriangle, Layers, Activity, Sparkles, Filter, Database, FileSpreadsheet, UserCheck, Radio, Award, HelpCircle, TrendingUp, Check } from 'lucide-react';
+import { Cpu, ShieldCheck, PhoneCall, Stethoscope, FileText, CheckCircle2, ArrowRight, Zap, RefreshCw, AlertTriangle, Layers, Activity, Sparkles, Filter, Database, FileSpreadsheet, UserCheck, Radio, Award, HelpCircle, TrendingUp, Check, Cloud, HeartPulse, Network, Globe } from 'lucide-react';
 
 export const YCInnovations: React.FC = () => {
-  const [activeCategory, setActiveCategory] = useState<'admin' | 'voice_rcm' | 'clinical' | 'specialty' | 'regulatory' | 'capacity'>('admin');
+  const [activeCategory, setActiveCategory] = useState<'admin' | 'voice_rcm' | 'clinical' | 'specialty' | 'regulatory' | 'capacity' | 'medzit'>('medzit');
 
   // Interactive simulation state for Voice RCM
   const [rcmStatus, setRcmStatus] = useState('Payer Call Queued');
@@ -19,12 +19,13 @@ export const YCInnovations: React.FC = () => {
   };
 
   const categories = [
-    { id: 'admin', label: '1. Administrative & Legacy Software AI', icon: <Database className="w-4 h-4 text-[#FF1B6B]" /> },
-    { id: 'voice_rcm', label: '2. Voice RCM & Payer Callers', icon: <PhoneCall className="w-4 h-4 text-[#0077FF]" /> },
-    { id: 'clinical', label: '3. Autonomous Practice & Prescriptions', icon: <Cpu className="w-4 h-4 text-[#7C3AED]" /> },
-    { id: 'specialty', label: '4. Specialty Scribing & Radiology AI', icon: <Stethoscope className="w-4 h-4 text-[#10B981]" /> },
-    { id: 'regulatory', label: '5. Credentialing & Regulatory AI', icon: <ShieldCheck className="w-4 h-4 text-[#00C2B3]" /> },
-    { id: 'capacity', label: '6. Post-Discharge & Remote Voice', icon: <Activity className="w-4 h-4 text-[#FF1B6B]" /> }
+    { id: 'medzit', label: '1. MedZit Care Network & Cloud OS', icon: <Cloud className="w-4 h-4 text-[#0077FF]" /> },
+    { id: 'admin', label: '2. Legacy EMR & Fax RPA AI', icon: <Database className="w-4 h-4 text-[#FF1B6B]" /> },
+    { id: 'voice_rcm', label: '3. Voice RCM & Payer Callers', icon: <PhoneCall className="w-4 h-4 text-[#0077FF]" /> },
+    { id: 'clinical', label: '4. Autonomous Practice & Prescriptions', icon: <Cpu className="w-4 h-4 text-[#7C3AED]" /> },
+    { id: 'specialty', label: '5. Specialty Scribing & Radiology AI', icon: <Stethoscope className="w-4 h-4 text-[#10B981]" /> },
+    { id: 'regulatory', label: '6. Credentialing & Regulatory AI', icon: <ShieldCheck className="w-4 h-4 text-[#00C2B3]" /> },
+    { id: 'capacity', label: '7. Post-Discharge & Remote Voice', icon: <Activity className="w-4 h-4 text-[#FF1B6B]" /> }
   ];
 
   return (
@@ -50,6 +51,32 @@ export const YCInnovations: React.FC = () => {
           </p>
         </div>
 
+        {/* Featured Automation Architecture Banner Image */}
+        <div className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 rounded-3xl p-4 sm:p-8 shadow-2xl border-2 border-slate-700 text-white space-y-4 relative overflow-hidden">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6 relative z-10">
+            <div className="space-y-2 text-center md:text-left max-w-xl">
+              <span className="text-[10px] font-extrabold uppercase tracking-widest text-[#00C2B3] bg-[#00C2B3]/10 px-3 py-1 rounded-full border border-[#00C2B3]/30">
+                HYBRID AI HEALTH CLOUD ARCHITECTURE
+              </span>
+              <h3 className="text-xl sm:text-2xl font-poppins font-extrabold text-white leading-snug">
+                MedZit Care Coordination Network
+              </h3>
+              <p className="text-xs text-slate-300 font-medium leading-relaxed">
+                Seamless encrypted telemetry connecting Hospital ICUs, Outpatient Clinics, Diagnostic Centers, Virtual Tele-Consultations, and Home Wearable Sensors into a unified AI Cloud.
+              </p>
+            </div>
+            
+            {/* Embedded Automation Network Photo */}
+            <div className="w-full md:w-auto shrink-0 flex justify-center">
+              <img 
+                src="/automation_network.jpg" 
+                alt="ACQSA AI Encrypted Cloud Care Network" 
+                className="max-h-72 sm:max-h-80 w-auto rounded-2xl border-2 border-[#00C2B3]/50 shadow-2xl object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+          </div>
+        </div>
+
         {/* Category Selector Tabs */}
         <div className="flex items-center justify-start lg:justify-center gap-2 overflow-x-auto pb-4 no-scrollbar">
           {categories.map((cat) => {
@@ -71,13 +98,69 @@ export const YCInnovations: React.FC = () => {
           })}
         </div>
 
-        {/* CATEGORY 1: Administrative & Legacy Software AI */}
+        {/* CATEGORY 1: MedZit Care Coordination & Hybrid Cloud Network */}
+        {activeCategory === 'medzit' && (
+          <div className="bg-[#FAFAFC] border-2 border-slate-200 rounded-3xl p-6 sm:p-10 shadow-xl space-y-10 animate-in fade-in duration-300">
+            <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 border-b border-slate-200 pb-6">
+              <div>
+                <span className="text-[10px] font-bold uppercase tracking-wider text-[#0077FF] bg-sky-50 px-3 py-1 rounded-full border border-sky-200">
+                  AUTOMATION SUITE 01 · MEDZIT DIGITAL HEALTH PLATFORM (DHP)
+                </span>
+                <h3 className="text-2xl sm:text-3xl font-poppins font-extrabold text-slate-900 mt-2">
+                  MedZit Care Coordination & Hybrid Health Cloud
+                </h3>
+              </div>
+              <span className="text-xs font-bold text-[#10B981] bg-emerald-50 px-4 py-2 rounded-xl border border-emerald-200">
+                Global Network across India, UK, Middle East & East Asia
+              </span>
+            </div>
+
+            {/* 3 Columns: Why Needed, How It Helps, How Hospitals Benefit */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              
+              <div className="bg-white p-6 rounded-2xl border-2 border-slate-200 shadow-md space-y-3">
+                <div className="w-10 h-10 rounded-xl bg-rose-50 border border-rose-200 text-rose-600 flex items-center justify-center font-bold">
+                  <HelpCircle className="w-5 h-5" />
+                </div>
+                <h4 className="font-poppins font-extrabold text-slate-900 text-base">Why It Is Needed</h4>
+                <p className="text-slate-800 text-xs font-medium leading-relaxed">
+                  Healthcare providers suffer from fragmented patient data split across separate outpatient clinics, diagnostic centers, ICUs, and home patient devices. Without unified care coordination, patient transfers are delayed and clinical history is lost.
+                </p>
+              </div>
+
+              <div className="bg-white p-6 rounded-2xl border-2 border-slate-200 shadow-md space-y-3">
+                <div className="w-10 h-10 rounded-xl bg-sky-50 border border-sky-200 text-[#0077FF] flex items-center justify-center font-bold">
+                  <Zap className="w-5 h-5" />
+                </div>
+                <h4 className="font-poppins font-extrabold text-slate-900 text-base">How It Helps (Workflow)</h4>
+                <p className="text-slate-800 text-xs font-medium leading-relaxed">
+                  MedZit connects hospitals, satellite clinics, diagnostic imaging labs, and patient smartwatches into an encrypted AI Cloud. It streams live vital telemetry (Heart Rate, SpO2, BP), aggregates genetic data analytics, and enables 1-click specialist tele-consultations.
+                </p>
+              </div>
+
+              <div className="bg-white p-6 rounded-2xl border-2 border-slate-200 shadow-md space-y-3">
+                <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 text-[#10B981] flex items-center justify-center font-bold">
+                  <TrendingUp className="w-5 h-5" />
+                </div>
+                <h4 className="font-poppins font-extrabold text-slate-900 text-base">How Hospitals Benefit</h4>
+                <p className="text-slate-800 text-xs font-medium leading-relaxed">
+                  - **Unified Hybrid Health Cloud**: HIPAA & ABDM encrypted data pipeline.<br />
+                  - **Precision Patient Analytics**: Custom treatment plans based on genetic & vital trends.<br />
+                  - **Global Virtual Care Network**: Cross-border specialist consultations.
+                </p>
+              </div>
+
+            </div>
+          </div>
+        )}
+
+        {/* CATEGORY 2: Administrative & Legacy Software AI */}
         {activeCategory === 'admin' && (
           <div className="bg-[#FAFAFC] border-2 border-slate-200 rounded-3xl p-6 sm:p-10 shadow-xl space-y-10 animate-in fade-in duration-300">
             <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 border-b border-slate-200 pb-6">
               <div>
                 <span className="text-[10px] font-bold uppercase tracking-wider text-[#FF1B6B] bg-[#FF1B6B]/10 px-3 py-1 rounded-full border border-[#FF1B6B]/20">
-                  AUTOMATION SUITE 01 · LEGACY EMR & FAX AI AGENTS
+                  AUTOMATION SUITE 02 · LEGACY EMR & FAX AI AGENTS
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-poppins font-extrabold text-slate-900 mt-2">
                   Legacy Hospital Software & Digital Fax Automation
@@ -130,13 +213,13 @@ export const YCInnovations: React.FC = () => {
           </div>
         )}
 
-        {/* CATEGORY 2: Voice RCM & Payer Callers */}
+        {/* CATEGORY 3: Voice RCM & Payer Callers */}
         {activeCategory === 'voice_rcm' && (
           <div className="bg-[#FAFAFC] border-2 border-slate-200 rounded-3xl p-6 sm:p-10 shadow-xl space-y-10 animate-in fade-in duration-300">
             <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 border-b border-slate-200 pb-6">
               <div>
                 <span className="text-[10px] font-bold uppercase tracking-wider text-[#0077FF] bg-sky-50 px-3 py-1 rounded-full border border-sky-200">
-                  AUTOMATION SUITE 02 · VOICE RCM & PAYER CALL AGENTS
+                  AUTOMATION SUITE 03 · VOICE RCM & PAYER CALL AGENTS
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-poppins font-extrabold text-slate-900 mt-2">
                   Voice AI Insurance Claim Follow-up & Denial Resolution
@@ -204,13 +287,13 @@ export const YCInnovations: React.FC = () => {
           </div>
         )}
 
-        {/* CATEGORY 3: Autonomous Practice & Prescriptions */}
+        {/* CATEGORY 4: Autonomous Practice & Prescriptions */}
         {activeCategory === 'clinical' && (
           <div className="bg-[#FAFAFC] border-2 border-slate-200 rounded-3xl p-6 sm:p-10 shadow-xl space-y-10 animate-in fade-in duration-300">
             <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 border-b border-slate-200 pb-6">
               <div>
                 <span className="text-[10px] font-bold uppercase tracking-wider text-[#7C3AED] bg-purple-50 px-3 py-1 rounded-full border border-purple-200">
-                  AUTOMATION SUITE 03 · AUTONOMOUS PRACTICE & PRESCRIPTIONS
+                  AUTOMATION SUITE 04 · AUTONOMOUS PRACTICE & PRESCRIPTIONS
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-poppins font-extrabold text-slate-900 mt-2">
                   Prescription Refill Protocols & Routine Lab Ordering
@@ -259,13 +342,13 @@ export const YCInnovations: React.FC = () => {
           </div>
         )}
 
-        {/* CATEGORY 4: Specialty Scribing & Radiology AI */}
+        {/* CATEGORY 5: Specialty Scribing & Radiology AI */}
         {activeCategory === 'specialty' && (
           <div className="bg-[#FAFAFC] border-2 border-slate-200 rounded-3xl p-6 sm:p-10 shadow-xl space-y-10 animate-in fade-in duration-300">
             <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 border-b border-slate-200 pb-6">
               <div>
                 <span className="text-[10px] font-bold uppercase tracking-wider text-[#10B981] bg-emerald-100 px-3 py-1 rounded-full text-emerald-800 border border-emerald-200">
-                  AUTOMATION SUITE 04 · SPECIALTY SCRIBING & RADIOLOGY AI
+                  AUTOMATION SUITE 05 · SPECIALTY SCRIBING & RADIOLOGY AI
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-poppins font-extrabold text-slate-900 mt-2">
                   Surgical Operative Copilot & Radiology Auto-Reporting
@@ -314,13 +397,13 @@ export const YCInnovations: React.FC = () => {
           </div>
         )}
 
-        {/* CATEGORY 5: Credentialing & Regulatory AI */}
+        {/* CATEGORY 6: Credentialing & Regulatory AI */}
         {activeCategory === 'regulatory' && (
           <div className="bg-[#FAFAFC] border-2 border-slate-200 rounded-3xl p-6 sm:p-10 shadow-xl space-y-10 animate-in fade-in duration-300">
             <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 border-b border-slate-200 pb-6">
               <div>
                 <span className="text-[10px] font-bold uppercase tracking-wider text-[#00C2B3] bg-[#00C2B3]/10 px-3 py-1 rounded-full border border-[#00C2B3]/20">
-                  AUTOMATION SUITE 05 · PROVIDER CREDENTIALING & REGULATORY
+                  AUTOMATION SUITE 06 · PROVIDER CREDENTIALING & REGULATORY
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-poppins font-extrabold text-slate-900 mt-2">
                   Doctor License Validation & Regulatory Filing AI
@@ -369,13 +452,13 @@ export const YCInnovations: React.FC = () => {
           </div>
         )}
 
-        {/* CATEGORY 6: Post-Discharge & Remote Voice */}
+        {/* CATEGORY 7: Post-Discharge & Remote Voice */}
         {activeCategory === 'capacity' && (
           <div className="bg-[#FAFAFC] border-2 border-slate-200 rounded-3xl p-6 sm:p-10 shadow-xl space-y-10 animate-in fade-in duration-300">
             <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 border-b border-slate-200 pb-6">
               <div>
                 <span className="text-[10px] font-bold uppercase tracking-wider text-[#FF1B6B] bg-[#FF1B6B]/10 px-3 py-1 rounded-full border border-[#FF1B6B]/20">
-                  AUTOMATION SUITE 06 · POST-DISCHARGE VOICE MONITORING
+                  AUTOMATION SUITE 07 · POST-DISCHARGE VOICE MONITORING
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-poppins font-extrabold text-slate-900 mt-2">
                   Automated Post-Operative Voice Outreach & Readmission Guard
