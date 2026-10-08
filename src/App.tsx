@@ -3,39 +3,34 @@ import Lenis from 'lenis';
 import { SEOHead } from './components/SEOHead';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { ScrollRevealSection } from './components/ScrollRevealSection';
 import { TrustMarquee } from './components/TrustMarquee';
-import { HealthcareDivisions } from './components/HealthcareDivisions';
-import { ProductsOverview } from './components/ProductsOverview';
-import { YCInnovations } from './components/YCInnovations';
-import { EkaHealthOS } from './components/EkaHealthOS';
-import { KiviDoctorOS } from './components/KiviDoctorOS';
-import { AppConsole } from './components/AppConsole';
-import { VernacularExperience } from './components/VernacularExperience';
-import { OPDBookingJourney } from './components/OPDBookingJourney';
-import { WhatsAppDemo } from './components/WhatsAppDemo';
-import { AutoScribeDemo } from './components/AutoScribeDemo';
-import { TPAWorkflow } from './components/TPAWorkflow';
-import { RoleBenefits } from './components/RoleBenefits';
-import { IntegrationsMap } from './components/IntegrationsMap';
-import { AnalyticsDashboard } from './components/AnalyticsDashboard';
-import { ArticlesSection } from './components/ArticlesSection';
-import { SecuritySection } from './components/SecuritySection';
-import { ROICalculator } from './components/ROICalculator';
-import { ImplementationProcess } from './components/ImplementationProcess';
-import { UseCasesGrid } from './components/UseCasesGrid';
-import { FAQAccordion } from './components/FAQAccordion';
+import { ProblemSection } from './components/ProblemSection';
+import { SystemSection } from './components/SystemSection';
+import { PipelineEngine } from './components/PipelineEngine';
+import { FounderPositioning } from './components/FounderPositioning';
+import { BannerShowcase } from './components/BannerShowcase';
+import { CredibilitySection } from './components/CredibilitySection';
+import { WinsProofSection } from './components/WinsProofSection';
+import { CustomerImpactSection } from './components/CustomerImpactSection';
+import { PipelineAudit } from './components/PipelineAudit';
+import { WhoForSection } from './components/WhoForSection';
+import { WhoNotForSection } from './components/WhoNotForSection';
+import { ServicePackages } from './components/ServicePackages';
+import { ProcessSection } from './components/ProcessSection';
+import { WeeklyReporting } from './components/WeeklyReporting';
+import { CRMKanban } from './components/CRMKanban';
+import { FollowPlaybook } from './components/FollowPlaybook';
+import { TestimonialsCaseStudies } from './components/TestimonialsCaseStudies';
+import { FAQSection } from './components/FAQSection';
 import { FinalCTA } from './components/FinalCTA';
-import { DemoModal } from './components/DemoModal';
+import { LeadQualificationModal } from './components/LeadQualificationModal';
 import { Footer } from './components/Footer';
-import { MobileBottomNav } from './components/MobileBottomNav';
-import { PWAInstallBanner } from './components/PWAInstallBanner';
 
 export function App() {
-  const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
-  const [demoModalType, setDemoModalType] = useState<string | undefined>('live_demo');
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedPackage, setSelectedPackage] = useState<string | undefined>();
 
-  // Initialize Lenis 60fps smooth scrolling physics
+  // Smooth Scrolling physics
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
@@ -55,109 +50,112 @@ export function App() {
     };
   }, []);
 
-  const handleOpenDemoModal = (type?: string) => {
-    setDemoModalType(type);
-    setIsDemoModalOpen(true);
+  const handleOpenAuditScroll = () => {
+    const auditElem = document.getElementById('audit');
+    if (auditElem) {
+      auditElem.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      setIsModalOpen(true);
+    }
+  };
+
+  const handleOpenStrategyCall = (packageTitle?: string) => {
+    setSelectedPackage(packageTitle);
+    setIsModalOpen(true);
   };
 
   return (
-    <div className="min-h-screen bg-[#FAFAFC] text-slate-900 flex flex-col font-sans selection:bg-[#FF1B6B]/20 selection:text-[#0077FF] relative">
+    <div className="min-h-screen bg-[#080A0C] text-white flex flex-col font-sans selection:bg-[#B8FF3D]/20 selection:text-[#B8FF3D] relative">
       
       {/* Dynamic SEO & AEO JSON-LD Schema Metadata */}
       <SEOHead />
 
-      {/* PWA 1-Click App Installation Banner */}
-      <PWAInstallBanner />
-
       {/* Global Navbar */}
-      <Navbar onOpenDemoModal={handleOpenDemoModal} />
+      <Navbar 
+        onOpenAudit={handleOpenAuditScroll} 
+        onOpenStrategyCall={() => handleOpenStrategyCall('General Strategy Call')} 
+      />
 
       {/* Main Page Sections */}
       <main className="flex-1">
-        {/* Section 1: Hero with 3D WebGL Particle Sphere */}
-        <Hero onOpenDemoModal={handleOpenDemoModal} />
+        {/* Section 5 & 6: Hero & Pipeline Animation */}
+        <Hero 
+          onOpenAudit={handleOpenAuditScroll} 
+          onOpenStrategyCall={() => handleOpenStrategyCall('General Strategy Call')} 
+        />
 
-        {/* 3D Scroll-Pinned Card Reveal */}
-        <ScrollRevealSection />
-
-        {/* Section 2: Trust & Value Strip */}
+        {/* Section 7: Hero Trust Strip */}
         <TrustMarquee />
 
-        {/* Section 3: Exclusive AI & Automations Across All Healthcare Divisions */}
-        <HealthcareDivisions />
+        {/* Section 8: Problem Section */}
+        <ProblemSection />
 
-        {/* Section 4: ABDM-Compliant AI Health OS (Eka Care Features) */}
-        <EkaHealthOS />
+        {/* Section 9: The ACQSA AI System (12-Step Operating System) */}
+        <SystemSection />
 
-        {/* Section 5: KiviHealth Doctor Practice OS & Clinic Management Suite */}
-        <KiviDoctorOS />
+        {/* Section 10: Interactive Pipeline Engine */}
+        <PipelineEngine />
 
-        {/* Section 6: Healthcare AI Automations Suite */}
-        <YCInnovations />
+        {/* Section 11: Founder Profile Positioning Before vs After */}
+        <FounderPositioning />
 
-        {/* Section 7: Native Android Mobile Web App Console */}
-        <AppConsole />
+        {/* Section 12: LinkedIn Banner Showcase (1584 x 396 px) */}
+        <BannerShowcase />
 
-        {/* Section 8: Two Core AI Products Overview */}
-        <ProductsOverview onOpenDemoModal={handleOpenDemoModal} />
+        {/* Section 13: Founder Credibility Section */}
+        <CredibilitySection />
 
-        {/* Section 9: Vernacular AI Experience */}
-        <VernacularExperience />
+        {/* Section 14 & 15: Wins & Metrics Section */}
+        <WinsProofSection />
 
-        {/* Section 10: OPD Booking Journey */}
-        <OPDBookingJourney />
+        {/* Section 16: Customer Impact Framework */}
+        <CustomerImpactSection />
 
-        {/* Section 11: WhatsApp Agent Demo */}
-        <WhatsAppDemo />
+        {/* Section 17: Interactive 7-Question LinkedIn Pipeline Audit */}
+        <PipelineAudit onAuditSubmitted={(data) => console.log('Audit submitted:', data)} />
 
-        {/* Section 12: Auto-Scribe Experience */}
-        <AutoScribeDemo />
+        {/* Section 18: Who This Is For */}
+        <WhoForSection />
 
-        {/* Section 13: TPA Workflow */}
-        <TPAWorkflow />
+        {/* Section 19: Who This Is NOT For */}
+        <WhoNotForSection />
 
-        {/* Section 14: Designed for Every Hospital Team */}
-        <RoleBenefits />
+        {/* Section 20: Service Model Packages */}
+        <ServicePackages onDiscussBusiness={(pkg) => handleOpenStrategyCall(pkg)} />
 
-        {/* Section 15: Integrations Orbit */}
-        <IntegrationsMap />
+        {/* Section 21: Implementation Roadmap Process */}
+        <ProcessSection />
 
-        {/* Section 16: Analytics Dashboard */}
-        <AnalyticsDashboard />
+        {/* Section 22: Weekly Reporting & Illustrative Dashboard */}
+        <WeeklyReporting />
 
-        {/* Section 17: SEO & AEO Knowledge Hub & Articles */}
-        <ArticlesSection />
+        {/* Section 23: CRM Kanban Visualization */}
+        <CRMKanban />
 
-        {/* Section 18: Security & Governance */}
-        <SecuritySection />
+        {/* Section 24: Follow The Playbook / Content Section */}
+        <FollowPlaybook />
 
-        {/* Section 19: Interactive ROI Calculator */}
-        <ROICalculator />
+        {/* Section 25 & 26: Proof, Testimonials & Case Teardowns */}
+        <TestimonialsCaseStudies />
 
-        {/* Section 20: Implementation Process */}
-        <ImplementationProcess />
+        {/* Section 27: Honest B2B Founder FAQs */}
+        <FAQSection />
 
-        {/* Section 21: Use Cases Grid */}
-        <UseCasesGrid />
-
-        {/* Section 22: FAQ Accordion */}
-        <FAQAccordion />
-
-        {/* Section 23: Final CTA & Demo Request */}
-        <FinalCTA onOpenDemoModal={handleOpenDemoModal} />
+        {/* Section 28 & 30: Final CTA */}
+        <FinalCTA 
+          onOpenAudit={handleOpenAuditScroll} 
+          onOpenStrategyCall={() => handleOpenStrategyCall('Final CTA Strategy Call')} 
+        />
       </main>
 
       {/* Global Footer */}
       <Footer />
 
-      {/* Native Mobile App Bottom Navigation Bar */}
-      <MobileBottomNav onOpenDemoModal={handleOpenDemoModal} />
-
-      {/* Interactive Modal */}
-      <DemoModal
-        isOpen={isDemoModalOpen}
-        onClose={() => setIsDemoModalOpen(false)}
-        initialType={demoModalType}
+      {/* Lead Qualification & Strategy Call Modal */}
+      <LeadQualificationModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+        initialPackage={selectedPackage} 
       />
 
     </div>
