@@ -80,26 +80,28 @@ export const SystemSection: React.FC = () => {
   ];
 
   return (
-    <section id="system" className="py-24 bg-[#101318] text-white border-b border-[#20242A] relative">
+    <section id="system" className="py-24 bg-[#FAFAFC] text-slate-900 border-b border-slate-200 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         
         {/* Section Header */}
         <div className="text-center max-w-4xl mx-auto space-y-4">
-          <span className="text-xs font-mono uppercase tracking-widest text-[#B8FF3D] font-bold px-3.5 py-1.5 rounded-full bg-[#B8FF3D]/10 border border-[#B8FF3D]/30">
+          <span className="text-xs font-poppins font-extrabold uppercase tracking-wider text-[#FF1B6B] bg-rose-50 px-3.5 py-1.5 rounded-full border border-rose-200">
             THE 12-STEP OPERATING SYSTEM
           </span>
 
-          <h2 className="text-3xl sm:text-5xl font-heading font-extrabold uppercase tracking-tight text-white leading-tight">
+          <h2 className="text-3xl sm:text-5xl font-poppins font-extrabold uppercase tracking-tight text-slate-900 leading-tight">
             FROM PROFILE <br />
-            <span className="text-lime-gradient">TO PIPELINE.</span>
+            <span className="bg-gradient-to-r from-[#FF1B6B] via-[#9333EA] to-[#0077FF] bg-clip-text text-transparent">
+              TO PIPELINE.
+            </span>
           </h2>
 
-          <p className="text-base sm:text-lg text-[#A7ADB5] font-semibold max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-slate-700 font-semibold max-w-2xl mx-auto">
             One operating system. Twelve execution steps. One commercial objective: qualified conversations.
           </p>
         </div>
 
-        {/* 12-Step Timeline & Micro-Panel Grid */}
+        {/* Skylead Style 12-Step Timeline & Preview Box */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
           {/* Timeline List (Left) */}
@@ -110,59 +112,59 @@ export const SystemSection: React.FC = () => {
                 <button
                   key={idx}
                   onClick={() => setActiveStep(idx)}
-                  className={`w-full p-4 rounded-xl text-left border transition-all flex items-center justify-between group ${
+                  className={`w-full p-4 rounded-2xl text-left border-2 transition-all flex items-center justify-between group ${
                     isActive
-                      ? 'bg-[#080A0C] border-[#B8FF3D] shadow-lg ring-1 ring-[#B8FF3D]/40'
-                      : 'bg-[#101318] border-[#20242A] hover:border-[#A7ADB5]/40'
+                      ? 'bg-white border-[#FF1B6B] shadow-lg ring-1 ring-[#FF1B6B]/30'
+                      : 'bg-white border-slate-200 hover:border-slate-300 text-slate-700'
                   }`}
                 >
                   <div className="space-y-1">
-                    <span className={`text-[10px] font-mono font-bold ${isActive ? 'text-[#B8FF3D]' : 'text-[#A7ADB5]'}`}>
+                    <span className={`text-[10px] font-mono font-bold ${isActive ? 'text-[#FF1B6B]' : 'text-slate-500'}`}>
                       {step.num}
                     </span>
-                    <h3 className={`text-xs font-heading font-extrabold uppercase ${isActive ? 'text-white' : 'text-[#A7ADB5] group-hover:text-white'}`}>
+                    <h3 className={`text-xs font-poppins font-extrabold uppercase ${isActive ? 'text-slate-900' : 'text-slate-700 group-hover:text-slate-900'}`}>
                       {step.title}
                     </h3>
                   </div>
-                  <ChevronRight className={`w-4 h-4 transition-transform ${isActive ? 'text-[#B8FF3D] translate-x-1' : 'text-[#20242A]'}`} />
+                  <ChevronRight className={`w-4 h-4 transition-transform ${isActive ? 'text-[#FF1B6B] translate-x-1' : 'text-slate-300'}`} />
                 </button>
               );
             })}
           </div>
 
           {/* Active Micro-Panel Detail (Right) */}
-          <div className="lg:col-span-7 bg-[#080A0C] border border-[#20242A] rounded-2xl p-8 space-y-6 shadow-2xl relative min-h-[420px] flex flex-col justify-between">
+          <div className="lg:col-span-7 bg-white border-2 border-slate-200 rounded-3xl p-8 space-y-6 shadow-xl relative min-h-[420px] flex flex-col justify-between">
             <div className="space-y-4">
-              <div className="flex items-center justify-between border-b border-[#20242A] pb-4">
-                <span className="text-xs font-mono font-bold text-[#B8FF3D] bg-[#B8FF3D]/10 px-3 py-1 rounded border border-[#B8FF3D]/30">
+              <div className="flex items-center justify-between border-b border-slate-200 pb-4">
+                <span className="text-xs font-mono font-bold text-[#FF1B6B] bg-rose-50 px-3 py-1 rounded-full border border-rose-200">
                   {steps[activeStep].num} EXECUTION DETAIL
                 </span>
-                <span className="text-xs font-mono text-[#A7ADB5]">12-Step Demand System</span>
+                <span className="text-xs font-mono text-slate-500">12-Step Demand System</span>
               </div>
 
-              <h3 className="text-2xl font-heading font-extrabold text-white uppercase tracking-tight">
+              <h3 className="text-2xl font-poppins font-extrabold text-slate-900 uppercase tracking-tight">
                 {steps[activeStep].title}
               </h3>
 
-              <p className="text-sm font-semibold text-[#B8FF3D] font-mono leading-relaxed bg-[#101318] p-4 rounded-xl border border-[#20242A]">
+              <p className="text-xs font-mono font-bold text-[#FF1B6B] bg-rose-50/60 p-4 rounded-xl border border-rose-200 leading-relaxed">
                 "{steps[activeStep].summary}"
               </p>
 
               <div className="space-y-3 pt-2">
-                <h4 className="text-xs font-mono text-[#A7ADB5] uppercase font-bold">Execution Methodology:</h4>
-                <p className="text-xs text-[#A7ADB5] font-medium leading-relaxed">
+                <h4 className="text-xs font-mono text-slate-500 uppercase font-bold">Execution Methodology:</h4>
+                <p className="text-xs text-slate-700 font-medium leading-relaxed">
                   {steps[activeStep].detail}
                 </p>
               </div>
             </div>
 
-            <div className="pt-6 border-t border-[#20242A] flex items-center justify-between text-xs text-[#A7ADB5]">
+            <div className="pt-6 border-t border-slate-200 flex items-center justify-between text-xs text-slate-600">
               <span className="flex items-center gap-2">
-                <Check className="w-4 h-4 text-[#B8FF3D]" /> Systematic & repeatable outbound execution
+                <Check className="w-4 h-4 text-[#FF1B6B]" /> Systematic & repeatable outbound execution
               </span>
               <button 
                 onClick={() => setActiveStep((prev) => (prev + 1) % steps.length)}
-                className="text-xs font-mono font-bold text-[#B8FF3D] hover:underline"
+                className="text-xs font-mono font-extrabold text-[#FF1B6B] hover:underline"
               >
                 Next Step →
               </button>

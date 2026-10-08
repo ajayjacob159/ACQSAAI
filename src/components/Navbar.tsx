@@ -22,44 +22,49 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAudit, onOpenStrategyCall 
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled 
-          ? 'bg-[#080A0C]/95 backdrop-blur-xl border-b border-[#20242A] py-3 shadow-2xl' 
-          : 'bg-[#080A0C]/80 backdrop-blur-md py-4 border-b border-[#20242A]/60'
+          ? 'bg-white/95 backdrop-blur-xl border-b border-slate-200 py-3 shadow-md shadow-slate-900/5' 
+          : 'bg-white/80 backdrop-blur-md py-4 border-b border-slate-100'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           
-          {/* Official ACQSA AI Logo */}
+          {/* Official ACQSA AI Brand Icon & Title */}
           <a href="#" className="flex items-center gap-3 group">
             <img 
-              src="/logo.jpg" 
-              alt="ACQSA AI Logo" 
-              className="h-8 sm:h-9 w-auto object-contain hover:scale-105 transition-transform" 
+              src="/icon.png" 
+              alt="ACQSA AI Icon" 
+              className="h-9 w-9 object-contain rounded-xl shadow-md group-hover:scale-105 transition-transform" 
             />
-            <span className="hidden sm:inline-block text-[10px] font-mono uppercase tracking-widest text-[#A7ADB5] border-l border-[#20242A] pl-3">
-              B2B Demand Gen
-            </span>
+            <div className="flex flex-col">
+              <span className="text-xl font-poppins font-extrabold text-slate-900 tracking-tight leading-none">
+                ACQSA <span className="bg-gradient-to-r from-[#FF1B6B] via-[#9333EA] to-[#4F46E5] bg-clip-text text-transparent">AI</span>
+              </span>
+              <span className="hidden sm:inline-block text-[10px] font-mono uppercase tracking-widest text-[#FF1B6B] font-bold">
+                B2B Demand Gen
+              </span>
+            </div>
           </a>
 
           {/* Desktop Nav Links */}
-          <nav className="hidden lg:flex items-center gap-6 bg-[#101318] px-6 py-2 rounded-full border border-[#20242A]">
-            <a href="#system" className="text-xs font-semibold uppercase tracking-wider text-[#A7ADB5] hover:text-[#FFFFFF] transition-colors">
+          <nav className="hidden lg:flex items-center gap-6 bg-white px-6 py-2 rounded-full border border-slate-200 shadow-sm">
+            <a href="#system" className="text-xs font-poppins font-bold uppercase tracking-wider text-slate-700 hover:text-[#FF1B6B] transition-colors">
               How It Works
             </a>
-            <a href="#pipeline-engine" className="text-xs font-semibold uppercase tracking-wider text-[#A7ADB5] hover:text-[#FFFFFF] transition-colors">
+            <a href="#pipeline-engine" className="text-xs font-poppins font-bold uppercase tracking-wider text-slate-700 hover:text-[#FF1B6B] transition-colors">
               The System
             </a>
-            <a href="#audit" className="text-xs font-extrabold uppercase tracking-wider text-[#B8FF3D] hover:text-white transition-colors flex items-center gap-1.5">
-              <Zap className="w-3.5 h-3.5 text-[#B8FF3D]" />
+            <a href="#audit" className="text-xs font-poppins font-extrabold uppercase tracking-wider text-[#FF1B6B] hover:text-[#7C3AED] transition-colors flex items-center gap-1.5">
+              <Zap className="w-3.5 h-3.5 text-[#FF1B6B]" />
               Pipeline Audit
             </a>
-            <a href="#who-for" className="text-xs font-semibold uppercase tracking-wider text-[#A7ADB5] hover:text-[#FFFFFF] transition-colors">
+            <a href="#who-for" className="text-xs font-poppins font-bold uppercase tracking-wider text-slate-700 hover:text-[#FF1B6B] transition-colors">
               Who It's For
             </a>
-            <a href="#proof" className="text-xs font-semibold uppercase tracking-wider text-[#A7ADB5] hover:text-[#FFFFFF] transition-colors">
+            <a href="#proof" className="text-xs font-poppins font-bold uppercase tracking-wider text-slate-700 hover:text-[#FF1B6B] transition-colors">
               Proof
             </a>
-            <a href="#about" className="text-xs font-semibold uppercase tracking-wider text-[#A7ADB5] hover:text-[#FFFFFF] transition-colors">
+            <a href="#about" className="text-xs font-poppins font-bold uppercase tracking-wider text-slate-700 hover:text-[#FF1B6B] transition-colors">
               About
             </a>
           </nav>
@@ -68,14 +73,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAudit, onOpenStrategyCall 
           <div className="hidden md:flex items-center gap-3">
             <button
               onClick={onOpenStrategyCall}
-              className="px-4 py-2 text-xs font-bold uppercase tracking-wider text-[#A7ADB5] hover:text-white bg-[#101318] hover:bg-[#1A1E26] border border-[#20242A] rounded-xl transition-all"
+              className="px-4 py-2 text-xs font-poppins font-bold uppercase tracking-wider text-slate-800 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 border border-slate-200 rounded-xl transition-all shadow-sm"
             >
               Strategy Call
             </button>
 
             <button
               onClick={onOpenAudit}
-              className="px-5 py-2.5 text-xs font-extrabold uppercase tracking-wider text-[#080A0C] bg-[#B8FF3D] rounded-xl shadow-lg hover:scale-105 transition-all flex items-center gap-1.5"
+              className="px-5 py-2.5 text-xs font-poppins font-extrabold uppercase tracking-wider text-white bg-gradient-to-r from-[#FF1B6B] via-[#9333EA] to-[#4F46E5] rounded-xl shadow-md hover:scale-105 transition-all flex items-center gap-1.5"
             >
               Get Audit <ArrowRight className="w-3.5 h-3.5" />
             </button>
@@ -85,14 +90,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAudit, onOpenStrategyCall 
           <div className="lg:hidden flex items-center gap-3">
             <button
               onClick={onOpenAudit}
-              className="px-3.5 py-1.5 text-xs font-extrabold text-[#080A0C] bg-[#B8FF3D] rounded-lg uppercase tracking-wider shadow-sm"
+              className="px-3.5 py-1.5 text-xs font-extrabold text-white bg-gradient-to-r from-[#FF1B6B] to-[#4F46E5] rounded-lg uppercase tracking-wider shadow-sm"
             >
               Get Audit
             </button>
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-xl bg-[#101318] border border-[#20242A] text-white hover:text-[#B8FF3D]"
+              className="p-2 rounded-xl bg-slate-100 border border-slate-200 text-slate-800 hover:text-[#FF1B6B]"
               aria-label="Toggle Navigation Menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -104,24 +109,24 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAudit, onOpenStrategyCall 
 
       {/* Mobile Menu Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-[#080A0C]/98 backdrop-blur-2xl border-b border-[#20242A] px-6 py-6 space-y-4 animate-in slide-in-from-top duration-300">
+        <div className="lg:hidden bg-white/98 backdrop-blur-2xl border-b border-slate-200 px-6 py-6 space-y-4 animate-in slide-in-from-top duration-300">
           <nav className="flex flex-col gap-3">
-            <a href="#system" onClick={() => setMobileMenuOpen(false)} className="text-sm font-bold uppercase tracking-wider text-white py-2 border-b border-[#20242A]/60">
+            <a href="#system" onClick={() => setMobileMenuOpen(false)} className="text-sm font-poppins font-bold uppercase tracking-wider text-slate-900 py-2 border-b border-slate-100">
               How It Works
             </a>
-            <a href="#pipeline-engine" onClick={() => setMobileMenuOpen(false)} className="text-sm font-bold uppercase tracking-wider text-white py-2 border-b border-[#20242A]/60">
+            <a href="#pipeline-engine" onClick={() => setMobileMenuOpen(false)} className="text-sm font-poppins font-bold uppercase tracking-wider text-slate-900 py-2 border-b border-slate-100">
               The System
             </a>
-            <a href="#audit" onClick={() => setMobileMenuOpen(false)} className="text-sm font-extrabold uppercase tracking-wider text-[#B8FF3D] py-2 border-b border-[#20242A]/60 flex items-center gap-2">
-              <Zap className="w-4 h-4 text-[#B8FF3D]" /> Pipeline Audit
+            <a href="#audit" onClick={() => setMobileMenuOpen(false)} className="text-sm font-poppins font-extrabold uppercase tracking-wider text-[#FF1B6B] py-2 border-b border-slate-100 flex items-center gap-2">
+              <Zap className="w-4 h-4 text-[#FF1B6B]" /> Pipeline Audit
             </a>
-            <a href="#who-for" onClick={() => setMobileMenuOpen(false)} className="text-sm font-bold uppercase tracking-wider text-white py-2 border-b border-[#20242A]/60">
+            <a href="#who-for" onClick={() => setMobileMenuOpen(false)} className="text-sm font-poppins font-bold uppercase tracking-wider text-slate-900 py-2 border-b border-slate-100">
               Who It's For
             </a>
-            <a href="#proof" onClick={() => setMobileMenuOpen(false)} className="text-sm font-bold uppercase tracking-wider text-white py-2 border-b border-[#20242A]/60">
+            <a href="#proof" onClick={() => setMobileMenuOpen(false)} className="text-sm font-poppins font-bold uppercase tracking-wider text-slate-900 py-2 border-b border-slate-100">
               Proof & Wins
             </a>
-            <a href="#about" onClick={() => setMobileMenuOpen(false)} className="text-sm font-bold uppercase tracking-wider text-white py-2 border-b border-[#20242A]/60">
+            <a href="#about" onClick={() => setMobileMenuOpen(false)} className="text-sm font-poppins font-bold uppercase tracking-wider text-slate-900 py-2 border-b border-slate-100">
               About Founder
             </a>
           </nav>
@@ -132,7 +137,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAudit, onOpenStrategyCall 
                 setMobileMenuOpen(false);
                 onOpenAudit();
               }}
-              className="w-full py-3 rounded-xl bg-[#B8FF3D] text-[#080A0C] font-extrabold text-xs uppercase tracking-wider shadow-lg flex items-center justify-center gap-2"
+              className="w-full py-3 rounded-xl bg-gradient-to-r from-[#FF1B6B] via-[#9333EA] to-[#4F46E5] text-white font-poppins font-extrabold text-xs uppercase tracking-wider shadow-md"
             >
               Get Your LinkedIn Pipeline Audit →
             </button>
@@ -141,7 +146,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAudit, onOpenStrategyCall 
                 setMobileMenuOpen(false);
                 onOpenStrategyCall();
               }}
-              className="w-full py-3 rounded-xl bg-[#101318] border border-[#20242A] text-white font-bold text-xs uppercase tracking-wider"
+              className="w-full py-3 rounded-xl bg-slate-100 border border-slate-200 text-slate-900 font-poppins font-bold text-xs uppercase tracking-wider"
             >
               Book Strategy Call
             </button>
