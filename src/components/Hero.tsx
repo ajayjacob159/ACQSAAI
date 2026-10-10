@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Zap, ChevronDown, CheckCircle2, Play, Sparkles, ShieldCheck } from 'lucide-react';
+import { ArrowRight, Zap, ChevronDown, CheckCircle2, Flame, Sparkles } from 'lucide-react';
 import { HeroPipelineAnimation } from './HeroPipelineAnimation';
 
 interface HeroProps {
@@ -16,21 +16,21 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAudit, onOpenStrategyCall }) =
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-12">
         
-        {/* Eyebrow Pill Badge */}
+        {/* AcquisitionX Eyebrow Pill Badge */}
         <div className="flex justify-center">
           <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white border border-purple-200 text-xs font-poppins font-extrabold text-[#0080FF] shadow-sm hover:border-purple-300 transition-colors">
-            <span className="flex h-2 w-2 rounded-full bg-[#FF1B6B] animate-pulse" />
-            <span>✨ #1 LinkedIn Demand Generation System for B2B Founders</span>
+            <Flame className="w-4 h-4 text-[#FF1B6B]" />
+            <span>ACQUISITIONX B2B MULTICHANNEL LEAD GENERATION AGENCY</span>
           </div>
         </div>
 
-        {/* Skylead Style Human Headline & Supporting Copy */}
+        {/* AcquisitionX Headline & Supporting Copy */}
         <div className="text-center max-w-4xl mx-auto space-y-6">
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-poppins font-extrabold tracking-tight text-slate-900 leading-[1.08]">
-            Turn LinkedIn into your <br />
+            We build multichannel <br />
             <span className="relative inline-block mt-1">
               <span className="bg-gradient-to-r from-[#FF1B6B] via-[#9333EA] to-[#0080FF] bg-clip-text text-transparent">
-                predictable sales pipeline.
+                acquisition systems.
               </span>
               <svg className="absolute -bottom-2 left-0 w-full h-3 text-[#FF1B6B]/30" viewBox="0 0 300 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M2 9C50 3 150 3 298 9" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
@@ -39,24 +39,22 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAudit, onOpenStrategyCall }) =
           </h1>
 
           <p className="text-base sm:text-xl text-slate-700 max-w-3xl mx-auto font-medium leading-relaxed">
-            We help founder-led B2B companies identify the right accounts, reach the right decision-makers, and generate a consistent flow of qualified sales conversations.
+            Deliver consistent, high-quality leads from Cold Email, LinkedIn, Social Media, and Direct Outbound. Keep your calendar full of qualified B2B sales calls.
           </p>
 
-          {/* Skylead Style Human Buttons with Icon Circle */}
+          {/* Action Buttons */}
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
             
-            {/* Primary Skylead Fancy Button */}
             <button
               onClick={onOpenAudit}
               className="w-full sm:w-auto inline-flex items-center justify-between gap-4 pl-7 pr-3 py-3.5 rounded-full bg-[#0080FF] hover:bg-[#0070E0] text-white font-poppins font-extrabold text-sm tracking-wide shadow-xl shadow-blue-500/20 hover:shadow-blue-500/30 hover:scale-[1.02] transition-all group"
             >
-              <span>Get Your Free Pipeline Audit</span>
+              <span>Get Your Free Acquisition Audit</span>
               <div className="w-9 h-9 rounded-full bg-white text-[#0080FF] flex items-center justify-center group-hover:translate-x-0.5 transition-transform shadow-md">
                 <ArrowRight className="w-4 h-4" />
               </div>
             </button>
 
-            {/* Secondary Skylead Button */}
             <a
               href="#system"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-white border-2 border-slate-200 text-slate-800 font-poppins font-bold text-sm tracking-wide hover:border-slate-300 hover:bg-slate-50 transition-all shadow-sm"
@@ -67,22 +65,22 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAudit, onOpenStrategyCall }) =
 
           </div>
 
-          {/* Human Trust Badges */}
+          {/* Trust Badges */}
           <div className="pt-6 flex flex-wrap items-center justify-center gap-6 text-xs text-slate-600 font-medium">
             <span className="flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-[#10B981]" /> Zero Automated Spam
+              <CheckCircle2 className="w-4 h-4 text-[#10B981]" /> High-Deliverability Cold Email Infrastructure
             </span>
             <span className="flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-[#10B981]" /> Verified ICP Decision-Makers
+              <CheckCircle2 className="w-4 h-4 text-[#10B981]" /> Verified ICP Decision-Maker Data
             </span>
             <span className="flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-[#10B981]" /> 100% Account Safety Guaranteed
+              <CheckCircle2 className="w-4 h-4 text-[#10B981]" /> Qualified Sales Call Guarantee
             </span>
           </div>
 
         </div>
 
-        {/* Skylead Style Interactive Campaign Visualizer */}
+        {/* Multichannel Campaign Visualizer */}
         <div className="pt-4">
           <HeroPipelineAnimation />
         </div>
