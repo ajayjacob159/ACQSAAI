@@ -13,7 +13,7 @@ export const SEOHead: React.FC = () => {
           "@id": "https://www.acqsaai.com/#organization",
           "name": "ACQSA AI",
           "url": "https://www.acqsaai.com",
-          "logo": "https://www.acqsaai.com/icon.png",
+          "logo": "https://www.acqsaai.com/logo.png",
           "description": "We build multichannel acquisition systems that deliver consistent, high-quality leads from cold email, LinkedIn, social media, and outbound. Grow your brand while keeping your calendar full of qualified B2B sales calls.",
           "knowsAbout": [
             "B2B Lead Generation",

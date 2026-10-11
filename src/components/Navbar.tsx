@@ -29,21 +29,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAudit, onOpenStrategyCall 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           
-          {/* Official ACQSA AI Brand Icon & Title */}
-          <a href="#" className="flex items-center gap-3 group">
+          {/* Official ACQSA AI Brand Wordmark Logo */}
+          <a href="#" className="flex items-center gap-3 group py-1">
             <img 
-              src="/icon.png" 
-              alt="ACQSA AI Icon" 
-              className="h-9 w-9 object-contain rounded-xl shadow-md group-hover:scale-105 transition-transform" 
+              src="/logo.png" 
+              alt="ACQSA AI Logo" 
+              className="h-8 sm:h-9 md:h-10 w-auto object-contain group-hover:scale-105 transition-transform" 
             />
-            <div className="flex flex-col">
-              <span className="text-xl font-poppins font-extrabold text-slate-900 tracking-tight leading-none">
-                ACQSA <span className="bg-gradient-to-r from-[#FF1B6B] via-[#9333EA] to-[#4F46E5] bg-clip-text text-transparent">AI</span>
-              </span>
-              <span className="hidden sm:inline-block text-[10px] font-mono uppercase tracking-widest text-[#FF1B6B] font-bold">
-                B2B Demand Gen
-              </span>
-            </div>
           </a>
 
           {/* Desktop Nav Links */}

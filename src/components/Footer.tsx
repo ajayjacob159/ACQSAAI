@@ -40,20 +40,15 @@ export const Footer: React.FC = () => {
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 border-b border-slate-200 pb-12">
           
           <div className="space-y-3 max-w-md">
-            <a href="#" className="flex items-center gap-3">
+            <a href="#" className="flex flex-col items-start gap-2 group">
               <img 
-                src="/icon.png" 
-                alt="ACQSA AI Brand Icon" 
-                className="h-10 w-10 object-contain rounded-xl shadow-md" 
+                src="/logo.png" 
+                alt="ACQSA AI Brand Logo" 
+                className="h-10 sm:h-12 w-auto object-contain group-hover:scale-105 transition-transform" 
               />
-              <div>
-                <span className="text-2xl font-poppins font-black text-slate-900 tracking-tight block">
-                  ACQSA <span className="bg-gradient-to-r from-[#FF1B6B] via-[#9333EA] to-[#0080FF] bg-clip-text text-transparent">AI</span>
-                </span>
-                <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-[#FF1B6B]">
-                  B2B Multichannel Lead Generation Agency
-                </span>
-              </div>
+              <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-[#FF1B6B]">
+                B2B Multichannel Lead Generation Agency
+              </span>
             </a>
             <p className="text-xs sm:text-sm text-slate-600 font-medium leading-relaxed">
               We build multichannel acquisition systems that deliver consistent, high-quality leads from Cold Email, LinkedIn, social selling, and direct outbound. Grow your brand while keeping your calendar full of qualified B2B sales calls.
@@ -80,11 +75,13 @@ export const Footer: React.FC = () => {
 
         </div>
 
-        {/* Massive Signature "ACQSA AI" Watermark Typography */}
-        <div className="pt-4 pb-2 text-center select-none overflow-hidden border-b border-slate-100">
-          <span className="font-poppins font-black text-6xl sm:text-8xl md:text-9xl lg:text-[140px] xl:text-[180px] tracking-tighter leading-none bg-gradient-to-b from-slate-900/[0.12] via-slate-900/[0.04] to-transparent bg-clip-text text-transparent block hover:from-[#FF1B6B]/25 hover:via-[#9333EA]/20 hover:to-[#0080FF]/25 transition-all duration-700">
-            ACQSA AI
-          </span>
+        {/* Massive Signature "ACQSA AI" Watermark Logo */}
+        <div className="pt-6 pb-2 text-center select-none overflow-hidden border-b border-slate-100 flex flex-col items-center justify-center">
+          <img 
+            src="/logo.png" 
+            alt="ACQSA AI" 
+            className="w-full max-w-lg sm:max-w-xl md:max-w-2xl h-auto object-contain opacity-85 hover:opacity-100 transition-opacity duration-300" 
+          />
         </div>
 
         {/* Bottom Legal & Status Row */}
