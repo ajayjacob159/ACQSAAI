@@ -4,23 +4,16 @@ import { SEOHead } from './components/SEOHead';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { TrustMarquee } from './components/TrustMarquee';
-import { ProblemSection } from './components/ProblemSection';
-import { SystemSection } from './components/SystemSection';
-import { PipelineEngine } from './components/PipelineEngine';
-import { FounderPositioning } from './components/FounderPositioning';
-import { BannerShowcase } from './components/BannerShowcase';
-import { CredibilitySection } from './components/CredibilitySection';
-import { WinsProofSection } from './components/WinsProofSection';
-import { CustomerImpactSection } from './components/CustomerImpactSection';
+import { WhyUsSection } from './components/WhyUsSection';
+import { HowWeHelpSection } from './components/HowWeHelpSection';
+import { InboundOutboundSystem } from './components/InboundOutboundSystem';
+import { ColdEmailInfrastructure } from './components/ColdEmailInfrastructure';
+import { NineLinkedInScenarios } from './components/NineLinkedInScenarios';
+import { CaseStudiesSection } from './components/CaseStudiesSection';
+import { TestimonialsGrid } from './components/TestimonialsGrid';
+import { ROICalculator } from './components/ROICalculator';
 import { PipelineAudit } from './components/PipelineAudit';
-import { WhoForSection } from './components/WhoForSection';
-import { WhoNotForSection } from './components/WhoNotForSection';
 import { ServicePackages } from './components/ServicePackages';
-import { ProcessSection } from './components/ProcessSection';
-import { WeeklyReporting } from './components/WeeklyReporting';
-import { CRMKanban } from './components/CRMKanban';
-import { FollowPlaybook } from './components/FollowPlaybook';
-import { TestimonialsCaseStudies } from './components/TestimonialsCaseStudies';
 import { FAQSection } from './components/FAQSection';
 import { FinalCTA } from './components/FinalCTA';
 import { LeadQualificationModal } from './components/LeadQualificationModal';
@@ -30,7 +23,7 @@ export function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedPackage, setSelectedPackage] = useState<string | undefined>();
 
-  // Smooth Scrolling physics
+  // Smooth Scrolling physics (Lenis)
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
@@ -65,7 +58,7 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#080A0C] text-white flex flex-col font-sans selection:bg-[#B8FF3D]/20 selection:text-[#B8FF3D] relative">
+    <div className="min-h-screen bg-white text-slate-900 flex flex-col font-sans selection:bg-[#FF1B6B]/20 selection:text-[#FF1B6B] relative">
       
       {/* Dynamic SEO & AEO JSON-LD Schema Metadata */}
       <SEOHead />
@@ -78,77 +71,56 @@ export function App() {
 
       {/* Main Page Sections */}
       <main className="flex-1">
-        {/* Section 5 & 6: Hero & Pipeline Animation */}
+        {/* Hero Section */}
         <Hero 
           onOpenAudit={handleOpenAuditScroll} 
           onOpenStrategyCall={() => handleOpenStrategyCall('General Strategy Call')} 
         />
 
-        {/* Section 7: Hero Trust Strip */}
+        {/* Live Commercial Metrics & Trust Strip */}
         <TrustMarquee />
 
-        {/* Section 8: Problem Section */}
-        <ProblemSection />
+        {/* Why ACQSA AI? (360-Degree Lead Gen Systems) */}
+        <WhyUsSection onBookCall={() => handleOpenStrategyCall('General Strategy Call')} />
 
-        {/* Section 9: The ACQSA AI System (12-Step Operating System) */}
-        <SystemSection />
+        {/* How We Help You ? (5-Step Framework) */}
+        <HowWeHelpSection />
 
-        {/* Section 10: Interactive Pipeline Engine */}
-        <PipelineEngine />
+        {/* 5-Step Inbound-Led Outbound System */}
+        <InboundOutboundSystem />
 
-        {/* Section 11: Founder Profile Positioning Before vs After */}
-        <FounderPositioning />
+        {/* Cold Email Deliverability & Technical Infrastructure */}
+        <ColdEmailInfrastructure />
 
-        {/* Section 12: LinkedIn Banner Showcase (1584 x 396 px) */}
-        <BannerShowcase />
+        {/* 9 Conversion Triggers That Turn Engagement Into Sales Calls */}
+        <NineLinkedInScenarios />
 
-        {/* Section 13: Founder Credibility Section */}
-        <CredibilitySection />
+        {/* 6 Real Client Case Studies */}
+        <CaseStudiesSection />
 
-        {/* Section 14 & 15: Wins & Metrics Section */}
-        <WinsProofSection />
+        {/* What Our Clients Say (Verified Testimonials from Ogilvy, Philips, Salee, etc.) */}
+        <TestimonialsGrid />
 
-        {/* Section 16: Customer Impact Framework */}
-        <CustomerImpactSection />
+        {/* Interactive B2B Multichannel Pipeline & ROI Calculator */}
+        <ROICalculator onBookCall={() => handleOpenStrategyCall('ROI Calculator')} />
 
-        {/* Section 17: Interactive 7-Question LinkedIn Pipeline Audit */}
+        {/* Interactive 7-Question Pipeline Audit */}
         <PipelineAudit onAuditSubmitted={(data) => console.log('Audit submitted:', data)} />
 
-        {/* Section 18: Who This Is For */}
-        <WhoForSection />
-
-        {/* Section 19: Who This Is NOT For */}
-        <WhoNotForSection />
-
-        {/* Section 20: Service Model Packages */}
+        {/* Transparent Service Packages */}
         <ServicePackages onDiscussBusiness={(pkg) => handleOpenStrategyCall(pkg)} />
 
-        {/* Section 21: Implementation Roadmap Process */}
-        <ProcessSection />
-
-        {/* Section 22: Weekly Reporting & Illustrative Dashboard */}
-        <WeeklyReporting />
-
-        {/* Section 23: CRM Kanban Visualization */}
-        <CRMKanban />
-
-        {/* Section 24: Follow The Playbook / Content Section */}
-        <FollowPlaybook />
-
-        {/* Section 25 & 26: Proof, Testimonials & Case Teardowns */}
-        <TestimonialsCaseStudies />
-
-        {/* Section 27: Honest B2B Founder FAQs */}
+        {/* Frequently Asked Questions */}
         <FAQSection />
 
-        {/* Section 28 & 30: Final CTA */}
+        {/* Final High-Converting CTA */}
         <FinalCTA 
           onOpenAudit={handleOpenAuditScroll} 
           onOpenStrategyCall={() => handleOpenStrategyCall('Final CTA Strategy Call')} 
         />
       </main>
 
-      {/* Global Footer */}
+      {/* Global Footer (Featuring ACQSA AI & Trending Now) */}
       <Footer />
 
       {/* Lead Qualification & Strategy Call Modal */}

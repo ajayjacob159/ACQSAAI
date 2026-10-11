@@ -47,25 +47,27 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAudit, onOpenStrategyCall 
           </a>
 
           {/* Desktop Nav Links */}
-          <nav className="hidden lg:flex items-center gap-6 bg-white px-6 py-2 rounded-full border border-slate-200 shadow-sm">
-            <a href="#system" className="text-xs font-poppins font-bold uppercase tracking-wider text-slate-700 hover:text-[#FF1B6B] transition-colors">
-              How It Works
+          <nav className="hidden lg:flex items-center gap-5 bg-white px-6 py-2 rounded-full border border-slate-200 shadow-sm">
+            <a href="#how-we-help" className="text-xs font-poppins font-bold uppercase tracking-wider text-slate-700 hover:text-[#0080FF] transition-colors">
+              How We Help
             </a>
-            <a href="#pipeline-engine" className="text-xs font-poppins font-bold uppercase tracking-wider text-slate-700 hover:text-[#FF1B6B] transition-colors">
-              The System
+            <a href="#inbound-outbound" className="text-xs font-poppins font-bold uppercase tracking-wider text-slate-700 hover:text-[#0080FF] transition-colors">
+              5-Step System
             </a>
-            <a href="#audit" className="text-xs font-poppins font-extrabold uppercase tracking-wider text-[#FF1B6B] hover:text-[#7C3AED] transition-colors flex items-center gap-1.5">
-              <Zap className="w-3.5 h-3.5 text-[#FF1B6B]" />
-              Pipeline Audit
+            <a href="#infrastructure" className="text-xs font-poppins font-bold uppercase tracking-wider text-slate-700 hover:text-[#0080FF] transition-colors">
+              Deliverability
             </a>
-            <a href="#who-for" className="text-xs font-poppins font-bold uppercase tracking-wider text-slate-700 hover:text-[#FF1B6B] transition-colors">
-              Who It's For
+            <a href="#case-studies" className="text-xs font-poppins font-bold uppercase tracking-wider text-slate-700 hover:text-[#0080FF] transition-colors">
+              Case Studies
             </a>
-            <a href="#proof" className="text-xs font-poppins font-bold uppercase tracking-wider text-slate-700 hover:text-[#FF1B6B] transition-colors">
-              Proof
+            <a href="#results" className="text-xs font-poppins font-bold uppercase tracking-wider text-slate-700 hover:text-[#0080FF] transition-colors">
+              Results
             </a>
-            <a href="#about" className="text-xs font-poppins font-bold uppercase tracking-wider text-slate-700 hover:text-[#FF1B6B] transition-colors">
-              About
+            <a href="#packages" className="text-xs font-poppins font-bold uppercase tracking-wider text-slate-700 hover:text-[#0080FF] transition-colors">
+              Packages
+            </a>
+            <a href="#faqs" className="text-xs font-poppins font-bold uppercase tracking-wider text-slate-700 hover:text-[#0080FF] transition-colors">
+              FAQs
             </a>
           </nav>
 
@@ -111,23 +113,26 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAudit, onOpenStrategyCall 
       {mobileMenuOpen && (
         <div className="lg:hidden bg-white/98 backdrop-blur-2xl border-b border-slate-200 px-6 py-6 space-y-4 animate-in slide-in-from-top duration-300">
           <nav className="flex flex-col gap-3">
-            <a href="#system" onClick={() => setMobileMenuOpen(false)} className="text-sm font-poppins font-bold uppercase tracking-wider text-slate-900 py-2 border-b border-slate-100">
-              How It Works
+            <a href="#how-we-help" onClick={() => setMobileMenuOpen(false)} className="text-sm font-poppins font-bold uppercase tracking-wider text-slate-900 py-2 border-b border-slate-100">
+              How We Help
             </a>
-            <a href="#pipeline-engine" onClick={() => setMobileMenuOpen(false)} className="text-sm font-poppins font-bold uppercase tracking-wider text-slate-900 py-2 border-b border-slate-100">
-              The System
+            <a href="#inbound-outbound" onClick={() => setMobileMenuOpen(false)} className="text-sm font-poppins font-bold uppercase tracking-wider text-slate-900 py-2 border-b border-slate-100">
+              5-Step System
             </a>
-            <a href="#audit" onClick={() => setMobileMenuOpen(false)} className="text-sm font-poppins font-extrabold uppercase tracking-wider text-[#FF1B6B] py-2 border-b border-slate-100 flex items-center gap-2">
-              <Zap className="w-4 h-4 text-[#FF1B6B]" /> Pipeline Audit
+            <a href="#infrastructure" onClick={() => setMobileMenuOpen(false)} className="text-sm font-poppins font-bold uppercase tracking-wider text-slate-900 py-2 border-b border-slate-100">
+              Deliverability
             </a>
-            <a href="#who-for" onClick={() => setMobileMenuOpen(false)} className="text-sm font-poppins font-bold uppercase tracking-wider text-slate-900 py-2 border-b border-slate-100">
-              Who It's For
+            <a href="#case-studies" onClick={() => setMobileMenuOpen(false)} className="text-sm font-poppins font-bold uppercase tracking-wider text-slate-900 py-2 border-b border-slate-100">
+              Case Studies
             </a>
-            <a href="#proof" onClick={() => setMobileMenuOpen(false)} className="text-sm font-poppins font-bold uppercase tracking-wider text-slate-900 py-2 border-b border-slate-100">
-              Proof & Wins
+            <a href="#results" onClick={() => setMobileMenuOpen(false)} className="text-sm font-poppins font-bold uppercase tracking-wider text-slate-900 py-2 border-b border-slate-100">
+              Results
             </a>
-            <a href="#about" onClick={() => setMobileMenuOpen(false)} className="text-sm font-poppins font-bold uppercase tracking-wider text-slate-900 py-2 border-b border-slate-100">
-              About Founder
+            <a href="#packages" onClick={() => setMobileMenuOpen(false)} className="text-sm font-poppins font-bold uppercase tracking-wider text-slate-900 py-2 border-b border-slate-100">
+              Packages
+            </a>
+            <a href="#faqs" onClick={() => setMobileMenuOpen(false)} className="text-sm font-poppins font-bold uppercase tracking-wider text-slate-900 py-2 border-b border-slate-100">
+              FAQs
             </a>
           </nav>
 
@@ -137,9 +142,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAudit, onOpenStrategyCall 
                 setMobileMenuOpen(false);
                 onOpenAudit();
               }}
-              className="w-full py-3 rounded-xl bg-gradient-to-r from-[#FF1B6B] via-[#9333EA] to-[#4F46E5] text-white font-poppins font-extrabold text-xs uppercase tracking-wider shadow-md"
+              className="w-full py-3 rounded-full bg-gradient-to-r from-[#FF1B6B] via-[#9333EA] to-[#0080FF] text-white font-poppins font-extrabold text-xs uppercase tracking-wider shadow-md"
             >
-              Get Your LinkedIn Pipeline Audit →
+              Get Free Acquisition Audit →
             </button>
             <button
               onClick={() => {

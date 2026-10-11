@@ -16,15 +16,15 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAudit, onOpenStrategyCall }) =
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-12">
         
-        {/* AcquisitionX Eyebrow Pill Badge */}
+        {/* ACQSA AI Eyebrow Pill Badge */}
         <div className="flex justify-center">
           <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white border border-purple-200 text-xs font-poppins font-extrabold text-[#0080FF] shadow-sm hover:border-purple-300 transition-colors">
             <Flame className="w-4 h-4 text-[#FF1B6B]" />
-            <span>ACQUISITIONX B2B MULTICHANNEL LEAD GENERATION AGENCY</span>
+            <span>ACQSA AI B2B MULTICHANNEL LEAD GENERATION AGENCY</span>
           </div>
         </div>
 
-        {/* AcquisitionX Headline & Supporting Copy */}
+        {/* ACQSA AI Headline & Supporting Copy */}
         <div className="text-center max-w-4xl mx-auto space-y-6">
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-poppins font-extrabold tracking-tight text-slate-900 leading-[1.08]">
             We build multichannel <br />

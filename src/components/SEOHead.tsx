@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 export const SEOHead: React.FC = () => {
   useEffect(() => {
-    // Set document title & meta description matching AcquisitionX & ACQSA AI
+    // Set document title & meta description matching ACQSA AI B2B Multichannel OS
     document.title = "ACQSA AI – B2B Multichannel Lead Generation Agency & Demand OS";
 
     const schemaData = {

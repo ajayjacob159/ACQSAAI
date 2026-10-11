@@ -17,16 +17,16 @@ export const Footer: React.FC = () => {
                 TRENDING NOW
               </span>
               <h4 className="text-base font-poppins font-extrabold text-slate-900 mt-0.5">
-                ACQSA AI — #1 Founder-Led B2B Demand Generation System
+                ACQSA AI — #1 B2B Multichannel Lead Generation Agency
               </h4>
             </div>
           </div>
 
           <a
             href="#audit"
-            className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#FF1B6B] via-[#9333EA] to-[#4F46E5] text-white font-poppins font-extrabold text-xs uppercase tracking-wider shadow-md hover:scale-105 transition-all flex items-center gap-1.5 shrink-0"
+            className="px-5 py-2.5 rounded-full bg-gradient-to-r from-[#FF1B6B] via-[#9333EA] to-[#0080FF] text-white font-poppins font-extrabold text-xs uppercase tracking-wider shadow-md hover:scale-105 transition-all flex items-center gap-1.5 shrink-0"
           >
-            Get Free Pipeline Audit <ArrowRight className="w-3.5 h-3.5" />
+            Get Free Acquisition Audit <ArrowRight className="w-3.5 h-3.5" />
           </a>
         </div>
 
@@ -41,23 +41,26 @@ export const Footer: React.FC = () => {
               />
               <div>
                 <span className="text-xl font-poppins font-extrabold text-slate-900 tracking-tight block">
-                  ACQSA <span className="text-gradient-logo">AI</span>
+                  ACQSA <span className="bg-gradient-to-r from-[#FF1B6B] via-[#9333EA] to-[#0080FF] bg-clip-text text-transparent">AI</span>
                 </span>
                 <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-[#FF1B6B]">
-                  B2B Demand Generation System
+                  B2B Multichannel Lead Generation Agency
                 </span>
               </div>
             </a>
             <p className="text-xs text-slate-600 max-w-md font-medium leading-relaxed">
-              LinkedIn Growth for B2B Founders. Turn LinkedIn into a predictable source of qualified sales conversations through ICP targeting, decision-maker research, and structured follow-up.
+              We build multichannel acquisition systems that deliver consistent, high-quality leads from Cold Email, LinkedIn, social selling, and direct outbound. Grow your brand while keeping your calendar full of qualified B2B sales calls.
             </p>
           </div>
 
           <div className="flex flex-wrap items-center gap-6 text-xs font-poppins font-bold uppercase tracking-wider">
-            <a href="#system" className="text-slate-700 hover:text-[#FF1B6B] transition-colors">How It Works</a>
-            <a href="#audit" className="text-[#FF1B6B] hover:text-[#7C3AED] transition-colors font-extrabold">Pipeline Audit</a>
-            <a href="#about" className="text-slate-700 hover:text-[#FF1B6B] transition-colors">About Founder</a>
-            <a href="#who-for" className="text-slate-700 hover:text-[#FF1B6B] transition-colors">Who It's For</a>
+            <a href="#how-we-help" className="text-slate-700 hover:text-[#0080FF] transition-colors">How We Help</a>
+            <a href="#inbound-outbound" className="text-slate-700 hover:text-[#0080FF] transition-colors">5-Step System</a>
+            <a href="#infrastructure" className="text-slate-700 hover:text-[#0080FF] transition-colors">Deliverability</a>
+            <a href="#case-studies" className="text-slate-700 hover:text-[#0080FF] transition-colors">Case Studies</a>
+            <a href="#results" className="text-slate-700 hover:text-[#0080FF] transition-colors">Results</a>
+            <a href="#packages" className="text-slate-700 hover:text-[#0080FF] transition-colors">Packages</a>
+            <a href="#faqs" className="text-slate-700 hover:text-[#0080FF] transition-colors">FAQs</a>
             <a 
               href="https://linkedin.com/company/acqsa-ai" 
               target="_blank" 
