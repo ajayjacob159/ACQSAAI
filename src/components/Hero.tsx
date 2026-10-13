@@ -1,88 +1,84 @@
 import React from 'react';
-import { ArrowRight, Zap, ChevronDown, CheckCircle2, Flame, Sparkles } from 'lucide-react';
-import { HeroPipelineAnimation } from './HeroPipelineAnimation';
+import { ArrowRight, CheckCircle2, Calendar, Sparkles, TrendingUp, Users, ShieldAlert, ArrowUpRight } from 'lucide-react';
 
 interface HeroProps {
-  onOpenAudit: () => void;
-  onOpenStrategyCall: () => void;
+  onOpenBooking: () => void;
 }
 
-export const Hero: React.FC<HeroProps> = ({ onOpenAudit, onOpenStrategyCall }) => {
+export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
   return (
-    <section className="relative pt-32 pb-24 bg-[#FAFAFC] text-slate-900 overflow-hidden border-b border-slate-200">
-      
-      {/* Skylead Style Soft Radiant Atmosphere */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[450px] bg-gradient-to-b from-rose-100/40 via-purple-100/30 to-transparent rounded-full blur-[140px] pointer-events-none" />
+    <section className="relative pt-32 pb-20 sm:pt-40 sm:pb-28 bg-[#FAFAFC] text-slate-900 border-b border-slate-200 overflow-hidden">
+      {/* Subtle modern SaaS ambient grid + glow (Linear / Stripe inspired) */}
+      <div className="absolute inset-0 bg-light-grid opacity-60 pointer-events-none" />
+      <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[720px] h-[360px] bg-gradient-to-tr from-rose-100/60 via-purple-100/50 to-blue-100/40 rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-12">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-8">
         
-        {/* ACQSA AI Eyebrow Pill Badge */}
-        <div className="flex justify-center">
-          <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white border border-purple-200 text-xs font-poppins font-extrabold text-[#0080FF] shadow-sm hover:border-purple-300 transition-colors">
-            <Flame className="w-4 h-4 text-[#FF1B6B]" />
-            <span>ACQSA AI B2B MULTICHANNEL LEAD GENERATION AGENCY</span>
-          </div>
+        {/* Eyebrow badge */}
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200/90 text-[11px] sm:text-xs font-mono font-semibold text-slate-700 shadow-sm hover:border-slate-300 transition-colors">
+          <span className="w-2 h-2 rounded-full bg-[#FF1B6B]" />
+          <span>SOLO FOUNDER BRANDING & EXECUTIVE GHOSTWRITING</span>
+          <span className="text-slate-300">|</span>
+          <span className="text-slate-500 hidden sm:inline">FOR US & UK B2B SAAS (SERIES A–B)</span>
         </div>
 
-        {/* ACQSA AI Headline & Supporting Copy */}
-        <div className="text-center max-w-4xl mx-auto space-y-6">
+        {/* Main Headline */}
+        <div className="space-y-4">
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-poppins font-extrabold tracking-tight text-slate-900 leading-[1.08]">
-            We build multichannel <br />
-            <span className="relative inline-block mt-1">
-              <span className="bg-gradient-to-r from-[#FF1B6B] via-[#9333EA] to-[#0080FF] bg-clip-text text-transparent">
-                acquisition systems.
-              </span>
-              <svg className="absolute -bottom-2 left-0 w-full h-3 text-[#FF1B6B]/30" viewBox="0 0 300 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M2 9C50 3 150 3 298 9" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
-              </svg>
+            LinkedIn that drives pipeline, <br className="hidden sm:inline" />
+            <span className="bg-gradient-to-r from-[#FF1B6B] via-[#9333EA] to-[#0080FF] bg-clip-text text-transparent">
+              not just likes.
             </span>
           </h1>
 
-          <p className="text-base sm:text-xl text-slate-700 max-w-3xl mx-auto font-medium leading-relaxed">
-            Deliver consistent, high-quality leads from Cold Email, LinkedIn, Social Media, and Direct Outbound. Keep your calendar full of qualified B2B sales calls.
+          <p className="text-base sm:text-xl text-slate-600 max-w-3xl mx-auto font-medium leading-relaxed">
+            Turn founder category authority into qualified inbound sales conversations. 
+            We combine deep voice extraction, AI-accelerated market research, and rigorous human ghostwriting — delivered with India-based cost leverage.
           </p>
-
-          {/* Action Buttons */}
-          <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
-            
-            <button
-              onClick={onOpenAudit}
-              className="w-full sm:w-auto inline-flex items-center justify-between gap-4 pl-7 pr-3 py-3.5 rounded-full bg-[#0080FF] hover:bg-[#0070E0] text-white font-poppins font-extrabold text-sm tracking-wide shadow-xl shadow-blue-500/20 hover:shadow-blue-500/30 hover:scale-[1.02] transition-all group"
-            >
-              <span>Get Your Free Acquisition Audit</span>
-              <div className="w-9 h-9 rounded-full bg-white text-[#0080FF] flex items-center justify-center group-hover:translate-x-0.5 transition-transform shadow-md">
-                <ArrowRight className="w-4 h-4" />
-              </div>
-            </button>
-
-            <a
-              href="#system"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-white border-2 border-slate-200 text-slate-800 font-poppins font-bold text-sm tracking-wide hover:border-slate-300 hover:bg-slate-50 transition-all shadow-sm"
-            >
-              <span>See How It Works</span>
-              <ChevronDown className="w-4 h-4 text-[#0080FF]" />
-            </a>
-
-          </div>
-
-          {/* Trust Badges */}
-          <div className="pt-6 flex flex-wrap items-center justify-center gap-6 text-xs text-slate-600 font-medium">
-            <span className="flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-[#10B981]" /> High-Deliverability Cold Email Infrastructure
-            </span>
-            <span className="flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-[#10B981]" /> Verified ICP Decision-Maker Data
-            </span>
-            <span className="flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-[#10B981]" /> Qualified Sales Call Guarantee
-            </span>
-          </div>
-
         </div>
 
-        {/* Multichannel Campaign Visualizer */}
-        <div className="pt-4">
-          <HeroPipelineAnimation />
+        {/* CTAs */}
+        <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3.5">
+          <button
+            onClick={onOpenBooking}
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full bg-slate-950 hover:bg-slate-800 text-white font-poppins font-bold text-sm tracking-wide shadow-lg shadow-slate-950/15 hover:scale-[1.02] active:scale-[0.98] transition-all group"
+          >
+            <span>Book a free 20-min strategy call</span>
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform text-[#FF1B6B]" />
+          </button>
+
+          <a
+            href="#how-it-works"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-white border border-slate-300 text-slate-700 font-poppins font-semibold text-sm hover:border-slate-400 hover:bg-slate-50 transition-all shadow-sm"
+          >
+            <span>See how it works</span>
+            <span className="text-slate-400 font-mono">↓</span>
+          </a>
+        </div>
+
+        {/* Key value propositions strip */}
+        <div className="pt-8 border-t border-slate-200/80 flex flex-wrap items-center justify-center gap-y-3 gap-x-8 text-xs font-mono text-slate-600">
+          <div className="flex items-center gap-2">
+            <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+            <span>Paid pilot from $1,500</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+            <span>Direct 1:1 founder collaboration</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+            <span>Zero generic AI spam or broetry</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+            <span>Month-to-month after pilot</span>
+          </div>
+        </div>
+
+        {/* Trust pill: No fake claims statement */}
+        <div className="pt-2 text-[11px] font-mono text-slate-500 max-w-xl mx-auto">
+          <span className="font-semibold text-slate-700">Commercial positioning note:</span> We build qualified inbound conversations and category authority. No manufactured meeting guarantees or inflated engagement pods.
         </div>
 
       </div>

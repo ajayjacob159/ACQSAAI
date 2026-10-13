@@ -2,37 +2,52 @@ import React, { useEffect } from 'react';
 
 export const SEOHead: React.FC = () => {
   useEffect(() => {
-    // Set document title & meta description matching ACQSA AI B2B Multichannel OS
-    document.title = "ACQSA AI – B2B Multichannel Lead Generation Agency & Demand OS";
+    document.title = "Rocky Jacob | Solo LinkedIn Founder Branding & Executive Ghostwriting | ACQSA AI";
 
     const schemaData = {
       "@context": "https://schema.org",
       "@graph": [
         {
-          "@type": "Organization",
-          "@id": "https://www.acqsaai.com/#organization",
-          "name": "ACQSA AI",
-          "url": "https://www.acqsaai.com",
-          "logo": "https://www.acqsaai.com/logo.png",
-          "description": "We build multichannel acquisition systems that deliver consistent, high-quality leads from cold email, LinkedIn, social media, and outbound. Grow your brand while keeping your calendar full of qualified B2B sales calls.",
-          "knowsAbout": [
-            "B2B Lead Generation",
-            "Multichannel Outbound Systems",
-            "Cold Email Infrastructure",
-            "LinkedIn Demand Generation",
-            "Target Account Research"
-          ]
+          "@type": "Person",
+          "name": "Rocky Jacob",
+          "jobTitle": "Solo Executive Ghostwriter & Founder Branding Strategist",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "ACQSA AI",
+            "url": "https://www.acqsaai.com",
+            "logo": "https://www.acqsaai.com/logo.png"
+          },
+          "description": "LinkedIn that drives pipeline, not just likes. Executive ghostwriting and category positioning for US and UK growth-stage B2B SaaS founders (Series A–B)."
         },
         {
           "@type": "Service",
-          "@id": "https://www.acqsaai.com/#service",
-          "name": "B2B Multichannel Acquisition & Lead Generation OS",
+          "name": "Solo Founder LinkedIn Branding & Executive Ghostwriting",
           "provider": {
-            "@id": "https://www.acqsaai.com/#organization"
+            "@type": "Organization",
+            "name": "ACQSA AI"
           },
-          "serviceType": "Multichannel Outbound Sales Pipeline System",
-          "areaServed": "Global",
-          "description": "Structured 4-step acquisition system combining cold email, LinkedIn outbound, decision-maker research, intent qualification, and direct calendar sales call booking."
+          "serviceType": "Executive Ghostwriting & LinkedIn Demand Generation",
+          "areaServed": ["United States", "United Kingdom", "Global"],
+          "offers": [
+            {
+              "@type": "Offer",
+              "name": "Paid Pilot (4-6 weeks)",
+              "price": "1500",
+              "priceCurrency": "USD"
+            },
+            {
+              "@type": "Offer",
+              "name": "Core Retainer",
+              "price": "2800",
+              "priceCurrency": "USD"
+            },
+            {
+              "@type": "Offer",
+              "name": "Premium Retainer",
+              "price": "3800",
+              "priceCurrency": "USD"
+            }
+          ]
         }
       ]
     };

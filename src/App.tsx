@@ -3,20 +3,14 @@ import Lenis from 'lenis';
 import { SEOHead } from './components/SEOHead';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { TrustMarquee } from './components/TrustMarquee';
-import { WhyUsSection } from './components/WhyUsSection';
-import { HowWeHelpSection } from './components/HowWeHelpSection';
-import { InboundOutboundSystem } from './components/InboundOutboundSystem';
-import { ColdEmailInfrastructure } from './components/ColdEmailInfrastructure';
-import { NineLinkedInScenarios } from './components/NineLinkedInScenarios';
-import { CaseStudiesSection } from './components/CaseStudiesSection';
-import { TestimonialsGrid } from './components/TestimonialsGrid';
-import { ROICalculator } from './components/ROICalculator';
-import { PipelineAudit } from './components/PipelineAudit';
-import { ServicePackages } from './components/ServicePackages';
-import { FAQSection } from './components/FAQSection';
+import { ProblemSection } from './components/ProblemSection';
+import { HowItWorksSection } from './components/HowItWorksSection';
+import { WhoItsForSection } from './components/WhoItsForSection';
+import { PricingSection } from './components/PricingSection';
+import { ProofSection } from './components/ProofSection';
+import { AboutFounderSection } from './components/AboutFounderSection';
 import { FinalCTA } from './components/FinalCTA';
-import { LeadQualificationModal } from './components/LeadQualificationModal';
+import { StrategyCallModal } from './components/StrategyCallModal';
 import { Footer } from './components/Footer';
 
 export function App() {
@@ -43,16 +37,7 @@ export function App() {
     };
   }, []);
 
-  const handleOpenAuditScroll = () => {
-    const auditElem = document.getElementById('audit');
-    if (auditElem) {
-      auditElem.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      setIsModalOpen(true);
-    }
-  };
-
-  const handleOpenStrategyCall = (packageTitle?: string) => {
+  const handleOpenBooking = (packageTitle?: string) => {
     setSelectedPackage(packageTitle);
     setIsModalOpen(true);
   };
@@ -64,67 +49,40 @@ export function App() {
       <SEOHead />
 
       {/* Global Navbar */}
-      <Navbar 
-        onOpenAudit={handleOpenAuditScroll} 
-        onOpenStrategyCall={() => handleOpenStrategyCall('General Strategy Call')} 
-      />
+      <Navbar onOpenBooking={() => handleOpenBooking('Exploratory 20-min Strategy Call')} />
 
-      {/* Main Page Sections */}
+      {/* Main Single-Page Sections */}
       <main className="flex-1">
-        {/* Hero Section */}
-        <Hero 
-          onOpenAudit={handleOpenAuditScroll} 
-          onOpenStrategyCall={() => handleOpenStrategyCall('General Strategy Call')} 
-        />
+        {/* 1. Hero section */}
+        <Hero onOpenBooking={() => handleOpenBooking('Paid Pilot ($1,500)')} />
 
-        {/* Live Commercial Metrics & Trust Strip */}
-        <TrustMarquee />
+        {/* 2. Problem section */}
+        <ProblemSection />
 
-        {/* Why ACQSA AI? (360-Degree Lead Gen Systems) */}
-        <WhyUsSection onBookCall={() => handleOpenStrategyCall('General Strategy Call')} />
+        {/* 3. Solution / How it works (5 clear steps) */}
+        <HowItWorksSection onOpenBooking={() => handleOpenBooking('Paid Pilot ($1,500)')} />
 
-        {/* How We Help You ? (5-Step Framework) */}
-        <HowWeHelpSection />
+        {/* 4. Who it's for & clear exclusion */}
+        <WhoItsForSection onOpenBooking={() => handleOpenBooking('Fit Evaluation Call')} />
 
-        {/* 5-Step Inbound-Led Outbound System */}
-        <InboundOutboundSystem />
+        {/* 5. Transparent Pricing section (Pilot $1,500 / Core $2,800 / Premium $3,800) */}
+        <PricingSection onSelectPackage={(pkg) => handleOpenBooking(pkg)} />
 
-        {/* Cold Email Deliverability & Technical Infrastructure */}
-        <ColdEmailInfrastructure />
+        {/* 6. Proof / Results section (commercial signals, case teardowns, testimonials) */}
+        <ProofSection onOpenBooking={() => handleOpenBooking('Strategy Session')} />
 
-        {/* 9 Conversion Triggers That Turn Engagement Into Sales Calls */}
-        <NineLinkedInScenarios />
+        {/* 7. About the founder (Rocky Jacob, India cost leverage, photo placeholder) */}
+        <AboutFounderSection onOpenBooking={() => handleOpenBooking('20-min Founder Call with Rocky')} />
 
-        {/* 6 Real Client Case Studies */}
-        <CaseStudiesSection />
-
-        {/* What Our Clients Say (Verified Testimonials from Ogilvy, Philips, Salee, etc.) */}
-        <TestimonialsGrid />
-
-        {/* Interactive B2B Multichannel Pipeline & ROI Calculator */}
-        <ROICalculator onBookCall={() => handleOpenStrategyCall('ROI Calculator')} />
-
-        {/* Interactive 7-Question Pipeline Audit */}
-        <PipelineAudit onAuditSubmitted={(data) => console.log('Audit submitted:', data)} />
-
-        {/* Transparent Service Packages */}
-        <ServicePackages onDiscussBusiness={(pkg) => handleOpenStrategyCall(pkg)} />
-
-        {/* Frequently Asked Questions */}
-        <FAQSection />
-
-        {/* Final High-Converting CTA */}
-        <FinalCTA 
-          onOpenAudit={handleOpenAuditScroll} 
-          onOpenStrategyCall={() => handleOpenStrategyCall('Final CTA Strategy Call')} 
-        />
+        {/* 8. Final CTA section */}
+        <FinalCTA onOpenBooking={() => handleOpenBooking('Final CTA Strategy Call')} />
       </main>
 
-      {/* Global Footer (Featuring ACQSA AI & Trending Now) */}
+      {/* 9. Clean Modern Footer */}
       <Footer />
 
-      {/* Lead Qualification & Strategy Call Modal */}
-      <LeadQualificationModal 
+      {/* Interactive Booking & Strategy Call Modal */}
+      <StrategyCallModal 
         isOpen={isModalOpen} 
         onClose={() => setIsModalOpen(false)} 
         initialPackage={selectedPackage} 
