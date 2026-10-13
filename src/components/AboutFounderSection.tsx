@@ -53,17 +53,32 @@ export const AboutFounderSection: React.FC<{ onOpenBooking: () => void }> = ({ o
                   <MapPin className="w-3.5 h-3.5 text-slate-400" />
                   <span>India-based • Global US/UK SaaS Focus</span>
                 </div>
+                <a
+                  href="tel:+919966997159"
+                  className="text-xs font-mono font-bold text-slate-800 hover:text-slate-950 transition-colors block pt-0.5"
+                >
+                  Contact: +91 9966997159
+                </a>
               </div>
 
-              <a
-                href="[LINKEDIN URL PLACEHOLDER]"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-sky-50 text-[#0077FF] border border-sky-200 text-xs font-mono font-bold hover:bg-[#0077FF] hover:text-white transition-colors"
-              >
-                <Linkedin className="w-3.5 h-3.5" />
-                <span>Connect on LinkedIn</span>
-              </a>
+              <div className="flex flex-col gap-2 w-full pt-1">
+                <a
+                  href="https://www.linkedin.com/in/rockyjacob159/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-sky-50 text-[#0077FF] border border-sky-200 text-xs font-mono font-bold hover:bg-[#0077FF] hover:text-white transition-colors"
+                >
+                  <Linkedin className="w-3.5 h-3.5" />
+                  <span>linkedin.com/in/rockyjacob159</span>
+                </a>
+                
+                <a
+                  href="mailto:ceo@acqsaai.com"
+                  className="text-[11px] font-mono text-slate-500 hover:text-slate-900 transition-colors"
+                >
+                  ceo@acqsaai.com • ajayjacobe2@gmail.com
+                </a>
+              </div>
             </div>
 
             {/* Right Bio Narrative */}

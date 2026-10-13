@@ -1,5 +1,5 @@
 import React from 'react';
-import { Linkedin, Mail, ArrowRight, ShieldCheck, MapPin } from 'lucide-react';
+import { Linkedin, Mail, ArrowRight, ShieldCheck, MapPin, Calendar } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
@@ -22,33 +22,48 @@ export const Footer: React.FC = () => {
             </p>
           </div>
 
-          {/* Quick links & placeholders */}
-          <div className="flex flex-wrap items-center gap-6 text-xs font-mono">
+          {/* Quick links & contact details */}
+          <div className="flex flex-wrap items-center gap-y-3 gap-x-6 text-xs font-mono">
             <a 
-              href="mailto:[CONTACT EMAIL PLACEHOLDER]" 
+              href="mailto:ceo@acqsaai.com" 
               className="flex items-center gap-1.5 text-slate-700 hover:text-slate-950 font-bold transition-colors"
             >
               <Mail className="w-3.5 h-3.5 text-[#FF1B6B]" />
-              <span>[CONTACT EMAIL PLACEHOLDER]</span>
+              <span>ceo@acqsaai.com</span>
             </a>
 
             <a 
-              href="[LINKEDIN URL PLACEHOLDER]" 
+              href="mailto:ajayjacobe2@gmail.com" 
+              className="text-slate-500 hover:text-slate-900 transition-colors"
+            >
+              ajayjacobe2@gmail.com
+            </a>
+
+            <a 
+              href="tel:+919966997159" 
+              className="text-slate-800 hover:text-slate-950 font-bold transition-colors"
+            >
+              +91 9966997159
+            </a>
+
+            <a 
+              href="https://www.linkedin.com/in/rockyjacob159/" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="flex items-center gap-1.5 text-slate-700 hover:text-[#0077FF] font-bold transition-colors"
             >
               <Linkedin className="w-3.5 h-3.5 text-[#0077FF]" />
-              <span>[LINKEDIN PROFILE PLACEHOLDER]</span>
+              <span>LinkedIn</span>
             </a>
 
             <a 
-              href="[CALENDLY LINK PLACEHOLDER]" 
+              href="https://calendly.com/rockyjacob-ai/30min" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="flex items-center gap-1.5 text-slate-700 hover:text-slate-950 font-bold transition-colors"
+              className="flex items-center gap-1.5 text-slate-900 bg-slate-100 hover:bg-slate-200 px-3 py-1.5 rounded-full font-bold transition-colors"
             >
-              <span>[CALENDLY LINK PLACEHOLDER]</span>
+              <Calendar className="w-3.5 h-3.5 text-[#0080FF]" />
+              <span>Book Call (Calendly)</span>
             </a>
           </div>
 

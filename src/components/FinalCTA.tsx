@@ -57,13 +57,13 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenBooking }) => {
             </button>
 
             <a
-              href="[CALENDLY LINK PLACEHOLDER]"
+              href="https://calendly.com/rockyjacob-ai/30min"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white border-2 border-slate-200 text-slate-800 font-poppins font-bold text-sm tracking-wide hover:border-slate-300 hover:bg-slate-50 transition-all shadow-sm"
             >
               <Calendar className="w-4 h-4 text-[#0080FF]" />
-              <span>Direct Calendly Link</span>
+              <span>Direct Calendly (30 min)</span>
             </a>
           </div>
 

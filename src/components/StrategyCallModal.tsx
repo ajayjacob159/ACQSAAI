@@ -142,9 +142,14 @@ export const StrategyCallModal: React.FC<StrategyCallModalProps> = ({ isOpen, on
             </button>
 
             <div className="pt-2 text-center">
-              <span className="text-[11px] font-mono text-slate-400">
-                Or book directly via [CALENDLY LINK PLACEHOLDER]
-              </span>
+              <a
+                href="https://calendly.com/rockyjacob-ai/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[11px] font-mono text-[#0080FF] hover:underline font-bold"
+              >
+                Or book directly via Calendly (30 min) →
+              </a>
             </div>
           </form>
         ) : (
