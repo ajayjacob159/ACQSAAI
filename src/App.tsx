@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Lenis from 'lenis';
+import { CountryProvider } from './context/CountryContext';
 import { SEOHead } from './components/SEOHead';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
@@ -13,7 +14,7 @@ import { FinalCTA } from './components/FinalCTA';
 import { StrategyCallModal } from './components/StrategyCallModal';
 import { Footer } from './components/Footer';
 
-export function App() {
+function MainContent() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedPackage, setSelectedPackage] = useState<string | undefined>();
 
@@ -54,24 +55,24 @@ export function App() {
       {/* Main Single-Page Sections */}
       <main className="flex-1">
         {/* 1. Hero section */}
-        <Hero onOpenBooking={() => handleOpenBooking('Paid Pilot ($1,500)')} />
+        <Hero onOpenBooking={() => handleOpenBooking('Paid Pilot')} />
 
         {/* 2. Problem section */}
         <ProblemSection />
 
         {/* 3. Solution / How it works (5 clear steps) */}
-        <HowItWorksSection onOpenBooking={() => handleOpenBooking('Paid Pilot ($1,500)')} />
+        <HowItWorksSection onOpenBooking={() => handleOpenBooking('Paid Pilot')} />
 
         {/* 4. Who it's for & clear exclusion */}
         <WhoItsForSection onOpenBooking={() => handleOpenBooking('Fit Evaluation Call')} />
 
-        {/* 5. Transparent Pricing section (Pilot $1,500 / Core $2,800 / Premium $3,800) */}
+        {/* 5. Transparent Pricing section (Dynamic localized prices by Country) */}
         <PricingSection onSelectPackage={(pkg) => handleOpenBooking(pkg)} />
 
         {/* 6. Proof / Results section (commercial signals, case teardowns, testimonials) */}
         <ProofSection onOpenBooking={() => handleOpenBooking('Strategy Session')} />
 
-        {/* 7. About the founder (Rocky Jacob, India cost leverage, photo placeholder) */}
+        {/* 7. About the founder (Rocky Jacob, India cost leverage, photo) */}
         <AboutFounderSection onOpenBooking={() => handleOpenBooking('20-min Founder Call with Rocky')} />
 
         {/* 8. Final CTA section */}
@@ -89,6 +90,14 @@ export function App() {
       />
 
     </div>
+  );
+}
+
+export function App() {
+  return (
+    <CountryProvider>
+      <MainContent />
+    </CountryProvider>
   );
 }
 

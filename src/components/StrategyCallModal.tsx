@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { X, Calendar, CheckCircle2, ArrowRight, ShieldCheck } from 'lucide-react';
+import { useCountry } from '../context/CountryContext';
 
 interface StrategyCallModalProps {
   isOpen: boolean;
@@ -8,6 +9,7 @@ interface StrategyCallModalProps {
 }
 
 export const StrategyCallModal: React.FC<StrategyCallModalProps> = ({ isOpen, onClose, initialPackage }) => {
+  const { selectedCountry } = useCountry();
   const [formData, setFormData] = useState({
     name: '',
     workEmail: '',
@@ -15,7 +17,7 @@ export const StrategyCallModal: React.FC<StrategyCallModalProps> = ({ isOpen, on
     linkedinUrl: '',
     stage: 'Series A ($1M–$5M ARR)',
     biggestChallenge: 'No time to write consistently',
-    packageInterest: initialPackage || 'Paid Pilot ($1,500)'
+    packageInterest: initialPackage || `Paid Pilot (${selectedCountry.pilotPrice})`
   });
 
   const [submitted, setSubmitted] = useState(false);
@@ -125,10 +127,10 @@ export const StrategyCallModal: React.FC<StrategyCallModalProps> = ({ isOpen, on
                     onChange={(e) => setFormData({ ...formData, packageInterest: e.target.value })}
                     className="w-full bg-[#FAFAFC] border border-slate-300 rounded-xl px-3 py-2 text-xs text-slate-900 focus:outline-none focus:border-slate-900"
                   >
-                    <option>Paid Pilot ($1,500)</option>
-                    <option>Core Retainer ($2,800/mo)</option>
-                    <option>Premium ($3,800/mo)</option>
-                    <option>Exploratory 20-min Call</option>
+                    <option value={`Paid Pilot (${selectedCountry.pilotPrice})`}>Paid Pilot ({selectedCountry.pilotPrice})</option>
+                    <option value={`Core Retainer (${selectedCountry.corePrice}/mo)`}>Core Retainer ({selectedCountry.corePrice}/mo)</option>
+                    <option value={`Premium (${selectedCountry.premiumPrice}/mo)`}>Premium ({selectedCountry.premiumPrice}/mo)</option>
+                    <option value="Exploratory 20-min Call">Exploratory 20-min Call</option>
                   </select>
                 </div>
               </div>

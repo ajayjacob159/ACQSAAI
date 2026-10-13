@@ -1,16 +1,20 @@
 import React from 'react';
-import { CheckCircle2, ArrowRight, Sparkles, ShieldCheck } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { CheckCircle2, ArrowRight, Sparkles, ShieldCheck, Globe } from 'lucide-react';
+import { useCountry } from '../context/CountryContext';
 
 interface PricingSectionProps {
   onSelectPackage: (pkgTitle: string) => void;
 }
 
 export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPackage }) => {
+  const { selectedCountry } = useCountry();
+
   const packages = [
     {
       title: "Paid Pilot",
       tag: "LOW-RISK ENTRY POINT",
-      price: "$1,500",
+      price: selectedCountry.pilotPrice,
       period: "one-time (4–6 weeks)",
       description: "Test voice alignment, content quality, and commercial workflow before committing to an ongoing monthly retainer.",
       features: [
@@ -27,7 +31,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPackage 
     {
       title: "Core Retainer",
       tag: "MOST POPULAR",
-      price: "$2,800",
+      price: selectedCountry.corePrice,
       period: "/ month",
       description: "Full-service founder personal branding and executive ghostwriting for consistent category authority and inbound pipeline.",
       features: [
@@ -45,7 +49,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPackage 
     {
       title: "Premium Retainer",
       tag: "HIGH-TOUCH / MULTI-EXECUTIVE",
-      price: "$3,800",
+      price: selectedCountry.premiumPrice,
       period: "/ month",
       description: "Maximum authority for founders seeking aggressive market presence, newsletter integration, or co-founder coverage.",
       features: [
@@ -68,10 +72,20 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPackage 
         
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-slate-200 text-xs font-mono font-bold text-slate-800 shadow-sm">
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-xs font-mono font-bold text-slate-800 shadow-sm"
+          >
             <Sparkles className="w-3.5 h-3.5 text-[#FF1B6B]" />
-            <span>TRANSPARENT PRICING IN USD</span>
-          </div>
+            <span>TRANSPARENT PRICING IN {selectedCountry.currency}</span>
+            <span className="text-slate-300">|</span>
+            <span className="text-slate-600 flex items-center gap-1">
+              <span>{selectedCountry.flag}</span>
+              <span>{selectedCountry.name}</span>
+            </span>
+          </motion.div>
 
           <h2 className="text-3xl sm:text-5xl font-poppins font-extrabold tracking-tight text-slate-900 leading-tight">
             Predictable investment. <br className="hidden sm:inline" />
@@ -85,15 +99,20 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPackage 
           </p>
         </div>
 
-        {/* Pricing Cards Grid */}
+        {/* Pricing Cards Grid with Motion Effects */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
           {packages.map((pkg, idx) => (
-            <div
-              key={idx}
-              className={`rounded-3xl p-8 sm:p-9 space-y-8 flex flex-col justify-between border-2 transition-all duration-200 relative ${
+            <motion.div
+              key={pkg.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: idx * 0.1 }}
+              whileHover={{ y: -4 }}
+              className={`rounded-3xl p-8 sm:p-9 space-y-8 flex flex-col justify-between border-2 transition-shadow duration-200 relative ${
                 pkg.popular
                   ? 'bg-white border-slate-950 shadow-2xl scale-[1.02] ring-4 ring-slate-950/5'
-                  : 'bg-white border-slate-200 hover:border-slate-300 shadow-sm'
+                  : 'bg-white border-slate-200 hover:border-slate-300 shadow-sm hover:shadow-md'
               }`}
             >
               {/* Popular Badge */}
@@ -116,11 +135,20 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPackage 
                   </p>
                 </div>
 
-                {/* Price Display */}
-                <div className="pt-2 border-t border-slate-100 flex items-baseline gap-1.5">
-                  <span className="text-4xl font-poppins font-extrabold text-slate-900 tracking-tight">
-                    {pkg.price}
-                  </span>
+                {/* Animated Price Display responding to country select */}
+                <div className="pt-2 border-t border-slate-100 flex items-baseline gap-1.5 min-h-[52px]">
+                  <AnimatePresence mode="wait">
+                    <motion.span
+                      key={`${pkg.title}-${selectedCountry.code}`}
+                      initial={{ opacity: 0, y: -8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 8 }}
+                      transition={{ duration: 0.2 }}
+                      className="text-4xl font-poppins font-extrabold text-slate-900 tracking-tight"
+                    >
+                      {pkg.price}
+                    </motion.span>
+                  </AnimatePresence>
                   <span className="text-xs font-mono text-slate-500 font-medium">
                     {pkg.period}
                   </span>
@@ -142,9 +170,11 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPackage 
 
               {/* Action Button */}
               <div className="pt-6 border-t border-slate-100">
-                <button
-                  onClick={() => onSelectPackage(pkg.title)}
-                  className={`w-full py-3.5 rounded-full font-poppins font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-sm ${
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={() => onSelectPackage(`${pkg.title} (${pkg.price})`)}
+                  className={`w-full py-3.5 rounded-full font-poppins font-bold text-xs uppercase tracking-wider transition-colors flex items-center justify-center gap-2 shadow-sm ${
                     pkg.popular
                       ? 'bg-slate-950 hover:bg-slate-800 text-white shadow-md'
                       : 'bg-slate-100 hover:bg-slate-200 text-slate-900'
@@ -152,25 +182,33 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPackage 
                 >
                   <span>{pkg.ctaText}</span>
                   <ArrowRight className="w-3.5 h-3.5 text-[#FF1B6B]" />
-                </button>
+                </motion.button>
                 <div className="text-center pt-2 text-[10px] font-mono text-slate-400">
-                  No hidden fees • Transparent monthly terms
+                  {selectedCountry.note} • Month-to-month
                 </div>
               </div>
 
-            </div>
+            </motion.div>
           ))}
         </div>
 
-        {/* Pricing Guarantee & Commercial disclaimer */}
-        <div className="p-6 rounded-2xl bg-white border border-slate-200 text-center max-w-3xl mx-auto space-y-2 text-xs text-slate-600 font-mono shadow-xs">
-          <div className="flex items-center justify-center gap-2 font-bold text-slate-900">
-            <ShieldCheck className="w-4 h-4 text-emerald-600" />
-            <span>Commercial Positioning Commitment</span>
+        {/* Commercial Safety Guarantee & Transparent Terms */}
+        <div className="bg-white rounded-3xl border border-slate-200 p-8 sm:p-10 shadow-xs max-w-4xl mx-auto">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+            <div className="w-12 h-12 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center justify-center shrink-0">
+              <ShieldCheck className="w-6 h-6 text-emerald-600" />
+            </div>
+            <div className="space-y-1">
+              <h4 className="font-poppins font-bold text-base text-slate-900">
+                Why our commercial model protects founder ROI
+              </h4>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Most agencies lock founders into rigid 6–12 month agreements with junior writers. 
+                Our model is built on mutual conviction: test our voice replication and positioning in a 4–6 week pilot ({selectedCountry.pilotPrice}). 
+                If it converts, transition to month-to-month retainers with no lock-in.
+              </p>
+            </div>
           </div>
-          <p className="text-[11px] text-slate-500 leading-relaxed">
-            We don't guarantee vanity meeting quotas or fake follower spikes. We provide high-fidelity category authority, authentic founder resonance, and qualified inbound buyer conversations.
-          </p>
         </div>
 
       </div>

@@ -1,11 +1,14 @@
 import React from 'react';
 import { ArrowRight, CheckCircle2, Calendar, Sparkles, TrendingUp, Users, ShieldAlert, ArrowUpRight } from 'lucide-react';
 
+import { useCountry } from '../context/CountryContext';
+
 interface HeroProps {
   onOpenBooking: () => void;
 }
 
 export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
+  const { selectedCountry } = useCountry();
   return (
     <section className="relative pt-32 pb-20 sm:pt-40 sm:pb-28 bg-[#FAFAFC] text-slate-900 border-b border-slate-200 overflow-hidden">
       {/* Subtle modern SaaS ambient grid + glow (Linear / Stripe inspired) */}
@@ -60,7 +63,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
         <div className="pt-8 border-t border-slate-200/80 flex flex-wrap items-center justify-center gap-y-3 gap-x-8 text-xs font-mono text-slate-600">
           <div className="flex items-center gap-2">
             <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-            <span>Paid pilot from $1,500</span>
+            <span>Paid pilot from {selectedCountry.pilotPrice}</span>
           </div>
           <div className="flex items-center gap-2">
             <CheckCircle2 className="w-4 h-4 text-emerald-600" />
