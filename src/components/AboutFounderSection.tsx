@@ -25,29 +25,22 @@ export const AboutFounderSection: React.FC<{ onOpenBooking: () => void }> = ({ o
         <div className="bg-white rounded-3xl border-2 border-slate-200/90 p-8 sm:p-12 shadow-sm">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-center">
             
-            {/* Left Photo / Visual Placeholder */}
+            {/* Left Photo & Profile Details */}
             <div className="md:col-span-5 flex flex-col items-center text-center space-y-4">
-              <div className="relative group w-48 h-48 sm:w-56 sm:h-56 rounded-3xl bg-gradient-to-tr from-slate-100 via-slate-200 to-slate-100 border-2 border-slate-200 flex items-center justify-center overflow-hidden shadow-inner">
-                {/* Dedicated Photo Placeholder */}
-                <div className="p-6 text-center space-y-2">
-                  <div className="w-16 h-16 rounded-2xl bg-slate-900 text-white font-poppins font-bold text-xl flex items-center justify-center mx-auto shadow-md">
-                    RJ
-                  </div>
-                  <span className="text-[11px] font-mono font-bold text-slate-500 uppercase tracking-wider block">
-                    [YOUR PHOTO]
-                  </span>
-                  <span className="text-[10px] text-slate-400 font-mono block">
-                    Rocky Jacob / Founder
-                  </span>
-                </div>
+              <div className="relative group w-52 h-64 sm:w-60 sm:h-72 rounded-3xl border-2 border-slate-200 overflow-hidden shadow-lg bg-slate-100">
+                <img
+                  src="/rocky-jacob.jpg"
+                  alt="Rocky Jacob - Founder & CEO @ ACQSA AI"
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                />
               </div>
 
               <div className="space-y-1">
-                <h3 className="font-poppins font-bold text-lg text-slate-900">
+                <h3 className="font-poppins font-extrabold text-xl text-slate-900 tracking-tight">
                   Rocky Jacob
                 </h3>
-                <p className="text-xs text-slate-500 font-mono">
-                  Founder & Executive Ghostwriter @ ACQSA AI
+                <p className="text-xs font-mono font-bold text-[#FF1B6B]">
+                  Founder & CEO @ ACQSA AI
                 </p>
                 <div className="flex items-center justify-center gap-1.5 text-xs text-slate-500 font-mono pt-1">
                   <MapPin className="w-3.5 h-3.5 text-slate-400" />
