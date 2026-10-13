@@ -4,6 +4,7 @@ import { CountryProvider } from './context/CountryContext';
 import { SEOHead } from './components/SEOHead';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
+import { ServicesSection } from './components/ServicesSection';
 import { ProblemSection } from './components/ProblemSection';
 import { HowItWorksSection } from './components/HowItWorksSection';
 import { WhoItsForSection } from './components/WhoItsForSection';
@@ -49,37 +50,40 @@ function MainContent() {
       {/* Dynamic SEO & AEO JSON-LD Schema Metadata */}
       <SEOHead />
 
-      {/* Global Navbar */}
-      <Navbar onOpenBooking={() => handleOpenBooking('Exploratory 20-min Strategy Call')} />
+      {/* Global Navbar with Services dropdown */}
+      <Navbar onOpenBooking={(pkg) => handleOpenBooking(pkg || 'Exploratory 20-min Strategy Call')} />
 
       {/* Main Single-Page Sections */}
       <main className="flex-1">
         {/* 1. Hero section */}
-        <Hero onOpenBooking={() => handleOpenBooking('Paid Pilot')} />
+        <Hero onOpenBooking={() => handleOpenBooking('Offer 1: Founder LinkedIn Authority')} />
 
-        {/* 2. Problem section */}
+        {/* 2. Specialized Services & Offers Section (The 3 Core Offers) */}
+        <ServicesSection onSelectService={(srv) => handleOpenBooking(srv)} />
+
+        {/* 3. Problem section */}
         <ProblemSection />
 
-        {/* 3. Solution / How it works (5 clear steps) */}
+        {/* 4. Solution / How it works (5 clear steps) */}
         <HowItWorksSection onOpenBooking={() => handleOpenBooking('Paid Pilot')} />
 
-        {/* 4. Who it's for & clear exclusion */}
+        {/* 5. Who it's for & clear exclusion */}
         <WhoItsForSection onOpenBooking={() => handleOpenBooking('Fit Evaluation Call')} />
 
-        {/* 5. Transparent Pricing section (Dynamic localized prices by Country) */}
+        {/* 6. Transparent Pricing section (Dynamic localized prices by Country) */}
         <PricingSection onSelectPackage={(pkg) => handleOpenBooking(pkg)} />
 
-        {/* 6. Proof / Results section (commercial signals, case teardowns, testimonials) */}
+        {/* 7. Proof / Results section (commercial signals, case teardowns, testimonials) */}
         <ProofSection onOpenBooking={() => handleOpenBooking('Strategy Session')} />
 
-        {/* 7. About the founder (Rocky Jacob, India cost leverage, photo) */}
+        {/* 8. About the founder (Rocky Jacob, India cost leverage, photo) */}
         <AboutFounderSection onOpenBooking={() => handleOpenBooking('20-min Founder Call with Rocky')} />
 
-        {/* 8. Final CTA section */}
+        {/* 9. Final CTA section */}
         <FinalCTA onOpenBooking={() => handleOpenBooking('Final CTA Strategy Call')} />
       </main>
 
-      {/* 9. Clean Modern Footer */}
+      {/* 10. Clean Modern Footer */}
       <Footer />
 
       {/* Interactive Booking & Strategy Call Modal */}

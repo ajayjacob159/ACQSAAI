@@ -127,10 +127,10 @@ export const StrategyCallModal: React.FC<StrategyCallModalProps> = ({ isOpen, on
                     onChange={(e) => setFormData({ ...formData, packageInterest: e.target.value })}
                     className="w-full bg-[#FAFAFC] border border-slate-300 rounded-xl px-3 py-2 text-xs text-slate-900 focus:outline-none focus:border-slate-900"
                   >
-                    <option value={`Paid Pilot (${selectedCountry.pilotPrice})`}>Paid Pilot ({selectedCountry.pilotPrice})</option>
-                    <option value={`Core Retainer (${selectedCountry.corePrice}/mo)`}>Core Retainer ({selectedCountry.corePrice}/mo)</option>
-                    <option value={`Premium (${selectedCountry.premiumPrice}/mo)`}>Premium ({selectedCountry.premiumPrice}/mo)</option>
-                    <option value="Exploratory 20-min Call">Exploratory 20-min Call</option>
+                    <option value="Offer 1: Founder LinkedIn Authority ($750–$1,500/mo)">Offer 1: Founder LinkedIn Authority ($750–$1,500/mo)</option>
+                    <option value="Offer 2: LinkedIn Lead Generation ($1,000–$2,000/mo)">Offer 2: LinkedIn Lead Generation ($1,000–$2,000/mo)</option>
+                    <option value="Offer 3: Founder Authority + Demand Gen ($2,500–$4,000/mo)">Offer 3: Founder Authority + Demand Gen ($2,500–$4,000/mo)</option>
+                    <option value="Exploratory 20-min Strategy Call">Exploratory 20-min Strategy Call</option>
                   </select>
                 </div>
               </div>
