@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Linkedin, Mail, ArrowRight, ShieldCheck, MapPin, Calendar, Sparkles, CheckCircle2 } from 'lucide-react';
 import logoImg from '../assets/logo.png';
+import { addSubscriber } from '../lib/supabase';
 
 interface FooterProps {
   onOpenNewsletter?: () => void;
@@ -11,11 +12,15 @@ export const Footer: React.FC<FooterProps> = ({ onOpenNewsletter }) => {
   const [subscribed, setSubscribed] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) return;
     setLoading(true);
-    setTimeout(() => {
+    try {
+      await addSubscriber(email, 'footer_subscription');
+    } catch (err) {
+      console.error('[Footer Subscription]:', err);
+    } finally {
       setLoading(false);
       setSubscribed(true);
       try {
@@ -23,7 +28,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenNewsletter }) => {
       } catch {
         // ignore
       }
-    }, 500);
+    }
   };
 
   return (

@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Mail, CheckCircle2, Sparkles, ArrowRight, Bell } from 'lucide-react';
+import { X, Mail, CheckCircle2, Sparkles, ArrowRight } from 'lucide-react';
+import { addSubscriber } from '../lib/supabase';
 
 interface NewsletterPopupProps {
   isOpen: boolean;
@@ -12,11 +13,15 @@ export const NewsletterPopup: React.FC<NewsletterPopupProps> = ({ isOpen, onClos
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) return;
     setLoading(true);
-    setTimeout(() => {
+    try {
+      await addSubscriber(email, 'newsletter_popup');
+    } catch (err) {
+      console.error('[Newsletter Popup]:', err);
+    } finally {
       setLoading(false);
       setSubmitted(true);
       try {
@@ -24,7 +29,7 @@ export const NewsletterPopup: React.FC<NewsletterPopupProps> = ({ isOpen, onClos
       } catch {
         // ignore
       }
-    }, 600);
+    }
   };
 
   return (

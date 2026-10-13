@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { X, Calendar, CheckCircle2, ArrowRight, ShieldCheck } from 'lucide-react';
 import { useCountry } from '../context/CountryContext';
+import { submitLead } from '../lib/supabase';
 
 interface StrategyCallModalProps {
   isOpen: boolean;
@@ -24,9 +25,22 @@ export const StrategyCallModal: React.FC<StrategyCallModalProps> = ({ isOpen, on
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     console.log('[BOOKING INQUIRY FOR ROCKY JACOB]:', formData);
+    try {
+      await submitLead({
+        name: formData.name,
+        email: formData.workEmail,
+        company: formData.company,
+        linkedinUrl: formData.linkedinUrl,
+        stage: formData.stage,
+        packageInterest: formData.packageInterest,
+        source: 'strategy_call_modal'
+      });
+    } catch (err) {
+      console.warn('[Supabase lead capture notice]:', err);
+    }
     setSubmitted(true);
   };
 
