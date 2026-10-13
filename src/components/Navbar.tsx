@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ArrowRight, Home, ChevronDown, Sparkles, Target, TrendingUp, Layers, Check } from 'lucide-react';
 import { SERVICES_DATA } from './ServicesSection';
+import logoImg from '../assets/logo.png';
 
 interface NavbarProps {
   onOpenBooking: (packageTitle?: string) => void;
@@ -63,7 +64,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
             aria-label="ACQSA AI Home"
           >
             <img 
-              src="/logo.png" 
+              src={logoImg} 
               alt="ACQSA AI" 
               className="h-8 sm:h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
             />

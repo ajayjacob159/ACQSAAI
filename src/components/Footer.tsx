@@ -1,5 +1,6 @@
 import React from 'react';
 import { Linkedin, Mail, ArrowRight, ShieldCheck, MapPin, Calendar } from 'lucide-react';
+import logoImg from '../assets/logo.png';
 
 export const Footer: React.FC = () => {
   return (
@@ -12,7 +13,7 @@ export const Footer: React.FC = () => {
           <div className="space-y-2 max-w-sm">
             <a href="#" className="flex items-center gap-2.5">
               <img 
-                src="/logo.png" 
+                src={logoImg} 
                 alt="ACQSA AI" 
                 className="h-8 w-auto object-contain" 
               />
