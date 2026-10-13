@@ -48,13 +48,15 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenBooking }) => {
         {/* CTA Actions Container */}
         <div className="space-y-6 pt-2">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button
-              onClick={onOpenBooking}
+            <a
+              href="https://calendly.com/rockyjacob-ai/30min"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-9 py-4 rounded-full bg-slate-950 hover:bg-slate-800 text-white font-poppins font-bold text-sm uppercase tracking-wider shadow-xl shadow-slate-950/15 hover:scale-105 active:scale-95 transition-all group"
             >
               <span>Book a free 20-min strategy call</span>
               <ArrowRight className="w-4 h-4 text-[#FF1B6B] group-hover:translate-x-1 transition-transform" />
-            </button>
+            </a>
 
             <a
               href="https://calendly.com/rockyjacob-ai/30min"

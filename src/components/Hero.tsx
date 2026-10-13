@@ -1,14 +1,11 @@
 import React from 'react';
-import { ArrowRight, CheckCircle2, Calendar, Sparkles, TrendingUp, Users, ShieldAlert, ArrowUpRight } from 'lucide-react';
-
-import { useCountry } from '../context/CountryContext';
+import { ArrowRight, CheckCircle2 } from 'lucide-react';
 
 interface HeroProps {
   onOpenBooking: () => void;
 }
 
 export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
-  const { selectedCountry } = useCountry();
   return (
     <section className="relative pt-32 pb-20 sm:pt-40 sm:pb-28 bg-[#FAFAFC] text-slate-900 border-b border-slate-200 overflow-hidden">
       {/* Subtle modern SaaS ambient grid + glow (Linear / Stripe inspired) */}
@@ -42,28 +39,30 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
 
         {/* CTAs */}
         <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3.5">
-          <button
-            onClick={onOpenBooking}
+          <a
+            href="https://calendly.com/rockyjacob-ai/30min"
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full bg-slate-950 hover:bg-slate-800 text-white font-poppins font-bold text-sm tracking-wide shadow-lg shadow-slate-950/15 hover:scale-[1.02] active:scale-[0.98] transition-all group"
           >
             <span>Book a free 20-min strategy call</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform text-[#FF1B6B]" />
-          </button>
+          </a>
 
           <a
-            href="#how-it-works"
+            href="#services"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-white border border-slate-300 text-slate-700 font-poppins font-semibold text-sm hover:border-slate-400 hover:bg-slate-50 transition-all shadow-sm"
           >
-            <span>See how it works</span>
+            <span>Explore services & pricing</span>
             <span className="text-slate-400 font-mono">↓</span>
           </a>
         </div>
 
-        {/* Key value propositions strip */}
+        {/* Key value propositions strip in USD Dollars */}
         <div className="pt-8 border-t border-slate-200/80 flex flex-wrap items-center justify-center gap-y-3 gap-x-8 text-xs font-mono text-slate-600">
           <div className="flex items-center gap-2">
             <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-            <span>Paid pilot from {selectedCountry.pilotPrice}</span>
+            <span>Paid pilot from $1,500</span>
           </div>
           <div className="flex items-center gap-2">
             <CheckCircle2 className="w-4 h-4 text-emerald-600" />

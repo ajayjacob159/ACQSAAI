@@ -107,12 +107,14 @@ export const AboutFounderSection: React.FC<{ onOpenBooking: () => void }> = ({ o
               </div>
 
               <div className="pt-3">
-                <button
-                  onClick={onOpenBooking}
+                <a
+                  href="https://calendly.com/rockyjacob-ai/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-xs font-poppins font-bold uppercase tracking-wider text-slate-900 hover:text-[#FF1B6B] transition-colors"
                 >
                   <span>Book a 20-min intro call with Rocky →</span>
-                </button>
+                </a>
               </div>
             </div>
 

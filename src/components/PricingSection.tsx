@@ -1,20 +1,17 @@
 import React from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { CheckCircle2, ArrowRight, Sparkles, ShieldCheck, Globe } from 'lucide-react';
-import { useCountry } from '../context/CountryContext';
+import { motion } from 'framer-motion';
+import { CheckCircle2, ArrowRight, Sparkles, ShieldCheck } from 'lucide-react';
 
 interface PricingSectionProps {
   onSelectPackage: (pkgTitle: string) => void;
 }
 
 export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPackage }) => {
-  const { selectedCountry } = useCountry();
-
   const packages = [
     {
       title: "Paid Pilot",
       tag: "LOW-RISK ENTRY POINT",
-      price: selectedCountry.pilotPrice,
+      price: "$1,500",
       period: "one-time (4–6 weeks)",
       description: "Test voice alignment, content quality, and commercial workflow before committing to an ongoing monthly retainer.",
       features: [
@@ -31,7 +28,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPackage 
     {
       title: "Core Retainer",
       tag: "MOST POPULAR",
-      price: selectedCountry.corePrice,
+      price: "$2,800",
       period: "/ month",
       description: "Full-service founder personal branding and executive ghostwriting for consistent category authority and inbound pipeline.",
       features: [
@@ -49,7 +46,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPackage 
     {
       title: "Premium Retainer",
       tag: "HIGH-TOUCH / MULTI-EXECUTIVE",
-      price: selectedCountry.premiumPrice,
+      price: "$3,800",
       period: "/ month",
       description: "Maximum authority for founders seeking aggressive market presence, newsletter integration, or co-founder coverage.",
       features: [
@@ -79,12 +76,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPackage 
             className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-xs font-mono font-bold text-slate-800 shadow-sm"
           >
             <Sparkles className="w-3.5 h-3.5 text-[#FF1B6B]" />
-            <span>TRANSPARENT PRICING IN {selectedCountry.currency}</span>
-            <span className="text-slate-300">|</span>
-            <span className="text-slate-600 flex items-center gap-1">
-              <span>{selectedCountry.flag}</span>
-              <span>{selectedCountry.name}</span>
-            </span>
+            <span>TRANSPARENT PRICING IN USD ($)</span>
           </motion.div>
 
           <h2 className="text-3xl sm:text-5xl font-poppins font-extrabold tracking-tight text-slate-900 leading-tight">
@@ -95,11 +87,11 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPackage 
           </h2>
 
           <p className="text-base sm:text-lg text-slate-600 font-medium">
-            Start with a fixed-scope 4–6 week pilot. Transition to month-to-month retainers only when you experience voice fidelity and quality firsthand.
+            Start with a fixed-scope 4–6 week pilot ($1,500). Transition to month-to-month retainers ($2,800–$3,800/mo) only when you experience voice fidelity and quality firsthand.
           </p>
         </div>
 
-        {/* Pricing Cards Grid with Motion Effects */}
+        {/* Pricing Cards Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
           {packages.map((pkg, idx) => (
             <motion.div
@@ -135,20 +127,11 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPackage 
                   </p>
                 </div>
 
-                {/* Animated Price Display responding to country select */}
+                {/* Price Display in USD */}
                 <div className="pt-2 border-t border-slate-100 flex items-baseline gap-1.5 min-h-[52px]">
-                  <AnimatePresence mode="wait">
-                    <motion.span
-                      key={`${pkg.title}-${selectedCountry.code}`}
-                      initial={{ opacity: 0, y: -8 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 8 }}
-                      transition={{ duration: 0.2 }}
-                      className="text-4xl font-poppins font-extrabold text-slate-900 tracking-tight"
-                    >
-                      {pkg.price}
-                    </motion.span>
-                  </AnimatePresence>
+                  <span className="text-4xl font-poppins font-extrabold text-slate-900 tracking-tight">
+                    {pkg.price}
+                  </span>
                   <span className="text-xs font-mono text-slate-500 font-medium">
                     {pkg.period}
                   </span>
@@ -184,7 +167,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPackage 
                   <ArrowRight className="w-3.5 h-3.5 text-[#FF1B6B]" />
                 </motion.button>
                 <div className="text-center pt-2 text-[10px] font-mono text-slate-400">
-                  {selectedCountry.note} • Month-to-month
+                  Fixed USD Pricing • Month-to-month
                 </div>
               </div>
 
@@ -203,9 +186,9 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onSelectPackage 
                 Why our commercial model protects founder ROI
               </h4>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Most agencies lock founders into rigid 6–12 month agreements with junior writers. 
-                Our model is built on mutual conviction: test our voice replication and positioning in a 4–6 week pilot ({selectedCountry.pilotPrice}). 
-                If it converts, transition to month-to-month retainers with no lock-in.
+                Most agencies lock founders into rigid $6k–$10k/month agreements with junior writers. 
+                Our model is built on mutual conviction: test our voice replication and positioning in a 4–6 week pilot ($1,500). 
+                If it converts, transition to month-to-month retainers ($2,800–$3,800/mo) with zero lock-in.
               </p>
             </div>
           </div>

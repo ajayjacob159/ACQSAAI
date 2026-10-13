@@ -175,15 +175,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
 
                     <div className="mt-1 p-2.5 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-between text-[10px] font-mono text-slate-500">
                       <span>Not sure which offer fits your stage?</span>
-                      <button
-                        onClick={() => {
-                          setServicesDropdownOpen(false);
-                          onOpenBooking('Exploratory Fit Call');
-                        }}
+                      <a
+                        href="https://calendly.com/rockyjacob-ai/30min"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => setServicesDropdownOpen(false)}
                         className="font-bold text-slate-900 underline hover:text-[#FF1B6B]"
                       >
-                        Free Fit Call →
-                      </button>
+                        Free 20-min Strategy Call →
+                      </a>
                     </div>
                   </motion.div>
                 )}
