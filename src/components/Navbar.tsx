@@ -39,6 +39,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
     { label: 'How It Works', href: '#how-it-works', icon: false },
     { label: 'Who It\'s For', href: '#who-its-for', icon: false },
     { label: 'Pricing', href: '#pricing', icon: false },
+    { label: 'Blog', href: '#blog', icon: false },
   ];
 
   return (
@@ -344,6 +345,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
                   className="text-xs font-poppins font-semibold text-slate-800 py-2.5 px-3 rounded-xl hover:bg-slate-50 transition-colors border-b border-slate-100/70"
                 >
                   Pricing
+                </a>
+                <a 
+                  href="#blog" 
+                  onClick={() => setMobileMenuOpen(false)} 
+                  className="text-xs font-poppins font-semibold text-slate-800 py-2.5 px-3 rounded-xl hover:bg-slate-50 transition-colors border-b border-slate-100/70"
+                >
+                  Blog & Playbooks
                 </a>
               </nav>
 

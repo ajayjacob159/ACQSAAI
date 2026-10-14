@@ -10,6 +10,7 @@ import { HowItWorksSection } from './components/HowItWorksSection';
 import { WhoItsForSection } from './components/WhoItsForSection';
 import { PricingSection } from './components/PricingSection';
 import { ProofSection } from './components/ProofSection';
+import { BlogSection } from './components/BlogSection';
 import { AboutFounderSection } from './components/AboutFounderSection';
 import { FinalCTA } from './components/FinalCTA';
 import { StrategyCallModal } from './components/StrategyCallModal';
@@ -103,7 +104,10 @@ function MainContent() {
         {/* 7. Proof / Results section (commercial signals, case teardowns, testimonials) */}
         <ProofSection onOpenBooking={() => handleOpenBooking('Strategy Session')} />
 
-        {/* 8. About the founder (Rocky Jacob, India cost leverage, photo) */}
+        {/* 8. Founder Thought Leadership & Blog Section */}
+        <BlogSection onOpenBooking={(pkg) => handleOpenBooking(pkg)} />
+
+        {/* 9. About the founder (Rocky Jacob, India cost leverage, photo) */}
         <AboutFounderSection onOpenBooking={() => handleOpenBooking('20-min Founder Call with Rocky')} />
 
         {/* 9. Final CTA section */}
