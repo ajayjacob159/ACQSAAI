@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ArrowRight, Home, ChevronDown, Sparkles, Target, TrendingUp, Layers, Check } from 'lucide-react';
+import { Menu, X, ArrowRight, Home, ChevronDown, Sparkles, Layers, BookOpen } from 'lucide-react';
 import { SERVICES_DATA } from './ServicesSection';
 import logoImg from '../assets/logo.png';
 
@@ -34,14 +35,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const navLinks = [
-    { label: 'Home', href: '#', icon: true },
-    { label: 'How It Works', href: '#how-it-works', icon: false },
-    { label: 'Who It\'s For', href: '#who-its-for', icon: false },
-    { label: 'Pricing', href: '#pricing', icon: false },
-    { label: 'Blog', href: '#blog', icon: false },
-  ];
-
   return (
     <motion.header 
       initial={{ y: -20, opacity: 0 }}
@@ -56,11 +49,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between gap-4">
           
-          {/* Logo brand lockup (Clean transparent PNG) */}
-          <motion.a 
-            href="#" 
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
+          {/* Logo brand lockup */}
+          <Link 
+            to="/" 
             className="flex items-center gap-2 group shrink-0"
             aria-label="ACQSA AI Home"
           >
@@ -69,20 +60,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
               alt="ACQSA AI" 
               className="h-8 sm:h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
             />
-          </motion.a>
+          </Link>
 
-          {/* Desktop Nav Links with Services Dropdown */}
+          {/* Desktop Nav Links with Services Dropdown & Blogs */}
           <nav className="hidden md:flex items-center gap-1 bg-slate-50/90 border border-slate-200/90 px-3 py-1.5 rounded-full shadow-2xs">
             {/* Home link */}
-            <motion.a
-              href="#"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.97 }}
+            <Link
+              to="/"
               className="px-3 py-1.5 text-xs font-poppins font-semibold text-slate-700 hover:text-slate-950 hover:bg-white rounded-full transition-all flex items-center gap-1.5"
             >
               <Home className="w-3.5 h-3.5 text-slate-400" />
               <span>Home</span>
-            </motion.a>
+            </Link>
 
             {/* Services Dropdown Trigger */}
             <div className="relative" ref={dropdownRef}>
@@ -118,7 +107,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
                         Select A Specialized Service
                       </span>
                       <a 
-                        href="#services" 
+                        href="/#services" 
                         onClick={() => setServicesDropdownOpen(false)}
                         className="text-[10px] font-mono font-bold text-[#FF1B6B] hover:underline"
                       >
@@ -153,7 +142,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
 
                           <div className="mt-2.5 pt-2 border-t border-slate-100 flex items-center justify-between gap-2">
                             <a
-                              href="#services"
+                              href="/#services"
                               onClick={() => setServicesDropdownOpen(false)}
                               className="text-[10px] font-mono font-bold text-slate-600 hover:text-slate-950 flex items-center gap-1"
                             >
@@ -192,30 +181,33 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
             </div>
 
             {/* Other Nav Links */}
-            <motion.a
-              href="#how-it-works"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.97 }}
+            <a
+              href="/#how-it-works"
               className="px-3.5 py-1.5 text-xs font-poppins font-semibold text-slate-700 hover:text-slate-950 hover:bg-white rounded-full transition-all"
             >
               How It Works
-            </motion.a>
-            <motion.a
-              href="#who-its-for"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.97 }}
+            </a>
+            <a
+              href="/#who-its-for"
               className="px-3.5 py-1.5 text-xs font-poppins font-semibold text-slate-700 hover:text-slate-950 hover:bg-white rounded-full transition-all"
             >
               Who It's For
-            </motion.a>
-            <motion.a
-              href="#pricing"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.97 }}
+            </a>
+            <a
+              href="/#pricing"
               className="px-3.5 py-1.5 text-xs font-poppins font-semibold text-slate-700 hover:text-slate-950 hover:bg-white rounded-full transition-all"
             >
               Pricing
-            </motion.a>
+            </a>
+
+            {/* Dedicated Blogs Link */}
+            <Link
+              to="/blog"
+              className="px-3.5 py-1.5 text-xs font-poppins font-semibold text-slate-700 hover:text-[#FF1B6B] hover:bg-white rounded-full transition-all flex items-center gap-1.5 group"
+            >
+              <BookOpen className="w-3.5 h-3.5 text-[#FF1B6B] group-hover:scale-110 transition-transform" />
+              <span>Blogs</span>
+            </Link>
           </nav>
 
           {/* Desktop Right Action Area: Book Strategy Call CTA */}
@@ -269,14 +261,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
           >
             <div className="px-6 py-5 space-y-4">
               <nav className="flex flex-col gap-1">
-                <a 
-                  href="#" 
+                <Link 
+                  to="/" 
                   onClick={() => setMobileMenuOpen(false)} 
                   className="flex items-center gap-2.5 text-xs font-poppins font-semibold text-slate-800 py-2.5 px-3 rounded-xl hover:bg-slate-50 transition-colors border-b border-slate-100/70"
                 >
                   <Home className="w-3.5 h-3.5 text-[#FF1B6B]" />
                   <span>Home</span>
-                </a>
+                </Link>
 
                 {/* Mobile Services Accordion */}
                 <div className="py-2 border-b border-slate-100 space-y-2">
@@ -302,7 +294,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
                           <div className="font-poppins font-bold text-xs text-slate-900">{srv.title}</div>
                           <div className="flex items-center gap-2 pt-1">
                             <a
-                              href="#services"
+                              href="/#services"
                               onClick={() => setMobileMenuOpen(false)}
                               className="text-[10px] font-mono font-bold text-[#FF1B6B]"
                             >
@@ -326,33 +318,39 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
                 </div>
 
                 <a 
-                  href="#how-it-works" 
+                  href="/#how-it-works" 
                   onClick={() => setMobileMenuOpen(false)} 
                   className="text-xs font-poppins font-semibold text-slate-800 py-2.5 px-3 rounded-xl hover:bg-slate-50 transition-colors border-b border-slate-100/70"
                 >
                   How It Works
                 </a>
                 <a 
-                  href="#who-its-for" 
+                  href="/#who-its-for" 
                   onClick={() => setMobileMenuOpen(false)} 
                   className="text-xs font-poppins font-semibold text-slate-800 py-2.5 px-3 rounded-xl hover:bg-slate-50 transition-colors border-b border-slate-100/70"
                 >
                   Who It's For
                 </a>
                 <a 
-                  href="#pricing" 
+                  href="/#pricing" 
                   onClick={() => setMobileMenuOpen(false)} 
                   className="text-xs font-poppins font-semibold text-slate-800 py-2.5 px-3 rounded-xl hover:bg-slate-50 transition-colors border-b border-slate-100/70"
                 >
                   Pricing
                 </a>
-                <a 
-                  href="#blog" 
+                
+                {/* Mobile Blogs Link */}
+                <Link 
+                  to="/blog" 
                   onClick={() => setMobileMenuOpen(false)} 
-                  className="text-xs font-poppins font-semibold text-slate-800 py-2.5 px-3 rounded-xl hover:bg-slate-50 transition-colors border-b border-slate-100/70"
+                  className="flex items-center justify-between text-xs font-poppins font-semibold text-slate-800 py-2.5 px-3 rounded-xl hover:bg-slate-50 transition-colors border-b border-slate-100/70"
                 >
-                  Blog & Playbooks
-                </a>
+                  <span className="flex items-center gap-2">
+                    <BookOpen className="w-3.5 h-3.5 text-[#FF1B6B]" />
+                    <span>Blogs & Playbooks</span>
+                  </span>
+                  <span className="text-[10px] font-mono font-bold text-[#FF1B6B] bg-pink-50 px-2 py-0.5 rounded-full border border-pink-100">Direct Share</span>
+                </Link>
               </nav>
 
               <div className="pt-2">
@@ -373,3 +371,5 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
     </motion.header>
   );
 };
+
+export default Navbar;

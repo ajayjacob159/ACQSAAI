@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   BookOpen, 
@@ -304,12 +305,14 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ onOpenBooking }) => {
             
             {/* Banner Image with Badge */}
             <div className="lg:col-span-6 relative overflow-hidden bg-slate-900 h-64 sm:h-80 lg:h-full min-h-[300px]">
-              <img
-                src={featuredPost.image}
-                alt={featuredPost.title}
-                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
-              />
-              <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-950/80 backdrop-blur-md border border-white/20 text-white text-[10px] font-mono font-bold uppercase tracking-wider">
+              <Link to={`/blog/${featuredPost.id}`} className="block w-full h-full">
+                <img
+                  src={featuredPost.image}
+                  alt={featuredPost.title}
+                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                />
+              </Link>
+              <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-950/80 backdrop-blur-md border border-white/20 text-white text-[10px] font-mono font-bold uppercase tracking-wider pointer-events-none">
                 <Sparkles className="w-3 h-3 text-[#FF1B6B]" />
                 <span>Featured Playbook</span>
               </div>
@@ -331,9 +334,11 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ onOpenBooking }) => {
               </div>
 
               <div className="space-y-2">
-                <h3 className="text-2xl sm:text-3xl font-poppins font-extrabold text-slate-900 group-hover:text-[#FF1B6B] transition-colors leading-tight">
-                  {featuredPost.title}
-                </h3>
+                <Link to={`/blog/${featuredPost.id}`}>
+                  <h3 className="text-2xl sm:text-3xl font-poppins font-extrabold text-slate-900 group-hover:text-[#FF1B6B] transition-colors leading-tight">
+                    {featuredPost.title}
+                  </h3>
+                </Link>
                 <p className="text-sm text-slate-600 leading-relaxed font-normal">
                   {featuredPost.subtitle}
                 </p>
@@ -357,13 +362,13 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ onOpenBooking }) => {
                   </div>
                 </div>
 
-                <button
-                  onClick={() => setSelectedPost(featuredPost)}
+                <Link
+                  to={`/blog/${featuredPost.id}`}
                   className="px-6 py-3 rounded-full bg-slate-950 hover:bg-slate-800 text-white font-poppins font-bold text-xs uppercase tracking-wider shadow-sm hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2"
                 >
-                  <span>Read Full Post</span>
+                  <span>Read Full Post & Share</span>
                   <ArrowRight className="w-3.5 h-3.5 text-[#FF1B6B]" />
-                </button>
+                </Link>
               </div>
             </div>
 
@@ -378,7 +383,7 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ onOpenBooking }) => {
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-[#FAFAFC] border border-slate-200 rounded-3xl p-6 sm:p-8 flex flex-col justify-between hover:border-slate-300 transition-all space-y-6"
+              className="bg-[#FAFAFC] border border-slate-200 rounded-3xl p-6 sm:p-8 flex flex-col justify-between hover:border-slate-300 transition-all space-y-6 group"
             >
               <div className="space-y-3">
                 <div className="flex items-center gap-2 text-[11px] font-mono text-slate-500">
@@ -387,9 +392,11 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ onOpenBooking }) => {
                   <span>{post.readTime}</span>
                 </div>
 
-                <h4 className="text-xl font-poppins font-extrabold text-slate-900 leading-snug">
-                  {post.title}
-                </h4>
+                <Link to={`/blog/${post.id}`}>
+                  <h4 className="text-xl font-poppins font-extrabold text-slate-900 group-hover:text-[#FF1B6B] transition-colors leading-snug">
+                    {post.title}
+                  </h4>
+                </Link>
 
                 <p className="text-xs text-slate-600 leading-relaxed">
                   {post.subtitle}
@@ -400,16 +407,28 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ onOpenBooking }) => {
                 <span className="text-xs font-mono text-slate-400">
                   By {post.author.name}
                 </span>
-                <button
-                  onClick={() => setSelectedPost(post)}
+                <Link
+                  to={`/blog/${post.id}`}
                   className="inline-flex items-center gap-1.5 text-xs font-poppins font-bold text-slate-900 hover:text-[#FF1B6B] transition-colors"
                 >
                   <span>Read Breakdown</span>
                   <ArrowRight className="w-3.5 h-3.5" />
-                </button>
+                </Link>
               </div>
             </motion.div>
           ))}
+        </div>
+
+        {/* Bottom directory explore button */}
+        <div className="text-center pt-2">
+          <Link
+            to="/blog"
+            className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-slate-50 hover:bg-slate-100 border border-slate-200 text-xs font-mono font-bold text-slate-900 transition-all shadow-2xs hover:scale-105"
+          >
+            <BookOpen className="w-4 h-4 text-[#FF1B6B]" />
+            <span>Explore All Founder Playbooks & Shareable Articles (/blog)</span>
+            <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
+          </Link>
         </div>
 
       </div>
